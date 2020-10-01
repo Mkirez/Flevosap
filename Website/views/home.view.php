@@ -1,13 +1,7 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset = "utf-8" />
-    <title>Flevosap – Het sap waar je de smaak ziet zitten</title>
-    <link rel="shortcut icon" href="../asset/favicon.ico" type="image/x-icon">
-</head>
+<?php $title = "Home" ?>
 <?php include "includes/head.view.php" ?>
-<link rel="stylesheet" href="includes/MainStyle.css">
-<title></title>
 <body>
     <?php include "includes/nav.view.php" ?>
     <h3 style="text-align: left;">Liefhebbers van Flevosap: welkom!</h3>
