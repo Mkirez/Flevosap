@@ -13,11 +13,11 @@ $router->define([
             'controller' => 'ContactController',
             'method' => 'index'
         ],
-        '/particulierproduct' => [
+        '/particulier' => [
             'controller' => 'ProductController',
             'method' => 'index'
         ],
-        '/zakelijkproduct' => [
+        '/zakelijk' => [
             'controller' => 'ProductController',
             'method' => 'index'
         ],

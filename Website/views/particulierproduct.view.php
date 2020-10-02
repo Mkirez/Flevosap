@@ -1,13 +1,9 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ADSD</title>
-</head>
+<?php $title = "Particulier" ?>
+<?php include "includes/head.view.php" ?>
 <body>
+<?php include "includes/nav.view.php" ?>
 
 <h1>Haal de meest verse sappen bij ons!</h1>
 
@@ -254,5 +250,6 @@
 
     <input type="submit" value="Submit">
 </form>
+<?php include "includes/footer.view.php" ?>
 </body>
 </html>
