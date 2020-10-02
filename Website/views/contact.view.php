@@ -1,13 +1,19 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ADSD</title>
-</head>
+<?php $title = "Home" ?>
+<?php include "includes/head.view.php" ?>
 <body>
-<h1>Hoe kom ik in contact met Stephan van de ADSD!</h1>
+<?php include "includes/nav.view.php" ?>
+<h3 style="text-align: left;">Neem contact op met FlevoSap:</h3>
+<section class="body">
+    <p style="text-align: left;">
+        <br>Flevosap bv
+        <br>Prof. Zuurlaan 22
+        <br>8256 PE Biddinghuizen, Nederland
+        <br>Tel: +31 (0)321 – 33 25 25
+        <br>info@flevosap.nl
+    </p>
+</section>
+<?php include "includes/footer.view.php" ?>
 </body>
 </html>

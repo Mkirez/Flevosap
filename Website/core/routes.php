@@ -28,7 +28,10 @@ $router->define([
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'index'
-        ]
+        ],
+        '/bestelling' => [
+            'controller' => 'BestellingController',
+            'method' => 'index'
     ],
     'POST' => [
         '/login' => [
@@ -40,4 +43,4 @@ $router->define([
             'method' => 'register'
         ],
     ]
-]);
+]]);
