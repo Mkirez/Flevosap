@@ -13,11 +13,11 @@ $router->define([
             'controller' => 'ContactController',
             'method' => 'index'
         ],
-        '/particulierproduct' => [
+        '/particulier' => [
             'controller' => 'ProductController',
             'method' => 'index'
         ],
-        '/zakelijkproduct' => [
+        '/zakelijk' => [
             'controller' => 'ProductController',
             'method' => 'index'
         ],
@@ -28,7 +28,10 @@ $router->define([
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'index'
-        ]
+        ],
+        '/bestelling' => [
+            'controller' => 'BestellingController',
+            'method' => 'index'
     ],
     'POST' => [
         '/login' => [
@@ -40,4 +43,4 @@ $router->define([
             'method' => 'register'
         ],
     ]
-]);
+]]);
