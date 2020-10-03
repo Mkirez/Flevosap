@@ -1,13 +1,9 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ADSD</title>
-</head>
+<?php $title = "Home" ?>
+<?php include "includes/head.view.php" ?>
 <body>
+<?php include "includes/nav.view.php" ?>
 
 <h1>Haal de meest verse sappen voor uw bedrijf bij ons!</h1>
 
@@ -254,7 +250,43 @@
 
     <br><br>
 
-    <input type="submit" value="Submit">
+    <script>
+        function submit(){
+            var appel = ;
+            var kleintjeAppel =
+            var appelAardbei = ;
+            var appelAnanasPerzik = ;
+            var appelCassis = ;
+            var appelCitroen = ;
+            var appelCranberry = ;
+            var appelKers = ;
+            var appelPeer = ;
+            var appelPeerZwarteBes = ;
+            var appelRabarber = ;
+            var appelSinaasappel = ;
+            var peer = ;
+            var peerCranberry = ;
+            var sinaasappel = ;
+            var winteravond = ;
+            var aantal = document.getElementById("appel").value + document.getElementById("kleintjeAppel").value +
+                document.getElementById("appelAardbei").value + document.getElementById("appelAnanasPerzik").value +
+                document.getElementById("appelCassis").value + document.getElementById("appelCitroen").value +
+                document.getElementById("appelCranberry").value + document.getElementById("appelKers").value +
+                document.getElementById("appelPeer").value + document.getElementById("appelPeerZwarteBes").value +
+                document.getElementById("appelRabarber").value + document.getElementById("appelSinaasappel").value +
+                document.getElementById("peer").value + document.getElementById("peerCranberry").value +
+                document.getElementById("sinaasappel").value + document.getElementById("winteravond").value;
+
+            if(aantal => 6)
+            {
+                return true;
+            }else{
+                alert("Selecteer minstens 6 flessen.")
+            }
+        }
+    </script>
+    <input type="submit" value="Submit" onsubmit="submit()">
 </form>
+<?php include "includes/footer.view.php" ?>
 </body>
 </html>

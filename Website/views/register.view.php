@@ -1,15 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registreren</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
-</head>
+<?php $title = "Home" ?>
+<?php include "includes/head.view.php" ?>
 <body>
+<?php include "includes/nav.view.php" ?>
 <div class="wrapper">
     <h2>Registreren</h2>
     <p>Vul a.u.b. dit formulier in om u te registreren.</p>
@@ -36,5 +30,6 @@
         <p>Heeft u al een account? <a href="login.view.php">Log dan hier in</a>.</p>
     </form>
 </div>
+<?php include "includes/footer.view.php" ?>
 </body>
 </html>
