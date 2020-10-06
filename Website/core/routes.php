@@ -32,6 +32,7 @@ $router->define([
         '/bestelling' => [
             'controller' => 'BestellingController',
             'method' => 'index'
+        ],
     ],
     'POST' => [
         '/login' => [
@@ -43,4 +44,4 @@ $router->define([
             'method' => 'register'
         ],
     ]
-]]);
+]);

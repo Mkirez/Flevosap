@@ -6,7 +6,7 @@
 <?php include "includes/nav.view.php" ?>
 <h3 style="text-align: left;">Liefhebbers van Flevosap: welkom!</h3>
 <section class="body">
-    <div class="col-md-6"
+    <div class="col-md-6">
     <div class="wrapper">
         <h2>Inloggen</h2>
         <p>Vul uw gegevens in om in te loggen.</p>
