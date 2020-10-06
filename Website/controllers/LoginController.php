@@ -3,12 +3,20 @@ class LoginController
 {
     public function index()
     {
-        if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-            header("location: /home.view.php");
+        unset($_SESSION['login_incorrect']);
+        if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) {
+            header("location: /");
             exit;
         }
         require 'views/login.view.php';
-        unset($_SESSION['login_incorrect']);
+    }
+    public function logout()
+    {
+        if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) {
+            unset($_SESSION['loggedIn']);
+        }
+        header("location: /login");
+        exit;
     }
 
     public function login(){

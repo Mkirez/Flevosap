@@ -29,6 +29,10 @@ $router->define([
             'controller' => 'LoginController',
             'method' => 'index'
         ],
+        '/logout' => [
+            'controller' => 'LoginController',
+            'method' => 'logout'
+        ],
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'index'
