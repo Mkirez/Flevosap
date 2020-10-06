@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<?php $title = "Home" ?>
+<?php $title = "About" ?>
 <?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
