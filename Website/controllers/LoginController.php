@@ -4,7 +4,7 @@ class LoginController
     public function index()
     {
         if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-            header("location: welcome.php");
+            header("location: /home.view.php");
             exit;
         }
         require 'views/login.view.php';
@@ -12,13 +12,14 @@ class LoginController
     }
 
     public function login(){
-        //POST LOGIN
+        // POST LOGIN
         $user =  new UserModel();
         $user->findByEmail($_POST['username']);
         if (password_verify($_POST['password'],$user->getPassword())){
             $_SESSION['loggedIn'] = true;
             $_SESSION['userId'] = $user->getId();
-        }else{
+            header("location: /");
+        } else {
             $_SESSION['login_incorrect'] = "Password or username not correct";
             header('location: /login');
             require 'views/login.view.php';

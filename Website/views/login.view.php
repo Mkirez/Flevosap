@@ -23,7 +23,7 @@
                 <input type="password" name="password" class="form-row">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" name="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Heeft u geen account? <a href='/register'>Registreer dan nu</a>.</p>
         </form>
