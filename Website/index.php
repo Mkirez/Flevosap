@@ -19,6 +19,7 @@ require "core/config.php";
  */
 require 'models/BaseModel.php';
 require 'models/UserModel.php';
+require 'models/ProductModel.php';
 
 /**
  * Controllers
@@ -29,6 +30,7 @@ require 'controllers/ContactController.php';
 require 'controllers/RegisterController.php';
 require 'controllers/LoginController.php';
 require 'controllers/ProductController.php';
+require 'controllers/ProductpageController.php';
 
 require 'core/Router.php';
 
