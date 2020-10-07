@@ -5,7 +5,7 @@
             <div class="col-md-3 ">
                 <h4>Flevosap</h4>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../home.view.php">Home</a>
+                    <a class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Boomgaard</a>
@@ -20,7 +20,7 @@
             <div class="col-md-3 ">
                 <h4>Horeca</h4>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../home.view.php">Klant worden</a>
+                    <a class="nav-link active" href="/">Klant worden</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Bestellen via Flevosap.nl </a>
@@ -35,7 +35,7 @@
             <div class="col-md-3 ">
                 <h4>Contact</h4>
                 <li class="nav-item">
-                    <a class="nav-link active" href="../home.view.php">Contact</a>
+                    <a class="nav-link active" href="/">Contact</a>
                 </li>
             </div>
             <div class="col-md-3 ">
