@@ -5,18 +5,18 @@
 <body>
 <?php include "includes/nav.view.php" ?>
 
+<?php foreach($productInfo as $productInfo){ ?>
 <div id="productView">
     <img alt="Flevosap logo" id="logoSite" src="../asset/img/Flevosap-logo-footer.png">
-    <img alt="Product foto" id="productPicture" src="../asset/FlevoSap%20producten/Bietensap.png">
+    <img alt="Product foto" id="productPicture" src="<?php $productInfo["afbeelding"] ?>">
 </div>
+
 <div id="productInfoBox">
-    <div id="productTitle"><h2>Rode Biet</h2></div>
-    <div id="productDescription"><p>Er is hier voldoende ruimte om alle <br>
-            voordelen van rode bieten op te sommen. <br>
-            Waar ze vandaan komen en hoe ze <br>
-            smaken evenmin. We maken er liever sap <br>
-            van. Met in gedachten dat een lekkere biet <br>
-            hier vanzelf boven uitstijgt.</p>
+    <div id="productTitle">
+        <h2> <?php $productInfo["title"] ?> </h2>
+    </div>
+    <div id="productDescription">
+        <p><?php $productInfo["description"] ?></p>
     </div>
     <div id="addToCart">
         <button>Voeg toe aan winkelmandje</button>
@@ -70,6 +70,7 @@
         </table>
     </div>
 </div>
+<?php } ?>
 
 <?php include "includes/footer.view.php" ?>
 </body>
