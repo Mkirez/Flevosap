@@ -1,8 +1,3 @@
-<?php if(isset($_SESSION["logged_in"])){ ?>
-
-    <p>Hier komt de NAV voor logged in users ( Same as the other one ( But with profile ) )</p>
-
-<?php }else{ ?>
 
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,18 +12,29 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/shop">Shop</a>
-                    </li>
+                    <?php  if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/shop">Shop</a>
+                        </li>
+                    <?php } ?>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register">Register</a>
-                    </li>
+
+                    <?php  if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">Logout</a>
+                        </li>
+                    <?php }else{ ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Register</a>
+                        </li>
+                    <?php } ?>
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search">
@@ -37,5 +43,3 @@
             </div>
         </nav>
     </div>
-
-<?php } ?>

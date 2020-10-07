@@ -5,7 +5,7 @@
 <body>
 <?php include "includes/nav.view.php" ?>
 <section class="body">
-    <div class="col-md-6"
+    <div class="col-md-6">
     <div class="wrapper">
         <h2>Inloggen</h2>
         <p>Vul uw gegevens in om in te loggen.</p>
@@ -22,7 +22,7 @@
                 <input type="password" name="password" class="form-row">
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
+                <input type="submit" name="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Heeft u geen account? <a href='/register'>Registreer dan nu</a>.</p>
         </form>

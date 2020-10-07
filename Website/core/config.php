@@ -2,5 +2,5 @@
 
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'WW');
-define('DB_NAME', 'gitlab');
+define('DB_PASSWORD', 'root');
+define('DB_NAME', 'Flevosapproducts');
