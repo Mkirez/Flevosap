@@ -28,6 +28,14 @@ $router->define([
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'index'
+        ],
+        '/Productpage' => [
+            'controller' => 'ProductpageController',
+            'method' => 'index'
+        ],
+        '/ProductImage' => [
+            'controller' => 'ProductpageController',
+            'method' => 'getProductImage'
         ]
     ],
     'POST' => [

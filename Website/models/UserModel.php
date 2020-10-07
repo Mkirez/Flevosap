@@ -5,8 +5,8 @@
 
 class UserModel extends BaseModel
 {
-    private $id;
-    private $username, $password;
+    private int $id;
+    private string $username, $password;
     private $createdAt, $updatedAt;
 
     public function __construct()

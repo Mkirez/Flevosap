@@ -23,7 +23,7 @@ class Router
     public function direct()
     {
         $method = $_SERVER['REQUEST_METHOD'];
-        $uri = $_SERVER['REQUEST_URI'];
+        $uri = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : $_SERVER['REQUEST_URI'];
 
         if (array_key_exists($uri, $this->routes[$method])) {
             $currentRoute = $this->routes[$method][$uri];
