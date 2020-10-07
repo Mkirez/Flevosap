@@ -13,11 +13,15 @@ $router->define([
             'controller' => 'ContactController',
             'method' => 'index'
         ],
-        '/particulierproduct' => [
+        '/productinfo' => [
+            'controller' => 'ProductInfoController',
+            'method' => 'index'
+        ],
+        '/particulier' => [
             'controller' => 'ProductController',
             'method' => 'index'
         ],
-        '/zakelijkproduct' => [
+        '/zakelijk' => [
             'controller' => 'ProductController',
             'method' => 'index'
         ],
@@ -25,18 +29,18 @@ $router->define([
             'controller' => 'LoginController',
             'method' => 'index'
         ],
+        '/logout' => [
+            'controller' => 'LoginController',
+            'method' => 'logout'
+        ],
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'index'
         ],
-        '/Productpage' => [
-            'controller' => 'ProductpageController',
+        '/bestelling' => [
+            'controller' => 'BestellingController',
             'method' => 'index'
         ],
-        '/ProductImage' => [
-            'controller' => 'ProductpageController',
-            'method' => 'getProductImage'
-        ]
     ],
     'POST' => [
         '/login' => [

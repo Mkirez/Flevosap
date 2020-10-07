@@ -1,4 +1,5 @@
-Hier komt de footer
+<div id="footer"><p>Hier komt de footer</p></div>
 
 <script src="/asset/js/jquery.min.js"></script>
 <script src="/asset/js/bootstrap.min.js"></script>
+<script src="/asset/js/main.js"></script>
