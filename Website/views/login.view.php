@@ -4,7 +4,6 @@
 <?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
-<h3 style="text-align: left;">Liefhebbers van Flevosap: welkom!</h3>
 <section class="body">
     <div class="col-md-6"
     <div class="wrapper">
