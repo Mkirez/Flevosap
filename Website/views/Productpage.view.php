@@ -1,18 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../asset/css/productpageStyle.css">
-    <meta charset="UTF-8">
-    <title>Product Page </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <?php include "includes/head.view.php" ?>
 </head>
 <body>
-<header>
-
-</header>
+<?php include "includes/nav.view.php" ?>
 <main role="main">
 <div class="container">
     <div class="row">
@@ -94,7 +86,7 @@
 </div>
 </main>
 <footer>
-
+    <?php include "includes/footer.view.php" ?>
 </footer>
 <?php
 //echo "<table style='border: solid 1px black;'>";
