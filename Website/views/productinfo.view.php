@@ -5,18 +5,18 @@
 <body>
 <?php include "includes/nav.view.php" ?>
 
-<?php foreach($productInfo as $productInfo){ ?>
+<?php foreach($productInfoData as $productInfoItem){ ?>
 <div id="productView">
     <img alt="Flevosap logo" id="logoSite" src="../asset/img/Flevosap-logo-footer.png">
-    <img alt="Product foto" id="productPicture" src="<?php $productInfo["afbeelding"] ?>">
+    <img alt="Product foto" id="productPicture" src="<?php $productInfoItem["afbeelding"] ?>">
 </div>
 
 <div id="productInfoBox">
     <div id="productTitle">
-        <h2> <?php $productInfo["title"] ?> </h2>
+        <h2> <?php $productInfoItem["title"] ?> </h2>
     </div>
     <div id="productDescription">
-        <p><?php $productInfo["description"] ?></p>
+        <p><?php $productInfoItem["description"] ?></p>
     </div>
     <div id="addToCart">
         <button>Voeg toe aan winkelmandje</button>
