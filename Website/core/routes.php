@@ -13,14 +13,6 @@ $router->define([
             'controller' => 'ContactController',
             'method' => 'index'
         ],
-        '/particulierproduct' => [
-            'controller' => 'ProductController',
-            'method' => 'index'
-        ],
-        '/zakelijkproduct' => [
-            'controller' => 'ProductController',
-            'method' => 'index'
-        ],
         '/login' => [
             'controller' => 'LoginController',
             'method' => 'index'
@@ -36,6 +28,10 @@ $router->define([
         '/ProductImage' => [
             'controller' => 'ProductpageController',
             'method' => 'getProductImage'
+        ],
+        '/productinfo' => [
+            'controller' => 'ProductInfoController',
+            'method' => 'index'
         ]
     ],
     'POST' => [

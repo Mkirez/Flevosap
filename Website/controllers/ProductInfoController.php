@@ -5,6 +5,8 @@ class ProductInfoController
 {
     public function index()
     {
-        require '/views/productinfo.view.php';
+        $productInfo = new ProductInfoModel();
+        $productInfoData = $productInfo->fetchAll();
+        require 'views/productinfo.view.php';
     }
 }
