@@ -19,11 +19,11 @@
         <?php
         $servername = "localhost";
         $username = "root";
-        $password = "";
-        $dbname = "registration";
+        $password = "St34ck5#Nice";
+        $dbname = "flevosapusers";
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $sqll = "SELECT  * from sales_stats WHERE month='Mar' ";
+        $sqll = "SELECT  * from gebruikers";
         if (mysqli_query($conn, $sqll))
         {
             echo "";
@@ -46,7 +46,7 @@
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-comments"></i>
                         </div>
-                        <div class="mr-5"><?php echo $row['Vistors']; ?> Vistors</div>
+                        <div class="mr-5"><?php echo $row['Visitors']; ?> Visitors</div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="#">
                         <span class="float-left">View Details</span>
@@ -169,7 +169,7 @@
                             <th>ID</th>
                             <th>Name of Product</th>
                             <th>Price of Product</th>
-                            <th>Product Catrogy</th>
+                            <th>Product Category</th>
                             <th>Product Details</th>
                         </tr>
                         </thead>
@@ -178,7 +178,7 @@
                             <th>ID</th>
                             <th>Name of Product</th>
                             <th>Price of Product</th>
-                            <th>Product Catrogy</th>
+                            <th>Product Category</th>
                             <th>Product Details</th>
                         </tr>
                         </tfoot>
@@ -261,5 +261,6 @@
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
 </div>
+<?php include "includes/footer.view.php" ?>
 </body>
 </html>

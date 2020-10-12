@@ -4,16 +4,16 @@
 <?php include "includes/head.view.php" ?>
 <body>
     <?php include "includes/nav.view.php" ?>
-    <h3 style="text-align: left;">Liefhebbers van Flevosap: welkom!</h3>
+    <h3 style="text-align: left;" class="col-md-6">Liefhebbers van Flevosap: welkom!</h3>
     <section class="body">
-        <p style="text-align: left;">
+        <p style="text-align: left;" class="col-md-6">
                 <br>De vele variaties zorgen voor de ene fruitige verrassing na de andere.
                 <br>De pure smaak van één soort, of een spannende combinatie van twee of meer.
                 <br>Altijd 100 procent natuurlijk, dus zonder smaak- en conserveringsmiddelen
                 <br>Waar je ook bent, met Flevosap heb je altijd de smaak te pakken!
         </p>
-        <h3>Altijd en overal genieten</h3>
-       <div class="avia_textblock  " itemprop="text">
+        <h3 style="text-align: left;" class="col-md-6">Altijd en overal genieten</h3>
+       <div style="text-align: left;" class="col-md-8" itemprop="text">
            <p>De grote flessen kom je tegen in je supermarkt.
                <br>Dat is makkelijk meenemen, en kinderen zijn er dol op. Volwassenen trouwens ook.
                <br>In de winkel vind je ook een handig klein flesje dat graag mee onderweg gaat.
