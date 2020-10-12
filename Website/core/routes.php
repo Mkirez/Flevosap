@@ -32,7 +32,11 @@ $router->define([
         '/productinfo' => [
             'controller' => 'ProductInfoController',
             'method' => 'index'
-        ]
+        ],
+         '/logout' => [
+            'controller' => 'LogoutController',
+            'method' => 'index'
+        ],
     ],
     'POST' => [
         '/login' => [

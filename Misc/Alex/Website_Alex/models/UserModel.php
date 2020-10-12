@@ -69,6 +69,27 @@ class UserModel extends BaseModel
         endif;
         return false;
     }
+    public function fetchAll(){
+        $query = 'SELECT * FROM gebruikers';
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $result = array();
+        while($data = $stmt->fetch())
+        {
+            $UserInfo = new UserModel();
+            $UserInfo->load($data);
+            $result[]=$UserInfo;
+        }
+        return $result;
+    }
+    private function load($data)
+    {
+        $this->setId($data['id']);
+        $this->setUserName($data['gebruikersnaam']);
+        $this->setPassword($data['wachtwoord']);
+        $this->setCreatedAt($data['created_at']);
+        $this->setUpdatedAt($data['updated_at']);
+    }
 
     /**
      * @return int
