@@ -5,6 +5,8 @@
 </head>
 <body>
 <?php include "includes/nav.view.php" ?>
+
+<?php include "includes/header.view.php" ?>
 <main role="main">
 <div class="container">
     <div class="row">
@@ -65,22 +67,42 @@
             </div>
         </div>
         <div class="col-md-9">
-            <?php for($a = 0; $a < ((count($products)/2) + ((count($products)%2)==0?0:1)); $a++) { ?>
-                <div class="row mb-4">
-                    <?php for($b = 0; $b < 2; $b++) { ?>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <img class="card-img-top" src="/ProductImage?productId=<?= $products[($a * 2) + $b]->getId();?>" />
-                                <div class="card-body">
-                                    <div class="card-title"><?= $products[($a * 2) + $b]->getTitle(); ?></div>
-                                    <div class="card-text">
+
+                <?php for($a = 0; $a < ((count($products)/2) + ((count($products)%2)==0?0:1)); $a++) { ?>
+                    <div class="row mb-4">
+                        <?php for($b = 0; $b < 2; $b++) { ?>
+                            <div class="col-md-6">
+                                <div class="card">
+                                    <img class="card-img-top" src="/ProductImage?productId=<?= $products[($a * 2) + $b]->getId();?>" />
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card-title text-left" id="cards-style" >
+                                                    <p><strong><?= $products[($a * 2) + $b]->getTitle(); ?></strong></p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                            
+                                            <div class="card-text text-right" id="cards-style" >
+
+                                               <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                            </div>
+                                            <div class="card-text"  >
+
+                                               <?= $products[($a * 2) + $b]->getProductOmschrijving(); ?>
+                                            </div>
+                                             <div class="card-text" >
+
+                                               <?= $products[($a * 2) + $b]->getPrijs(); ?>
+                                            </div>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    <?php } ?>
-                </div>
-            <?php } ?>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
         </div>
     </div>
 </div>
