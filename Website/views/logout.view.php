@@ -4,19 +4,23 @@ include "includes/head.view.php";
 
 session_destroy();
 ?>
+<style>
+    h1 {text-align: center;}
+    p {text-align: center;}
+    div {text-align: center;}
+</style>
 <body>
-<meta http-equiv="refresh" content="3;url=/" />
+<meta http-equiv="refresh" content="10000;url=/" />
 <?php include "includes/nav.view.php" ?>
+<div class="container" style="align-content: center">
 <section class="body">
-    <div class="col-md-6">
-        <div class="wrapper">
-            <div class="container-fluid" style="font-family:'Calibri';">
+    <div class="align-content-lg-center">
+            <div>
                 <h1>U bent nu uitgelogd</h1>
-
             </div>
-        </div>
     </div>
 </section>
+</div>
 <?php include "includes/footer.view.php" ?>
 </body>
 </html>

@@ -84,7 +84,7 @@ a {
 /* Styling footer */
 
 #footer{
-
+    position: sticky;
     background-image: url("../../asset/img/Flevosap-Footer-achtergrond.png");
     bottom: 0;
     left: 0;
