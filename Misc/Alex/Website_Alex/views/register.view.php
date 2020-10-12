@@ -15,15 +15,15 @@
     <form action="/register" method="post">
         <div class="form-group">
             <label>Gebruikersnaam</label>
-            <input type="text" name="gebruikersnaam" class="form-row" value="<?= isset($_POST["gebruikersnaam"]) ? $_POST["gebruikersnaam"] : ""?>">
+            <input type="text" name="gebruikersnaam" class="form-control form-control-sm" value="<?= isset($_POST["gebruikersnaam"]) ? $_POST["gebruikersnaam"] : ""?>">
         </div>
         <div class="form-group">
             <label>Wachtwoord</label>
-            <input type="password" name="wachtwoord" class="form-row">
+            <input type="password" name="wachtwoord" class="form-control form-control-sm">
         </div>
         <div class="form-group ">
             <label>Bevestig wachtwoord</label>
-            <input type="password" name="bevestig_wachtwoord" class="form-row">
+            <input type="password" name="bevestig_wachtwoord" class="form-control form-control-sm">
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" value="Invoeren">

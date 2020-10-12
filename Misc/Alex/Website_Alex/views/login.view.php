@@ -15,11 +15,11 @@
             </div>
             <div class="form-group <?= isset($_SESSION["login_incorrect"]) ? 'error' : ''; ?>">
                 <label>Gebruikersnaam</label>
-                <input type="text" name="username" class="form-row" value="<?= isset($_POST["username"]) ? $_POST["username"] : ""?>">
+                <input type="text" name="username" class="form-control form-control-sm" value="<?= isset($_POST["username"]) ? $_POST["username"] : ""?>">
             </div>
             <div class="form-group">
                 <label>Wachtwoord</label>
-                <input type="password" name="password" class="form-row">
+                <input type="password" name="password" class="form-control form-control-sm">
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" class="btn btn-primary" value="Login">
