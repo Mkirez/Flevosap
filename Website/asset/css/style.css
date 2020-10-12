@@ -84,9 +84,20 @@ a {
 /* Styling footer */
 
 #footer{
-    position: fixed;
+
     background-image: url("../../asset/img/Flevosap-Footer-achtergrond.png");
     bottom: 0;
     left: 0;
     width: 100%;
+}
+
+img{
+    width: 100% ;
+}
+.no-padding{
+    padding: 0px;
+}
+
+.space{
+    padding: 20px 0px 20px 0px;
 }
