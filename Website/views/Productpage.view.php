@@ -77,25 +77,40 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <div class="card-title text-left" id="cards-style" >
+                                                <div class="card-title texT-right" id="cards-style" >
                                                     <p><strong><?= $products[($a * 2) + $b]->getTitle(); ?></strong></p>
                                                 </div>
                                             </div>
-                                        </div>
+                                            
+                                             <div class="col-md-12">
+                                                    <div class="card-text"  >
+
+                                                    <?= $products[($a * 2) + $b]->getProductOmschrijving(); ?>
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-md-6 ">
+                                                <div class="card-text" >
+
+                                                   <?= $products[($a * 2) + $b]->getPrijs(); ?>
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="col-md-6 text-right ">
+                                                <div class="card-text" id="cards-style" >
+
+                                                    <a href="#"><i class="fa fa-shopping-basket"></i></a>
+                                                </div>
+                                            </div>
+
+                                            </div>
+                                            
+                                            
 
                                             
-                                            <div class="card-text text-right" id="cards-style" >
-
-                                               <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                            <div class="card-text"  >
-
-                                               <?= $products[($a * 2) + $b]->getProductOmschrijving(); ?>
-                                            </div>
-                                             <div class="card-text" >
-
-                                               <?= $products[($a * 2) + $b]->getPrijs(); ?>
-                                            </div>
+                                            
+                                            
+                                             
 
                                     </div>
                                 </div>
