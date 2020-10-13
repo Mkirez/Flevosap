@@ -10,7 +10,7 @@ session_destroy();
     div {text-align: center;}
 </style>
 <body>
-<meta http-equiv="refresh" content="10000;url=/" />
+<meta http-equiv="refresh" content="3;url=/" />
 <?php include "includes/nav.view.php" ?>
 <div class="container" style="align-content: center">
 <section class="body">
