@@ -124,7 +124,10 @@
                         <?php } ?>
                     </div>
                 <?php } ?>
-            <?php for($a = 0; $a < ((count($products)/2) + ((count($products)%2)==0?0:1)); $a++) { ?>
+
+
+                
+           <!--  <?php for($a = 0; $a < ((count($products)/2) + ((count($products)%2)==0?0:1)); $a++) { ?>
                 <div class="row mb-4">
                     <?php for($b = 0; $b < 2; $b++) { if ( isset($products[($a * 2) + $b] )){ ?>
                         <div class="col-md-6">
@@ -139,7 +142,7 @@
                         </div>
                     <?php }} ?>
                 </div>
-            <?php } ?>
+            <?php } ?> -->
 
         </div>
     </div>
