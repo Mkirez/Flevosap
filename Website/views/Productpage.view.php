@@ -7,6 +7,11 @@
 <?php include "includes/nav.view.php" ?>
 
 <?php include "includes/header.view.php" ?>
+
+
+
+<div class="space">
+</div>
 <main role="main">
 <div class="container">
     <div class="row">
@@ -119,7 +124,6 @@
                         <?php } ?>
                     </div>
                 <?php } ?>
-=======
             <?php for($a = 0; $a < ((count($products)/2) + ((count($products)%2)==0?0:1)); $a++) { ?>
                 <div class="row mb-4">
                     <?php for($b = 0; $b < 2; $b++) { if ( isset($products[($a * 2) + $b] )){ ?>
@@ -136,7 +140,7 @@
                     <?php }} ?>
                 </div>
             <?php } ?>
->>>>>>> Stashed changes
+
         </div>
     </div>
 </div>

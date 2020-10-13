@@ -85,11 +85,11 @@ a {
 
 #footer{
     position: relative;
-   background-color: #E84D2A;
     bottom: 0;
     left: 0;
     width: 100%;
         padding: 32px;
+        border-top: 1px solid black;
 }
 
 img{
@@ -122,7 +122,7 @@ img{
 .card-text:last-child {
     margin-bottom: 11px!important;
 }
-.navbar-color {
+.navbar{
     background-color: #E84D2A;
 
 }
@@ -136,6 +136,10 @@ img{
  }
 
 
-.wrapper-home{
-    padding: 40px;
+.wrapper-home {
+    padding: 160px;
+  
+}
+.footer-link li a{
+    color: black;
 }
