@@ -76,9 +76,9 @@ class UserModel extends BaseModel
         $result = array();
         while($data = $stmt->fetch())
         {
-            $UserInfo = new UserModel();
-            $UserInfo->load($data);
-            $result[]=$UserInfo;
+            $user = new UserModel();
+            $user->load($data);
+            $result[]=$user;
         }
         return $result;
     }
