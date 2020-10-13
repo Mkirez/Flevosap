@@ -70,7 +70,7 @@ class UserModel extends BaseModel
         return false;
     }
     public function fetchAll(){
-        $query = 'SELECT * FROM gebruikers';
+        $query = "SELECT * FROM gebruikers";
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
         $result = array();

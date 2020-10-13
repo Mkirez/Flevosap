@@ -7,24 +7,27 @@
 
 <?php include "includes/nav.view.php" ?>
 
-<?php foreach($UserInfoData as $UserInfoItem){ ?>
+<?php foreach($userInfoData as $userInfoItem){ ?>
 <div id="UserId">
     <div>
-        <h1> <?php $UserInfoItem["id"] ?> </h1>
+    <h1> <?php $userInfoItem ['id'] ?> </h1>
+        <form>
+
+        </form>
     </div>
 </div>
 <div id="UserInfoBox">
     <div id="Gebruikersnaam">
-        <h2> <?php $UserInfoItem["gebruikersnaam"] ?> </h2>
+        <h2> <?php $userInfoItem ['gebruikersnaam'] ?> </h2>
     </div>
     <div id="Wachtwoord">
-        <h2> <?php $UserInfoItem["wachtwoord"] ?> </h2>
+        <h2> <?php $userInfoItem ['wachtwoord'] ?> </h2>
     </div>
     <div id="Created_at">
-        <p><?php $UserInfoItem["created_at"] ?></p>
+        <p><?php $userInfoItem ['created_at'] ?></p>
     </div>
     <div id="Updated_at">
-        <p><?php $UserInfoItem["updated_at"] ?></p>
+        <p><?php $userInfoItem ['updated_at'] ?></p>
     </div>
 </div>
 <?php } ?>
