@@ -1,4 +1,4 @@
-::-moz-selection{background-color: #015a2e;color: #ffffff;}  ::selection{background-color: #015a2e;color: #ffffff;}
+
 body{font-family:' helvetica', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
 h3 {
     font-size: 24px;
@@ -84,11 +84,12 @@ a {
 /* Styling footer */
 
 #footer{
-    position: sticky;
-    background-image: url("../../asset/img/Flevosap-Footer-achtergrond.png");
+    position: relative;
+   background-color: #E84D2A;
     bottom: 0;
     left: 0;
     width: 100%;
+        padding: 32px;
 }
 
 img{
@@ -121,6 +122,20 @@ img{
 .card-text:last-child {
     margin-bottom: 11px!important;
 }
-.navbar-color{
+.navbar-color {
     background-color: #E84D2A;
+
+}
+
+.logo-header img{
+    width: 50%;
+}
+
+.inner h2{
+    color: #5E9A46;
+ }
+
+
+.wrapper-home{
+    padding: 40px;
 }
