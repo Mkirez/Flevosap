@@ -33,11 +33,25 @@ $router->define([
             'controller' => 'ProductInfoController',
             'method' => 'index'
         ],
+<<<<<<< Updated upstream
          '/logout' => [
             'controller' => 'LogoutController',
             'method' => 'index'
         ],
+=======
+
+         '/Productpagezakelijk' => [
+            'controller' => 'ppzakelijkcontroller',
+            'method' => 'index'
+
+         ],
+        '/ProductImage' => [
+            'controller' => 'ppzakelijkcontroller',
+            'method' => 'getProductImage'
+>>>>>>> Stashed changes
     ],
+],
+
     'POST' => [
         '/login' => [
             'controller' => 'LoginController',

@@ -59,7 +59,7 @@ class ProductModel extends BaseModel
         return $result;
     }
 
-    private function load($data)
+    public function load($data)
     {
         $this->setId($data['id']);
         $this->setTitle($data['title']);

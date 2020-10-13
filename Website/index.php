@@ -21,6 +21,7 @@ require 'models/BaseModel.php';
 require 'models/UserModel.php';
 require 'models/ProductModel.php';
 require 'models/ProductInfoModel.php';
+require 'models/ppzakelijkmodel.php';
 
 /**
  * Controllers
@@ -33,6 +34,7 @@ require 'controllers/LoginController.php';
 require 'controllers/LogoutController.php';
 require 'controllers/ProductpageController.php';
 require 'controllers/ProductInfoController.php';
+require 'controllers/ppzakelijkcontroller.php';
 
 require 'core/Router.php';
 
