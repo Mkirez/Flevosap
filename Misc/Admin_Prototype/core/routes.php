@@ -6,18 +6,6 @@ $router->define([
             'controller' => 'AdminLoginController',
             'method' => 'index'
         ],
-        '/' => [
-            'controller' => 'HomeController',
-            'method' => 'index'
-        ],
-        '/about' => [
-            'controller' => 'AboutController',
-            'method' => 'index'
-        ],
-        '/contact' => [
-            'controller' => 'ContactController',
-            'method' => 'index'
-        ],
         '/logout' => [
             'controller' => 'LogoutController',
             'method' => 'index'
@@ -26,23 +14,7 @@ $router->define([
             'controller' => 'LoginController',
             'method' => 'index'
         ],
-        '/register' => [
-            'controller' => 'RegisterController',
-            'method' => 'index'
-        ],
-        '/Productpage' => [
-            'controller' => 'ProductpageController',
-            'method' => 'index'
-        ],
-        '/ProductImage' => [
-            'controller' => 'ProductpageController',
-            'method' => 'getProductImage'
-        ],
-        '/productinfo' => [
-            'controller' => 'ProductInfoController',
-            'method' => 'index'
-        ],
-        '/dashboard' => [
+        '/' => [
             'controller' => 'AdminController',
             'method' => 'index'
         ],
@@ -60,10 +32,6 @@ $router->define([
             'controller' => 'LoginController',
             'controller' => 'AdminLoginController',
             'method' => 'login'
-        ],
-        '/register' => [
-            'controller' => 'RegisterController',
-            'method' => 'register'
         ],
     ]
 ]);

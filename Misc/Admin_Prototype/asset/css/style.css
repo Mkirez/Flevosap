@@ -1,0 +1,92 @@
+::-moz-selection{background-color: #015a2e;color: #ffffff;}  ::selection{background-color: #015a2e;color: #ffffff;}
+body{font-family:' helvetica', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+h3 {
+    font-size: 24px;
+    line-height: 1.2em;
+    margin-bottom: 5px;
+    font-family: 'helvetica', 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+.responsive .av-image-hotspot {
+    height: 15px;
+    width: 15px;
+    line-height: 15px;
+}
+.responsive .av-image-hotspot-pulse {
+    width: 45px;
+    height: 45px;
+}
+a {
+    text-decoration: none;
+}
+.av-language-switch-item{
+    display:none;
+}
+.container {width:100%;} .container .av-content-small.units {width:73%; }
+
+.responsive .boxed#top , .responsive.html_boxed.html_header_sticky #header,
+.responsive.html_boxed.html_header_transparency #header{ width: 1024px; max-width:90%; }
+.responsive .container{ max-width: 1024px; }
+
+/* Styling van product info view */
+
+#productView{
+    position: fixed;
+    float: left;
+    background-color: beige;
+    width: 50%;
+    height: 50%;
+}
+
+#logoSite{
+    float: top;
+    margin-top: 25px;
+    margin-left: 25px;
+    width: 135px;
+    height: 100px;
+}
+
+#productPicture{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -140px;
+    width: 330px;
+    height: 500px;
+}
+
+#productInfoBox{
+    float: right;
+    background-color: white;
+    width: 50%;
+    height: 50%;
+}
+
+#productTitle{
+    margin-left: 50px;
+}
+
+#productDescription{
+    margin-left: 50px;
+}
+
+#addToCart{
+    margin-left: 50px;
+}
+
+#availableAtStores{
+    margin-left: 50px;
+}
+
+#nutritiveValues{
+    margin-left: 50px;
+}
+
+/* Styling footer */
+
+#footer{
+    position: fixed;
+    background-image: url("../../asset/img/Flevosap-Footer-achtergrond.png");
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
