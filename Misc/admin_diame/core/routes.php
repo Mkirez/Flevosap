@@ -2,17 +2,17 @@
 $router->define([
     'GET' => [
         '/admin' => [
-            'controller' => 'LoginController',
+            'controller' => 'AdminLoginController',
             'method' => 'index'
         ],
         '/' => [
             'controller' => 'HomeController',
             'method' => 'index'
         ],
-        // '/login' => [
-        //     'controller' => 'LoginController',
-        //     'method' => 'index'
-        // ],
+        '/logout' => [
+            'controller' => 'AdminLogoutController',
+            'method' => 'index'
+        ],
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'index'
@@ -32,7 +32,7 @@ $router->define([
     ],
     'POST' => [
         '/admin' => [
-            'controller' => 'LoginController',
+            'controller' => 'AdminLoginController',
             'method' => 'login'
         ],
         '/register' => [
