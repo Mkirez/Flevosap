@@ -13,6 +13,10 @@ $router->define([
             'controller' => 'ContactController',
             'method' => 'index'
         ],
+        '/logout' => [
+            'controller' => 'LogoutController',
+            'method' => 'index'
+        ],
         '/login' => [
             'controller' => 'LoginController',
             'method' => 'index'
