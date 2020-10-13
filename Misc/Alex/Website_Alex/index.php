@@ -32,6 +32,8 @@ require 'controllers/ContactController.php';
 require 'controllers/RegisterController.php';
 require 'controllers/LoginController.php';
 require 'controllers/LogoutController.php';
+require 'controllers/AdminLoginController.php';
+require 'controllers/AdminLogoutController.php';
 require 'controllers/ProductpageController.php';
 require 'controllers/ProductInfoController.php';
 

@@ -1,8 +1,10 @@
-<!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
-<?php $title = "Dashboard" ?>
-<?php include "includes/head.view.php" ?>
-<body>
+</html>
+<?php  if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) { ?>
+    <!doctype html>
+    <html lang="en">
+    <?php $title = "Home" ?>
+    <?php include "includes/head.view.php" ?>
+
 <?php include "includes/nav.view.php" ?>
 
 <?php foreach($UserInfoData as $UserInfoItem){ ?>
@@ -26,6 +28,6 @@
     </div>
 </div>
 <?php } ?>
-<?php include "includes/footer.view.php" ?>
 </body>
 </html>
+<?php }else{header('location:/admin');} ?>
