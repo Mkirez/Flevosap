@@ -6,9 +6,9 @@
 <?php include "includes/nav.view.php" ?>
 
 <?php
-    function display_data($data) {
+    function display_data($UserInfo) {
     $output = '<table>';
-        foreach($data as $key => $var) {
+        foreach($UserInfo as $key => $var) {
         $output .= '<tr>';
             foreach($var as $k => $v) {
             if ($key === 0) {
