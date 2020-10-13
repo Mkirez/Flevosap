@@ -1,22 +1,18 @@
 <?php
 $router->define([
     'GET' => [
+        '/admin' => [
+            'controller' => 'LoginController',
+            'method' => 'index'
+        ],
         '/' => [
             'controller' => 'HomeController',
             'method' => 'index'
         ],
-        '/about' => [
-            'controller' => 'AboutController',
-            'method' => 'index'
-        ],
-        '/contact' => [
-            'controller' => 'ContactController',
-            'method' => 'index'
-        ],
-        '/login' => [
-            'controller' => 'LoginController',
-            'method' => 'index'
-        ],
+        // '/login' => [
+        //     'controller' => 'LoginController',
+        //     'method' => 'index'
+        // ],
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'index'
@@ -32,14 +28,10 @@ $router->define([
         '/productinfo' => [
             'controller' => 'ProductInfoController',
             'method' => 'index'
-        ],
-         '/logout' => [
-            'controller' => 'LogoutController',
-            'method' => 'index'
-        ],
+        ]
     ],
     'POST' => [
-        '/login' => [
+        '/admin' => [
             'controller' => 'LoginController',
             'method' => 'login'
         ],
