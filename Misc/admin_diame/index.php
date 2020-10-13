@@ -26,10 +26,8 @@ require 'models/ProductInfoModel.php';
  * Controllers
  */
 require 'controllers/HomeController.php';
-require 'controllers/RegisterController.php';
-require 'controllers/LoginController.php';
-require 'controllers/ProductpageController.php';
-require 'controllers/ProductInfoController.php';
+require 'controllers/AdminLoginController.php';
+require 'controllers/AdminLogoutController.php';
 
 require 'core/Router.php';
 
