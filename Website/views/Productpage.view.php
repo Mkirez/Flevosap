@@ -126,23 +126,8 @@
                 <?php } ?>
 
 
-                
-           <!--  <?php for($a = 0; $a < ((count($products)/2) + ((count($products)%2)==0?0:1)); $a++) { ?>
-                <div class="row mb-4">
-                    <?php for($b = 0; $b < 2; $b++) { if ( isset($products[($a * 2) + $b] )){ ?>
-                        <div class="col-md-6">
-                            <div class="card">
-                                <img class="card-img-top" src="/ProductImage?productId=<?= $products[($a * 2) + $b]->getId();?>" />
-                                <div class="card-body">
-                                    <div class="card-title"><?= $products[($a * 2) + $b]->getTitle(); ?></div>
-                                    <div class="card-text">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <?php }} ?>
-                </div>
-            <?php } ?> -->
+
+         
 
         </div>
     </div>

@@ -8,8 +8,7 @@
 
 
 
-<div class="space">
-</div>
+
 <div class="container">
     <div class="wrapper-home">
         <div class="row">
