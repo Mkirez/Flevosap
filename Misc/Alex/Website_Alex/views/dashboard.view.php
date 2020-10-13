@@ -8,7 +8,7 @@
 <?php foreach($UserInfoData as $UserInfoItem){ ?>
 <div id="UserId">
     <div>
-        <h1> <?php// $UserInfoItem ?> </h1>
+        <h1> <?php $UserInfoItem["id"] ?> </h1>
     </div>
 </div>
 <div id="UserInfoBox">
