@@ -2,20 +2,21 @@
 <?php  if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) { ?>
     <!doctype html>
     <html lang="en">
-    <?php $title = "Home" ?>
-    <?php include "includes/head.view.php" ?>
+        <head>
+            <?php $title = "Dashboard" ?>
+            <?php include "includes/head.view.php" ?>
+            <link rel="stylesheet" href="dashstyle.css">
+        </head>
+<body>
+    <?php foreach($userInfoData as $userInfoItem){ ?>
+    <div id="UserId">
+        <div>
+            <h1> <?php $userInfoItem ['id'] ?> </h1>
+                <form>
 
-<?php include "includes/nav.view.php" ?>
-
-<?php foreach($userInfoData as $userInfoItem){ ?>
-<div id="UserId">
-    <div>
-    <h1> <?php $userInfoItem ['id'] ?> </h1>
-        <form>
-
-        </form>
+                </form>
+        </div>
     </div>
-</div>
 <div id="UserInfoBox">
     <div id="Gebruikersnaam">
         <h2> <?php $userInfoItem ['gebruikersnaam'] ?> </h2>
