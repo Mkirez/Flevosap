@@ -5,7 +5,7 @@ class AdminController
     public function index()
     {
         $userInfo = new UserModel();
-        $userInfoData = $userInfo->fetchAll();
+        $userInfoData = $userInfo->all();
         require 'views/dashboard.view.php';
     }
 }

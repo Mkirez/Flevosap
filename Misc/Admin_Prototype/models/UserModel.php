@@ -69,19 +69,23 @@ class UserModel extends BaseModel
         endif;
         return false;
     }
-    public function fetchAll(){
-        $query = "SELECT * FROM gebruikers";
+
+    public function all()
+    {
+        $query = 'SELECT * FROM gebruikers';
         $stmt = $this->pdo->prepare($query);
         $stmt->execute();
         $result = array();
         while($data = $stmt->fetch())
         {
-            $user = new UserModel();
-            $user->load($data);
-            $result[]=$user;
+            $product = new UserModel();
+            $product->load($data);
+            $result[]=$product;
         }
+
         return $result;
     }
+
     private function load($data)
     {
         $this->setId($data['id']);
