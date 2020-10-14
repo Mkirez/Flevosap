@@ -6,8 +6,6 @@
 <body>
     <?php include "includes/nav.view.php" ?>
     <h3 style="text-align: left;">Dashboard</h3>
-    <?php 
-    ?>
 </body>
 </html>
 <!-- <?php }else{header('location:/admin');} ?> -->

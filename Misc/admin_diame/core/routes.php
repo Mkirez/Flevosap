@@ -13,22 +13,10 @@ $router->define([
             'controller' => 'AdminLogoutController',
             'method' => 'index'
         ],
-        '/register' => [
-            'controller' => 'RegisterController',
+        '/users' => [
+            'controller' => 'AdminUsersController',
             'method' => 'index'
         ],
-        '/Productpage' => [
-            'controller' => 'ProductpageController',
-            'method' => 'index'
-        ],
-        '/ProductImage' => [
-            'controller' => 'ProductpageController',
-            'method' => 'getProductImage'
-        ],
-        '/productinfo' => [
-            'controller' => 'ProductInfoController',
-            'method' => 'index'
-        ]
     ],
     'POST' => [
         '/admin' => [
