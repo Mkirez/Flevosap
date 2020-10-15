@@ -39,7 +39,6 @@ $router->define([
             'method' => 'index'
         ],
 
-
          '/Productpagezakelijk' => [
             'controller' => 'ppzakelijkcontroller',
             'method' => 'index'
@@ -49,7 +48,11 @@ $router->define([
             'controller' => 'ppzakelijkcontroller',
             'method' => 'getProductImage'
 
-    ],
+        ],
+        '/Zakelijkelogin' => [
+            'controller' => 'ZakelijkeLoginController',
+            'method' => 'index'
+        ],
 ],
 
     'POST' => [

@@ -17,10 +17,10 @@
                             <label><input type="radio" name="check"/>Alles</label>
                         </div>
                         <div class="custom-radio">
-                            <label><input type="radio" name="check"/>100%Fruitsap</label>
+                            <label><input type="radio" name="check"/>100% Fruitsap</label>
                         </div>
                         <div class="custom-radio">
-                            <label><input type="radio" name="check"/>100%Groentesap</label>
+                            <label><input type="radio" name="check"/>100% Groentesap</label>
                         </div>
                     </div>
                 </div>
@@ -45,9 +45,6 @@
                 <div class="card-body">
                     <div class="card-title">Appel met</div>
                     <div class="card-text">
-                        <div class="custom-checkbox">
-                            <label><input type="checkbox" name="check"/>Aardbei</label>
-                        </div>
                         <div class="custom-radio">
                             <label><input type="checkbox" name="check"/>Ananas</label>
                         </div>
@@ -55,10 +52,10 @@
                             <label><input type="checkbox" name="check"/>Perzik</label>
                         </div>
                         <div class="custom-radio">
-                            <label><input type="checkbox" name="check"/>100%Groentesap</label>
+                            <label><input type="checkbox" name="check"/>100% Groentesap</label>
                         </div>
                         <div class="custom-radio">
-                            <label><input type="checkbox" name="check"/>100%Fruitsap</label>
+                            <label><input type="checkbox" name="check"/>100% Fruitsap</label>
                         </div>
                     </div>
                 </div>

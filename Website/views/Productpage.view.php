@@ -88,15 +88,20 @@
                                                     <p><strong><?= $products[($a * 2) + $b]->getTitle(); ?></strong></p>
                                                 </div>
                                             </div>
+<<<<<<< Updated upstream
 
                                             <div class="col-md-12">
                                                 <div class="card-text">
 
+=======
+                                             <div class="col-md-12">
+                                                    <div class="card-text"  >
+>>>>>>> Stashed changes
                                                     <?= $products[($a * 2) + $b]->getProductOmschrijving(); ?>
                                                 </div>
                                             </div>
-
                                             <div class="col-md-6 ">
+<<<<<<< Updated upstream
                                                 <div class="card-text">
 
                                                     <?= $products[($a * 2) + $b]->getPrijs(); ?>
@@ -106,6 +111,14 @@
                                             <div class="col-md-6 text-right ">
                                                 <div class="card-text" id="cards-style">
 
+=======
+                                                <div class="card-text" >
+                                                   <?= $products[($a * 2) + $b]->getPrijs(); ?>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 text-right ">
+                                                <div class="card-text" id="cards-style" >
+>>>>>>> Stashed changes
                                                     <a href="#"><i class="fa fa-shopping-basket"></i></a>
                                                 </div>
                                             </div>

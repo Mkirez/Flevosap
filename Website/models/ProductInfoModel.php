@@ -114,4 +114,5 @@ class ProductInfoModel extends BaseModel
         $this->afbeelding = $afbeelding;
     }
 
+
 }
