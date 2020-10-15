@@ -80,7 +80,7 @@ class UserModel extends BaseModel
         {
             $user = new UserModel();
             $user->load($data);
-            $user[]=$user;
+            $result[]=$user;
         }
 
         return $result;
