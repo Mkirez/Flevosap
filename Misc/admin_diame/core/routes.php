@@ -17,6 +17,10 @@ $router->define([
             'controller' => 'AdminUsersController',
             'method' => 'index'
         ],
+        '/products' => [
+            'controller' => 'AdminProductController',
+            'method' => 'index'
+        ]
     ],
     'POST' => [
         '/admin' => [

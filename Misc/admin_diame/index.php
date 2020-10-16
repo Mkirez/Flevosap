@@ -29,6 +29,7 @@ require 'controllers/HomeController.php';
 require 'controllers/AdminLoginController.php';
 require 'controllers/AdminLogoutController.php';
 require 'controllers/AdminUsersController.php';
+require 'controllers/AdminProductController.php';
 
 
 require 'core/Router.php';
