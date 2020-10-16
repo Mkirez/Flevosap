@@ -5,9 +5,7 @@
 <?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
-
-<?php $row = $users -> fetch_assoc(); ?>
-<?php foreach ($row as $userInfo){ ?>
+<?php foreach ($users as $userInfo){ ?>
     <div id="weergaveUsers">
         <table>
             <tr>
@@ -26,16 +24,16 @@
             </tr>
             <tr>
                 <td>
-                    <?php $userInfo["gebruikersnaam"] ?>
+                    <?php echo $userInfo->getUsername(); ?>
                 </td>
                 <td>
-                    <?php $userInfo["wachtwoord"] ?>
+                    <?php echo $userInfo->getPassword(); ?>
                 </td>
                 <td>
-                    <?php $userInfo["created_at"] ?>
+                    <?php echo $userInfo->getCreatedAt(); ?>
                 </td>
                 <td>
-                    <?php $userInfo["updated_at"] ?>
+                    <?php echo $userInfo->getUpdatedAt(); ?>
                 </td>
             </tr>
         </table>

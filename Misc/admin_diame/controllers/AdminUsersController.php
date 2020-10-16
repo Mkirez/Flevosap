@@ -6,7 +6,7 @@ class AdminUsersController
     public function index()
     {
         $model = new UserModel();
-        $users = $model->fetchUsers();
+        $users = $model->all();
         require 'views/users.view.php';
     }
 }
