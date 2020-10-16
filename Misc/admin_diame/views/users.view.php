@@ -5,7 +5,7 @@
 <?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
-<?php foreach ($row as $userInfo){ ?>
+<?php foreach ($users as $userInfo){ ?>
     <div id="weergaveUsers">
         <table>
             <tr>
