@@ -24,16 +24,16 @@
             </tr>
             <tr>
                 <td>
-                    <?php echo $userInfo["gebruikersnaam"] ?>
+                    <?php $userInfo["gebruikersnaam"] ?>
                 </td>
                 <td>
-                    <?php echo $userInfo["wachtwoord"] ?>
+                    <?php $userInfo["wachtwoord"] ?>
                 </td>
                 <td>
-                    <?php echo $userInfo["created_at"] ?>
+                    <?php $userInfo["created_at"] ?>
                 </td>
                 <td>
-                    <?php echo $userInfo["updated_at"] ?>
+                    <?php $userInfo["updated_at"] ?>
                 </td>
             </tr>
         </table>
