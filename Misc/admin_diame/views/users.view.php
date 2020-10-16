@@ -7,7 +7,11 @@
 <?php include "includes/nav.view.php" ?>
 <?php foreach ($users as $userInfo){ ?>
     <div id="weergaveUsers">
-        <table>
+        <table id="example" border="1" class="table table-striped table-bordered" style="width:100%">
+            <colgroup>
+                <col width="100%" />
+                <col width="0%" />
+            </colgroup>
             <tr>
                 <th>
                     Gebruikers:
@@ -23,16 +27,16 @@
                 </th>
             </tr>
             <tr>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $userInfo->getUsername(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $userInfo->getPassword(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $userInfo->getCreatedAt(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $userInfo->getUpdatedAt(); ?>
                 </td>
             </tr>
@@ -41,4 +45,4 @@
 <?php } ?>
 </body>
 </html>
-<!-- <?php }else{header('location:/admin');} ?> -->
+<!-- <?php }else{header('location:/admin');}?> -->
