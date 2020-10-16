@@ -94,6 +94,10 @@ class UserModel extends BaseModel
         $this->setUpdatedAt($data['updated_at']);
     }
 
+    public function deleteIndex($id)
+    {
+        $this->db->delete('mvc', "`id` = {$id}");
+    }
     /**
      * @return int
      */

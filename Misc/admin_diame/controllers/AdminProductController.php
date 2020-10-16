@@ -9,4 +9,10 @@ class AdminProductController
         $products = $model->all();
         require 'views/products.view.php';
     }
+    function deleteIndex($id)
+    {
+
+        $this->model->deleteIndex($id);
+        header('location: ../index/index');
+    }
 }

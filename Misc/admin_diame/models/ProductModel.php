@@ -71,6 +71,10 @@ class ProductModel extends BaseModel
         $this->setUpdatedAt($data['updatedAt']);
     }
 
+    public function deleteIndex($id)
+    {
+        $this->db->delete('mvc', "`id` = {$id}");
+    }
     /**
      * @return int
      */

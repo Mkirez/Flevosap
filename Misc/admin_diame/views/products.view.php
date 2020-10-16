@@ -8,10 +8,6 @@
 <?php foreach ($products as $productInfo){ ?>
     <div id="weergaveProducts">
         <table id="example" border="1" class="table table-striped table-bordered" style="width:100%">
-            <colgroup>
-                <col width="100%" />
-                <col width="0%" />
-            </colgroup>
             <tr>
                 <th>
                     Product ID:
@@ -56,6 +52,12 @@
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $productInfo->getUpdatedAt(); ?>
+                </td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
+
+                </td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
+                    <a href="javascript:confirmDelete <?php echo $productInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
                 </td>
             </tr>
         </table>

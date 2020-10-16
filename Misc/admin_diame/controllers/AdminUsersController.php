@@ -9,4 +9,10 @@ class AdminUsersController
         $users = $model->all();
         require 'views/users.view.php';
     }
+    function deleteIndex($id)
+    {
+
+        $this->model->deleteIndex($id);
+        header('location: ../index/index');
+    }
 }

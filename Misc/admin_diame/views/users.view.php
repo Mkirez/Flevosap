@@ -7,11 +7,7 @@
 <?php include "includes/nav.view.php" ?>
 <?php foreach ($users as $userInfo){ ?>
     <div id="weergaveUsers">
-        <table id="example" border="1" class="table table-striped table-bordered" style="width:100%">
-            <colgroup>
-                <col width="100%" />
-                <col width="0%" />
-            </colgroup>
+        <table id="Usertable" border="1" class="table table-striped table-bordered" style="width:100%">
             <tr>
                 <th>
                     Gebruikers:
@@ -24,6 +20,12 @@
                 </th>
                 <th>
                     Updated at:
+                </th>
+                <th>
+                    Edit
+                </th>
+                <th>
+                    Delete
                 </th>
             </tr>
             <tr>
@@ -39,8 +41,21 @@
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $userInfo->getUpdatedAt(); ?>
                 </td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
+
+                </td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
+                    <a href="javascript:confirmDelete <?php echo $userInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
+                </td>
             </tr>
         </table>
+            <script>
+                function confirmDelete(delUrl) {
+                   if (confirm("Are you sure you want to delete")) {
+                      document.location = delUrl;
+                  }
+                }
+            </script>
     </div>
 <?php } ?>
 </body>
