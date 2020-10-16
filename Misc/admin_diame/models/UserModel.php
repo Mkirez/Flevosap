@@ -82,7 +82,6 @@ class UserModel extends BaseModel
             $user->load($data);
             $result[]=$user;
         }
-
         return $result;
     }
 

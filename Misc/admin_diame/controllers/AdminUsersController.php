@@ -8,7 +8,5 @@ class AdminUsersController
         $model = new UserModel();
         $users = $model->all();
         require 'views/users.view.php';
-
     }
-
 }

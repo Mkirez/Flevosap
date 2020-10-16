@@ -1,8 +1,9 @@
-<?php  if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) { ?>
+<?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) { ?>
 <!doctype html>
 <html lang="en">
 <?php $title = "Dashboard" ?>
 <?php include "includes/head.view.php" ?>
+<?php include "includes/nav.view.php" ?>
 <body>
 <?php foreach ($users as $userInfo){ ?>
     <div id="weergaveUsers">
@@ -23,16 +24,16 @@
             </tr>
             <tr>
                 <td>
-                    <?php $userInfo["gebruikersnaam"] ?>
+                    <?php echo $userInfo["gebruikersnaam"] ?>
                 </td>
                 <td>
-                    <?php $userInfo["wachtwoord"] ?>
+                    <?php echo $userInfo["wachtwoord"] ?>
                 </td>
                 <td>
-                    <?php $userInfo["created_at"] ?>
+                    <?php echo $userInfo["created_at"] ?>
                 </td>
                 <td>
-                    <?php $userInfo["updated_at"] ?>
+                    <?php echo $userInfo["updated_at"] ?>
                 </td>
             </tr>
         </table>
