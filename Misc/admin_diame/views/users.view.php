@@ -26,6 +26,8 @@
             </tr>
             <tr>
                 <td>
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
                     <?php $userInfo["gebruikersnaam"] ?>
                 </td>
                 <td>
@@ -36,6 +38,23 @@
                 </td>
                 <td>
                     <?php $userInfo["updated_at"] ?>
+=======
+=======
+>>>>>>> Stashed changes
+                    <?php echo $userInfo->getUsername(); ?>
+                </td>
+                <td>
+                    <?php echo $userInfo->getPassword(); ?>
+                </td>
+                <td>
+                    <?php echo $userInfo->getCreatedAt(); ?>
+                </td>
+                <td>
+                    <?php echo $userInfo->getUpdatedAt(); ?>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
                 </td>
             </tr>
         </table>
