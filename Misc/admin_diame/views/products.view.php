@@ -7,7 +7,11 @@
 <?php include "includes/nav.view.php" ?>
 <?php foreach ($products as $productInfo){ ?>
     <div id="weergaveProducts">
-        <table>
+        <table id="example" border="1" class="table table-striped table-bordered" style="width:100%">
+            <colgroup>
+                <col width="100%" />
+                <col width="0%" />
+            </colgroup>
             <tr>
                 <th>
                     Product ID:
@@ -32,25 +36,25 @@
                 </th>
             </tr>
             <tr>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $productInfo->getId(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $productInfo->getTitle(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $productInfo->getProductOmschrijving(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $productInfo->getPrijs(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $productInfo->getHoeveelheid(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $productInfo->getCreatedAt(); ?>
                 </td>
-                <td>
+                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?php echo $productInfo->getUpdatedAt(); ?>
                 </td>
             </tr>
