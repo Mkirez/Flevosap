@@ -96,7 +96,26 @@ class UserModel extends BaseModel
 
     public function deleteIndex($id)
     {
-        $this->db->delete('mvc', "`id` = {$id}");
+        if (isset($_GET['id'])) {
+            $stmt = $pdo->prepare('SELECT * FROM gebruikers WHERE id = ?');
+            $stmt->execute([$_GET['id']]);
+            $contact = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$contact) {
+                exit('Deze gebruiker bestaat niet!');
+            }
+            if (isset($_GET['confirm'])) {
+                if ($_GET['confirm'] == 'yes') {
+                    $stmt = $pdo->prepare('DELETE FROM gebruikers WHERE id = ?');
+                    $stmt->execute([$_GET['id']]);
+                    $msg = 'U heeft de gebruiker verwijderd!';
+                } else {
+                    header('Location:/users');
+                    exit;
+                }
+            }
+        } else {
+            exit('Geen ID vermeld!');
+        }
     }
     /**
      * @return int

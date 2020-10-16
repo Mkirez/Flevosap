@@ -33,31 +33,31 @@
             </tr>
             <tr>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $productInfo->getId(); ?>
+                    <?= $productInfo->getId(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $productInfo->getTitle(); ?>
+                    <?= $productInfo->getTitle(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $productInfo->getProductOmschrijving(); ?>
+                    <?= $productInfo->getProductOmschrijving(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $productInfo->getPrijs(); ?>
+                    <?= $productInfo->getPrijs(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $productInfo->getHoeveelheid(); ?>
+                    <?= $productInfo->getHoeveelheid(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $productInfo->getCreatedAt(); ?>
+                    <?= $productInfo->getCreatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $productInfo->getUpdatedAt(); ?>
+                    <?= $productInfo->getUpdatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-
+                    <a href="javascript:confirmEdit <?= $productInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Edit</a>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a href="javascript:confirmDelete <?php echo $productInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
+                    <a href="javascript:confirmDelete <?= $productInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
                 </td>
             </tr>
         </table>

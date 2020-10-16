@@ -73,7 +73,7 @@ class ProductModel extends BaseModel
 
     public function deleteIndex($id)
     {
-        $this->db->delete('mvc', "`id` = {$id}");
+        $this->pdo->delete('mvc', "`id` = {$id}");
     }
     /**
      * @return int

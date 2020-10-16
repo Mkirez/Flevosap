@@ -30,25 +30,32 @@
             </tr>
             <tr>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $userInfo->getUsername(); ?>
+                    <?= $userInfo->getUsername(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $userInfo->getPassword(); ?>
+                    <?= $userInfo->getPassword(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $userInfo->getCreatedAt(); ?>
+                    <?= $userInfo->getCreatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?php echo $userInfo->getUpdatedAt(); ?>
+                    <?= $userInfo->getUpdatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-
+                    <a href="javascript:confirmEdit <?= $userInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Edit</a>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a href="javascript:confirmDelete <?php echo $userInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
+                    <a href="javascript:confirmDelete <?= $userInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
                 </td>
             </tr>
         </table>
+            <script>
+                function confirmEdit(editUrl) {
+                  if (confirm("Are you sure you want to delete")) {
+                    document.location = editUrl;
+                  }
+                }
+            </script>
             <script>
                 function confirmDelete(delUrl) {
                    if (confirm("Are you sure you want to delete")) {
