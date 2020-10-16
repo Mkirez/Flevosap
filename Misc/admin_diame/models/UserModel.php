@@ -85,6 +85,12 @@ class UserModel extends BaseModel
         return $result;
     }
 
+    public function fetchUsers(){
+        $query = 'SELECT * FROM gebruikers';
+        $stmt = $this->pdo->prepare($query);
+        $result = $stmt->execute();
+    }
+
     private function load($data)
     {
         $this->setId($data['id']);

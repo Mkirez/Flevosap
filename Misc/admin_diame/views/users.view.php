@@ -3,9 +3,11 @@
 <html lang="en">
 <?php $title = "Dashboard" ?>
 <?php include "includes/head.view.php" ?>
-<?php include "includes/nav.view.php" ?>
 <body>
-<?php foreach ($users as $userInfo){ ?>
+<?php include "includes/nav.view.php" ?>
+
+<?php $row = $users -> fetch_assoc(); ?>
+<?php foreach ($row as $userInfo){ ?>
     <div id="weergaveUsers">
         <table>
             <tr>
