@@ -11,8 +11,8 @@ class AdminUsersController
     }
     function deleteIndex($id)
     {
-
         $this->model->deleteIndex($id);
-        header('location: ../index/index');
+        header('location:/users');
+        require 'views/users.view.php';
     }
 }

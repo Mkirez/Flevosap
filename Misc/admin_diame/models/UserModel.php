@@ -99,8 +99,8 @@ class UserModel extends BaseModel
         if (isset($_GET['id'])) {
             $stmt = $pdo->prepare('SELECT * FROM gebruikers WHERE id = ?');
             $stmt->execute([$_GET['id']]);
-            $contact = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (!$contact) {
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$user) {
                 exit('Deze gebruiker bestaat niet!');
             }
             if (isset($_GET['confirm'])) {

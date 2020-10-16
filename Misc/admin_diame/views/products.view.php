@@ -61,6 +61,20 @@
                 </td>
             </tr>
         </table>
+        <script>
+            function confirmEdit(editUrl) {
+                if (confirm("Are you sure you want to delete")) {
+                    document.location = editUrl;
+                }
+            }
+        </script>
+        <script>
+            function confirmDelete(delUrl) {
+                if (confirm("Are you sure you want to delete")) {
+                    document.location = delUrl;
+                }
+            }
+        </script>
     </div>
 <?php } ?>
 </body>

@@ -42,11 +42,12 @@
                     <?= $userInfo->getUpdatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a href="javascript:confirmEdit <?= $userInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Edit</a>
+                    <a  href="javascript:confirmEdit <?= $userInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Edit</a>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a href="javascript:confirmDelete <?= $userInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
+                    <a  href="javascript:confirmDelete <?= $userInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
                 </td>
+
             </tr>
         </table>
             <script>

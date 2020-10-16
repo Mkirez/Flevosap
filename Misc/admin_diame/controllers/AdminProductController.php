@@ -11,8 +11,8 @@ class AdminProductController
     }
     function deleteIndex($id)
     {
-
         $this->model->deleteIndex($id);
-        header('location: ../index/index');
+        header('location:/products');
+        require 'views/products.view.php';
     }
 }
