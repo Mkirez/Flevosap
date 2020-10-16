@@ -5,8 +5,6 @@
 <?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
-
-<?php $row = $users -> fetch_assoc(); ?>
 <?php foreach ($row as $userInfo){ ?>
     <div id="weergaveUsers">
         <table>
@@ -26,21 +24,6 @@
             </tr>
             <tr>
                 <td>
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-                    <?php $userInfo["gebruikersnaam"] ?>
-                </td>
-                <td>
-                    <?php $userInfo["wachtwoord"] ?>
-                </td>
-                <td>
-                    <?php $userInfo["created_at"] ?>
-                </td>
-                <td>
-                    <?php $userInfo["updated_at"] ?>
-=======
-=======
->>>>>>> Stashed changes
                     <?php echo $userInfo->getUsername(); ?>
                 </td>
                 <td>
@@ -51,10 +34,6 @@
                 </td>
                 <td>
                     <?php echo $userInfo->getUpdatedAt(); ?>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
                 </td>
             </tr>
         </table>
