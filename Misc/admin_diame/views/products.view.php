@@ -54,24 +54,34 @@
                     <?= $productInfo->getUpdatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a href="javascript:confirmEdit <?= $productInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Edit</a>
+                    <a href="javascript:void(0);" onclick="confirmEdit('Weet je zeker dat je product #<?= $productInfo->getId();?> wilt modificeren?', '/products?recordId=<?= urlencode($productInfo->getId()); ?>');">Edit</a>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a href="javascript:confirmDelete <?= $productInfo->getId();?>" class="btn btn-primary btn-sm" role="button">Delete</a>
+                    <a href="javascript:void(0);" onclick="confirmDelete('Weet je zeker dat je product #<?= $productInfo->getId();?> wilt verwijderen? Dit is permanent.', '/products?recordId=<?= urlencode($productInfo->getId()); ?>');">Delete</a>
                 </td>
             </tr>
         </table>
         <script>
-            function confirmEdit(editUrl) {
-                if (confirm("Are you sure you want to delete")) {
-                    document.location = editUrl;
+            function confirmEdit ( message, url )
+            {
+                var confirmation = confirm ( message );
+
+                if (confirmation == true ) {
+                    window.location = url;
+                } else {
+                    return false;
                 }
             }
         </script>
         <script>
-            function confirmDelete(delUrl) {
-                if (confirm("Are you sure you want to delete")) {
-                    document.location = delUrl;
+            function confirmDelete ( message, url )
+            {
+                var confirmation = confirm ( message );
+
+                if (confirmation == true ) {
+                    window.location = url;
+                } else {
+                    return false;
                 }
             }
         </script>
