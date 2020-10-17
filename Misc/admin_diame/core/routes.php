@@ -31,6 +31,14 @@ $router->define([
             'controller' => 'RegisterController',
             'method' => 'register'
         ],
+        '/users' => [
+            'controller' => 'AdminUsersController',
+            'method' => 'index'
+        ],
+        '/products' => [
+            'controller' => 'AdminProductController',
+            'method' => 'index'
+        ],
     ],
     'DELETE' => [
         '/users' => [
