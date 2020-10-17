@@ -70,6 +70,30 @@ class UserModel extends BaseModel
         return false;
     }
 
+    public function delete($id)
+    {
+        if (isset($_GET['id'])) {
+            $stmt = $pdo->prepare('SELECT * FROM gebruikers WHERE id = ?');
+            $stmt->execute([$_GET['id']]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$user) {
+                exit('Deze gebruiker bestaat niet!');
+            }
+            if (isset($_GET['confirm'])) {
+                if ($_GET['confirm'] == 'yes') {
+                    $stmt = $pdo->prepare('DELETE FROM gebruikers WHERE id = ?');
+                    $stmt->execute([$_GET['id']]);
+                    $msg = 'U heeft de gebruiker verwijderd!';
+                } else {
+                    header('Location:/users');
+                    exit;
+                }
+            }
+        } else {
+            exit('Geen ID vermeld!');
+        }
+    }
+
     public function all()
     {
         $query = 'SELECT * FROM gebruikers';
@@ -94,29 +118,6 @@ class UserModel extends BaseModel
         $this->setUpdatedAt($data['updated_at']);
     }
 
-    public function delete($id)
-    {
-        if (isset($_GET['id'])) {
-            $stmt = $pdo->prepare('SELECT * FROM gebruikers WHERE id = ?');
-            $stmt->execute([$_GET['id']]);
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (!$user) {
-                exit('Deze gebruiker bestaat niet!');
-            }
-            if (isset($_GET['confirm'])) {
-                if ($_GET['confirm'] == 'yes') {
-                    $stmt = $pdo->prepare('DELETE FROM gebruikers WHERE id = ?');
-                    $stmt->execute([$_GET['id']]);
-                    $msg = 'U heeft de gebruiker verwijderd!';
-                } else {
-                    header('Location:/users');
-                    exit;
-                }
-            }
-        } else {
-            exit('Geen ID vermeld!');
-        }
-    }
     /**
      * @return int
      */

@@ -10,7 +10,7 @@ class AdminUsersController
         require 'views/users.view.php';
     }
 
-    function delete($id)
+    public function delete($id)
     {
         $model = new UserModel();
         $delete = $model->delete($id);

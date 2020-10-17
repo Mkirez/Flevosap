@@ -47,11 +47,11 @@
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <a href="javascript:void(0);"
-                       onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $userInfo->getId(); ?> wilt modificeren?', '/users?recordId=<?= urlencode($userInfo->getId()); ?>');">Edit</a>
+                       onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $edit = $userInfo->getId(); ?> wilt modificeren?', '/users?recordId=<?= urlencode($userInfo->getId()); ?>');">Edit</a>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <a href="javascript:void(0);"
-                       onclick="confirmDelete('Weet je zeker dat je gebruiker #<?= $userInfo->getId(); ?> wilt verwijderen? Dit is permanent.', '/users?recordId=<?= urlencode($userInfo->getId()); ?>');">Delete</a>
+                       onclick="confirmDelete('Weet je zeker dat je gebruiker #<?= $delete = $userInfo->getId(); ?> wilt verwijderen? Dit is permanent.', '/users?recordId=<?= urlencode($userInfo->getId()); ?>');">Delete</a>
                 </td>
             </tr>
         </table>
@@ -62,7 +62,6 @@
 
             if (confirmation == true) {
                 window.location = url;
-
             } else {
                 return false;
             }
@@ -74,7 +73,7 @@
 
             if (confirmation == true) {
                 window.location = url;
-                <?php $userInfo->getId()  ?>
+
             } else {
                 return false;
             }
