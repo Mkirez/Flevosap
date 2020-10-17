@@ -9,9 +9,11 @@ class AdminUsersController
         $users = $model->all();
         require 'views/users.view.php';
     }
-    function deleteIndex($id)
+
+    function delete($id)
     {
-        $this->model->deleteIndex($id);
+        $model = new UserModel();
+        $delete = $model->delete($id);
         header('location:/users');
         require 'views/users.view.php';
     }

@@ -71,7 +71,7 @@ class ProductModel extends BaseModel
         $this->setUpdatedAt($data['updatedAt']);
     }
 
-    public function deleteIndex($id)
+    public function delete($id)
     {
         if (isset($_GET['id'])) {
             $stmt = $pdo->prepare('SELECT * FROM Products WHERE id = ?');

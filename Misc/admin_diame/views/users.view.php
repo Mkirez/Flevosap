@@ -62,6 +62,7 @@
 
             if (confirmation == true) {
                 window.location = url;
+
             } else {
                 return false;
             }
@@ -73,6 +74,7 @@
 
             if (confirmation == true) {
                 window.location = url;
+                <?php $userInfo->getId()  ?>
             } else {
                 return false;
             }
