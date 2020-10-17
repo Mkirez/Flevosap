@@ -34,7 +34,7 @@ $router->define([
     ],
     'DELETE' => [
         '/users' => [
-            'controller' => 'AdminUserController',
+            'controller' => 'AdminUsersController',
             'method' => 'delete'
         ],
         '/products' => [

@@ -46,18 +46,16 @@
                     <?= $userInfo->getUpdatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a href="javascript:void(0);"
-                       onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $edit = $userInfo->getId(); ?> wilt modificeren?', '/users?recordId=<?= urlencode($userInfo->getId()); ?>');">Edit</a>
+                    <a class="edit-item" href="javascript:void(0)" data-id="<?= $delete = $userInfo->getId(); ?>" onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $edit = $userInfo->getId(); ?> wilt modificeren?');">Edit</a>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a href="javascript:void(0);"
-                       onclick="confirmDelete('Weet je zeker dat je gebruiker #<?= $delete = $userInfo->getId(); ?> wilt verwijderen? Dit is permanent.', '/users?recordId=<?= urlencode($userInfo->getId()); ?>');">Delete</a>
+                    <a class="delete-item" href="javascript:void(0)" data-id="<?= $delete = $userInfo->getId(); ?>" onclick="confirmDelete('Weet je zeker dat je gebruiker #<?= $delete = $userInfo->getId(); ?> wilt verwijderen? Dit is permanent.')">Delete</a>
                 </td>
-            </tr>
+                </tr>
         </table>
     </form>
     <script>
-        function confirmEdit(message, url) {
+        function confirmEdit(message) {
             var confirmation = confirm(message);
 
             if (confirmation == true) {
@@ -68,7 +66,7 @@
         }
     </script>
     <script>
-        function confirmDelete(message, url) {
+        function confirmDelete(message) {
             var confirmation = confirm(message);
 
             if (confirmation == true) {
