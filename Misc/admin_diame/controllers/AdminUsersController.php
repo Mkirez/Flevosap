@@ -14,7 +14,7 @@ class AdminUsersController
     {
         $model = new UserModel();
         $delete = $model->delete($id);
-        header('location:/users');
+        header('location:/users?=id2');
         require 'views/users.view.php';
     }
 }

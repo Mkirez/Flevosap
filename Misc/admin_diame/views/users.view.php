@@ -46,10 +46,10 @@
                     <?= $userInfo->getUpdatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a class="edit-item" href="javascript:void(0)" data-id="<?= $delete = $userInfo->getId(); ?>" onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $edit = $userInfo->getId(); ?> wilt modificeren?');">Edit</a>
+                    <a class="edit-item" href="users?id=2" onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $edit = $userInfo->getId(); ?> wilt modificeren?');">Edit</a>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a class="delete-item" href="javascript:void(0)" data-id="<?= $delete = $userInfo->getId(); ?>" onclick="confirmDelete('Weet je zeker dat je gebruiker #<?= $delete = $userInfo->getId(); ?> wilt verwijderen? Dit is permanent.')">Delete</a>
+                    <a class="delete-item" href="users?id=2" onclick="confirmDelete('Weet je zeker dat je gebruiker #<?= $delete = $userInfo->getId(); ?> wilt verwijderen? Dit is permanent.')">Delete</a>
                 </td>
                 </tr>
         </table>
