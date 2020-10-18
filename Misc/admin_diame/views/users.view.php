@@ -46,10 +46,16 @@
                     <?= $userInfo->getUpdatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a value="<?= isset($_POST[$userInfo->getId()])?>" class="edit-item" href="/users?id=<?=$userInfo->getId();?>" onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $edit = $userInfo->getId(); ?> wilt modificeren?');">Edit</a>
+                    <a value="<?= isset($_POST[$userInfo->getId()])?>"
+                       class="edit-item"
+                       href="/users?id=<?=$userInfo->getId();?>"
+                       onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $edit = $userInfo->getId(); ?> wilt modificeren?');">Edit</a>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a value="<?= isset($_POST[$userInfo->getId()])?>" class="delete-item" href="/users?id=<?=$userInfo->getId();?>" onclick="confirmDelete('Weet je zeker dat je gebruiker #<?= $delete = $userInfo->getId(); ?> wilt verwijderen? Dit is permanent.')">Delete</a>
+                    <a value="<?= isset($_POST[$userInfo->getId()])?>"
+                       class="delete-item"
+                       href="/users?id=<?=$userInfo->getId();?>"
+                       onclick="confirmDelete('Weet je zeker dat je gebruiker #<?= $delete = $userInfo->getId(); ?> wilt verwijderen? Dit is permanent.')">Delete</a>
                 </td>
                 </tr>
         </table>
