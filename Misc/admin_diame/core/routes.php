@@ -41,11 +41,11 @@ $router->define([
         ],
     ],
     'DELETE' => [
-        '/users?=id2' => [
+        '/users' => [
             'controller' => 'AdminUsersController',
             'method' => 'delete'
         ],
-        '/products?=id2' => [
+        '/products' => [
             'controller' => 'AdminProductController',
             'method' => 'delete'
         ]

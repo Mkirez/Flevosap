@@ -72,25 +72,18 @@ class UserModel extends BaseModel
 
     public function delete($id)
     {
-        if (isset($_GET['id'])) {
-            $stmt = $pdo->prepare('SELECT * FROM gebruikers WHERE id = ?');
-            $stmt->execute([$_GET['id']]);
+        if ($id != null) {
+            $stmt = $this->pdo->prepare('SELECT * FROM gebruikers WHERE id = ?');
+            $stmt->execute([$id]);
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
             if (!$user) {
-                exit('Deze gebruiker bestaat niet!');
+                return "0";
             }
-            if (isset($_GET['confirm'])) {
-                if ($_GET['confirm'] == 'yes') {
-                    $stmt = $pdo->prepare('DELETE FROM gebruikers WHERE id = ?');
-                    $stmt->execute([$_GET['id']]);
-                    $msg = 'U heeft de gebruiker verwijderd!';
-                } else {
-                    header('Location:/users');
-                    exit;
-                }
-            }
+            $stmt = $this->pdo->prepare('DELETE FROM gebruikers WHERE id = ?');
+            $stmt->execute([$id]);
+            return "1";
         } else {
-            exit('Geen ID vermeld!');
+            return "0";
         }
     }
 
