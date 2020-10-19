@@ -4,6 +4,7 @@
 ######################
 *.log
 *.sqlite
+Website/core/config.php
 
 # OS generated files #
 ######################

@@ -8,7 +8,22 @@ class ProductpageController
         $model = new ProductModel();
         $products = $model->all();
         require 'views/Productpage.view.php';
+    }
 
+    public function product_info(){
+
+        if(isset($_GET["id"])){
+
+            //Get product info
+            $product_id = $_GET["id"];
+            $model = new ProductModel();
+            $product = $model->find($product_id);
+
+            if($product != null){
+                require 'views/productinfo.view.php';return""; // If product found, Show the product info
+            }
+        }
+        require 'views/errors/404.view.php';return""; // If product not found, Return 404
     }
 
     public function getProductImage()

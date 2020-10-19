@@ -10,4 +10,11 @@ class ContactController
     {
         require 'views/contact.view.php';
     }
+
+    public function contact(){
+        echo "<pre>";
+        print_r($_POST);
+        echo "</pre>";
+        die();
+    }
 }

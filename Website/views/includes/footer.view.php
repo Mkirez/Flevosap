@@ -1,6 +1,3 @@
-
-<div class="space">
-</div>
 <div id="footer">
     <ul class="nav text-center">
         <div class="container-fluid">
@@ -58,3 +55,8 @@
         </div>
     </ul>
 </div>
+
+
+<script src="/asset/js/jquery.min.js"></script>
+<script src="/asset/js/bootstrap.min.js"></script>
+<script src="/asset/js/main.js"></script>

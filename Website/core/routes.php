@@ -1,27 +1,43 @@
 <?php
 $router->define([
     'GET' => [
-        '/' => [
+        '/' => [ #DONE
             'controller' => 'HomeController',
             'method' => 'index'
         ],
-        '/about' => [
+        '/about' => [ #ToDo Check deze pagina
             'controller' => 'AboutController',
             'method' => 'index'
         ],
-        '/contact' => [
+        '/contact' => [ #ToDo Check deze pagina
             'controller' => 'ContactController',
             'method' => 'index'
         ],
-        '/login' => [
+        '/login' => [ #Done
             'controller' => 'LoginController',
             'method' => 'index'
         ],
-        '/register' => [
+        '/register' => [ #Done
             'controller' => 'RegisterController',
             'method' => 'index'
         ],
-        '/Productpage' => [
+        '/cart' => [
+            'controller' => 'CartController',
+            'method' => 'index'
+        ],
+        '/cart/add' => [
+            'controller' => 'CartController',
+            'method' => 'add_product'
+        ],
+        '/cart/remove' => [
+            'controller' => 'CartController',
+            'method' => 'remove_product'
+        ],
+        '/checkout' => [
+            'controller' => 'CheckoutController',
+            'method' => 'index'
+        ],
+        '/shop' => [
             'controller' => 'ProductpageController',
             'method' => 'index'
         ],
@@ -29,36 +45,37 @@ $router->define([
             'controller' => 'ProductpageController',
             'method' => 'getProductImage'
         ],
-        '/productinfo' => [
-            'controller' => 'ProductInfoController',
-            'method' => 'index'
+        '/product/info' => [
+            'controller' => 'ProductpageController',
+            'method' => 'product_info'
         ],
-
-         '/logout' => [
+        '/logout' => [
             'controller' => 'LogoutController',
-            'method' => 'index'
+            'method' => 'logout'
         ],
-
-         '/Productpagezakelijk' => [
+        '/Productpagezakelijk' => [
             'controller' => 'ppzakelijkcontroller',
             'method' => 'index'
-
-         ],
-        '/ProductImage' => [
-            'controller' => 'ppzakelijkcontroller',
-            'method' => 'getProductImage'
 
         ],
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
             'method' => 'index'
         ],
-],
+    ],
 
     'POST' => [
         '/login' => [
             'controller' => 'LoginController',
             'method' => 'login'
+        ],
+        '/cart/update' => [
+            'controller' => 'CartController',
+            'method' => 'update_product'
+        ],
+        '/contact' => [
+            'controller' => 'ContactController',
+            'method' => 'contact'
         ],
         '/register' => [
             'controller' => 'RegisterController',

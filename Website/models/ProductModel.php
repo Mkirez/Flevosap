@@ -23,7 +23,6 @@ class ProductModel extends BaseModel
         {
             return $data['picture'];
         }
-
         throw new Exception("Unknown product id");
     }
 
@@ -39,8 +38,6 @@ class ProductModel extends BaseModel
             $product->load($data);
             return $product;
         }
-
-        throw new Exception("Unknown product id");
     }
 
     public function all()
