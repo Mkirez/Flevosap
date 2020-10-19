@@ -38,9 +38,9 @@
             </th>
         </tr>
     </table>
+    <table id="ProductContent" border=1 class="table-sm" style="width:100%">
         <?php foreach ($products as $productInfo){ ?>
-    <table>
-        <tr>
+        <tr id="product_<?= $productInfo->getId(); ?>">
             <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 <?= $productInfo->getId(); ?>
             </td>
@@ -67,24 +67,35 @@
                    onclick="confirmEdit('Weet je zeker dat je product #<?= $productInfo->getId(); ?> wilt modificeren?', '/products?recordId=<?= urlencode($productInfo->getId()); ?>');">Edit</a>
             </td>
             <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                <a href="javascript:void(0);"
-                   onclick="confirmDelete('Weet je zeker dat je product #<?= $productInfo->getId(); ?> wilt verwijderen? Dit is permanent.', '/products?recordId=<?= urlencode($productInfo->getId()); ?>');">Delete</a>
+                <button data-product_id="<?= $productInfo->getId(); ?>"
+                        data-product_name="<?= $productInfo->getTitle(); ?>" class="delete_user">Delete User
+                </button>
             </td>
         </tr>
     </table>
+    <script src="asset/js/jquery.min.js"></script>
     <script>
-        function confirmEdit(message, url) {
-            var confirmation = confirm(message);
+        $("#ProductContent").on("click", ".delete_user", function () {
+            var product_id = $(this).data("product_id");
+            var product_name = $(this).data("product_name");
+            var confirmation = confirm('Weet u zeker dat u gebruiker: ' + product_name + ' wilt verwijderen?');
 
             if (confirmation == true) {
-                window.location = url;
-            } else {
-                return false;
+                $.ajax({
+                    url: '/products?id=' + product_id,
+                    type: 'DELETE',
+                    success: function (result) {
+                        // Do something with the result
+                        if (result === "1") {
+                            $("#ProductContent").find("#product_" + product_id).remove();
+                        }
+                    }
+                });
             }
-        }
+        });
     </script>
     <script>
-        function confirmDelete(message, url) {
+        function confirmEdit(message, url) {
             var confirmation = confirm(message);
 
             if (confirmation == true) {

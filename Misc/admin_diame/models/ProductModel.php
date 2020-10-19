@@ -73,25 +73,18 @@ class ProductModel extends BaseModel
 
     public function delete($id)
     {
-        if (isset($_GET['id'])) {
-            $stmt = $pdo->prepare('SELECT * FROM Products WHERE id = ?');
-            $stmt->execute([$_GET['id']]);
-            $product = $stmt->fetch(PDO::FETCH_ASSOC);
-            if (!$product) {
-                exit('Dit product bestaat niet!');
+        if ($id != null) {
+            $stmt = $this->pdo->prepare('SELECT * FROM Products WHERE id = ?');
+            $stmt->execute([$id]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$user) {
+                return "0";
             }
-            if (isset($_GET['confirm'])) {
-                if ($_GET['confirm'] == 'yes') {
-                    $stmt = $pdo->prepare('DELETE FROM Products WHERE id = ?');
-                    $stmt->execute([$_GET['id']]);
-                    $msg = 'U heeft het product verwijderd!';
-                } else {
-                    header('Location:/product');
-                    exit;
-                }
-            }
+            $stmt = $this->pdo->prepare('DELETE FROM Products WHERE id = ?');
+            $stmt->execute([$id]);
+            return "1";
         } else {
-            exit('Geen ID vermeld!');
+            return "0";
         }
     }
     /**

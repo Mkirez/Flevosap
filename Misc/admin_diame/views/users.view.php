@@ -61,7 +61,7 @@
         $("#UserContent").on("click",".delete_user", function () {
             var user_id = $(this).data("user_id");
             var user_name = $(this).data("user_name");
-            var confirmation = confirm('Weet u zeker dat u gebruiker: ' + user_name + ' wilt verwijderen');
+            var confirmation = confirm('Weet u zeker dat u gebruiker: ' + user_name + ' wilt verwijderen?');
 
             if (confirmation == true) {
                 $.ajax({

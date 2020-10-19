@@ -10,11 +10,11 @@ class AdminProductController
         require 'views/products.view.php';
     }
 
-    public function delete($id)
+    public function delete()
     {
         $model = new ProductModel();
+        $id=$_GET["id"];
         $delete = $model->delete($id);
-        header('location:/products');
-        require 'views/products.view.php';
+        echo $delete;
     }
 }
