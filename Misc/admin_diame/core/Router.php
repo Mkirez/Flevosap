@@ -35,6 +35,3 @@ class Router
         throw new Exception('Route not defined!');
     }
 }
-
-
-
