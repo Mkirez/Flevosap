@@ -40,7 +40,7 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Login bij Mijn Flevosap</h5>
-            <form action="/login" method="post" onclick="inputCheckLogin()">
+            <form action="/login" method="post" onsubmit="inputCheckLogin()">
                 <div class="error" style="color: #ff0000; font-size: 22px;">
                     <?= isset($_SESSION["login_incorrect"]) ? $_SESSION["login_incorrect"] : ''; ?>
                     <div class="form-group <?= isset($_SESSION["login_incorrect"]) ? 'error' : ''; ?>">
