@@ -49,5 +49,15 @@ $router->define([
             'controller' => 'AdminProductController',
             'method' => 'delete'
         ]
+    ],
+    'UPDATE' => [
+        '/admineditusers' => [
+            'controller' => 'EditorController',
+            'method' => 'Update'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'EditorController',
+            'method' => 'Update'
+        ]
     ]
 ]);

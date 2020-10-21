@@ -4,6 +4,6 @@ class EditorController
 {
     public function index()
     {
-        require 'views/adminedit.view.php';
+        require 'views/admineditproducts.view.php';
     }
 }

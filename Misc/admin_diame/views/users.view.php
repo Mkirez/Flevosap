@@ -51,11 +51,14 @@
                     </button>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <button data-user_id="<?= $userInfo->getId(); ?>" data-user_name="<?= $userInfo->getUsername(); ?>" class="delete_user">Delete User</button>
+                    <button data-user_id="<?= $userInfo->getId(); ?>"
+                            data-user_name="<?= $userInfo->getUsername(); ?>"
+                            class="delete_user">Delete User</button>
                 </td>
             </tr>
         <?php } ?>
     </table>
+</div>
     <script src="asset/js/jquery.min.js"></script>
     <script>
         $("#UserContent").on("click",".delete_user", function () {
@@ -95,7 +98,7 @@
             }
         });
     </script>
-</div>
+
 <section class="body">
     <div class="col-md-6">
         <div class="wrapper">

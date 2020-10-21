@@ -41,8 +41,8 @@
             </th>
         </tr>
     </table>
-    <?php foreach ($products as $productInfo){ ?>
     <table id="ProductContent" border=1 class="table-sm" style="width:100%">
+        <?php foreach ($products as $productInfo){ ?>
         <tr id="product_<?= $productInfo->getId(); ?>">
             <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 <?= $productInfo->getId(); ?>
@@ -81,9 +81,9 @@
                 </button>
             </td>
         </tr>
+        <?php } ?>
     </table>
 </div>
-</body>
     <script src="asset/js/jquery.min.js"></script>
     <script>
         $("#ProductContent").on("click", ".delete_product", function () {
@@ -123,40 +123,39 @@
             }
         });
     </script>
-<?php } ?>
-</div>
-    <section class="body">
-        <div class="col-md-6">
-            <div class="wrapper">
-                <h2 class="card-header">Add Product</h2>
-                <form action="/products" method="post" class="card-body border">
-                    <div class="form-group">
-                        <label>Productnaam</label>
-                        <input type="text" name="title" class="form-control form-control-sm" value="<?= isset($_POST["title"]) ? $_POST["title"] : ""?>">
-                    </div>
-                    <div class="form-group">
-                        <label>Product Code</label>
-                        <input type="text" name="productCode" class="form-control form-control-sm"
-                    </div>
-                    <div class="form-group">
-                        <label>Productomschrijving</label>
-                        <input type="text" name="productOmschrijving" class="form-control form-control-sm">
-                    </div>
-                    <div class="form-group">
-                        <label>Prijs</label>
-                        <input type="number" name="Prijs" class="form-control form-control-sm">
-                    </div>
-                    <div class="form-group">
-                        <label>Hoeveelheid</label>
-                        <input type="text" name="Hoeveelheid" class="form-control form-control-sm">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Submit">
-                        <input type="reset" class="btn btn-default" value="Reset">
-                    </div>
-                </form>
-            </div>
-    </section>
+<section class="body">
+    <div class="col-md-6">
+        <div class="wrapper">
+            <h2 class="card-header">Add Product</h2>
+            <form action="/products" method="post" class="card-body border">
+                <div class="form-group">
+                    <label>Productnaam</label>
+                    <input type="text" name="title" class="form-control form-control-sm"
+                           value="<?= isset($_POST["title"]) ? $_POST["title"] : "" ?>">
+                </div>
+                <div class="form-group">
+                    <label>Product Code</label>
+                    <input type="text" name="productCode" class="form-control form-control-sm"
+                </div>
+                <div class="form-group">
+                    <label>Productomschrijving</label>
+                    <input type="text" name="productOmschrijving" class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <label>Prijs</label>
+                    <input type="number" name="Prijs" class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <label>Hoeveelheid</label>
+                    <input type="text" name="Hoeveelheid" class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                    <input type="reset" class="btn btn-default" value="Reset">
+                </div>
+            </form>
+        </div>
+</section>
 </body>
 </html>
 <!-- <?php } else {header('location:/admin');} ?> -->

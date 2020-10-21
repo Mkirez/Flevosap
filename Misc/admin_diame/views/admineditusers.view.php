@@ -1,19 +1,15 @@
 <<!doctype html>
 <html lang="en">
-<?php $title = "Edit user" ?>
+<?php $title = "Edit User" ?>
 <body>
 <section class="body">
     <div class="col-md-6">
         <div class="wrapper">
-            <h2>Add user</h2>
-            private int $id;
-            private string $title, $productCode, $prijs, $hoeveelheid, $ProductOmschrijving;
-            private $picture;
-            private $createdAt, $updatedAt;
+            <h2>Edit User <?=$userInfo->getId();?></h2>
             <form action="/users" method="post">
                 <div class="form-group">
                     <label>Title</label>
-                    <input type="text" name="Title" class="form-control form-control-sm" value="<?= isset($_POST["Title"]) ? $_POST["Title"] : ""?>">
+                    <input type="text" name="Title" class="form-control form-control-sm">
                 </div>
                 <div class="form-group">
                     <label>Productcode</label>
@@ -21,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <label>Prijs</label>
-                    <input type="text" name="Prijs" class="form-control form-control-sm">
+                    <input type="text" name="Prijsw" class="form-control form-control-sm">
                 </div>
                 <div class="form-group">
                     <label>Productcode</label>
