@@ -6,8 +6,8 @@
 <body>
 <?php include "includes/nav.view.php" ?>
 
-<div id="weergaveProducts">
-    <table id="example" border="1" class="table table-striped table-bordered" style="width:100%">
+<div id="weergaveProducts" class="form-group">
+    <table id="ProductTable" border="1" class="table-sm table-striped table-bordered" style="width:100%; height:60px;">
         <tr>
             <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 Product ID:
@@ -63,22 +63,25 @@
                 <?= $productInfo->getUpdatedAt(); ?>
             </td>
             <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                <a href="javascript:void(0);"
-                   onclick="confirmEdit('Weet je zeker dat je product #<?= $productInfo->getId(); ?> wilt modificeren?', '/products?recordId=<?= urlencode($productInfo->getId()); ?>');">Edit</a>
+                <button data-product_id="<?= $productInfo->getId(); ?>"
+                        data-product_name="<?= $productInfo->getTitle(); ?>"
+                        class="edit_product">Edit Product
+                </button>
             </td>
             <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 <button data-product_id="<?= $productInfo->getId(); ?>"
-                        data-product_name="<?= $productInfo->getTitle(); ?>" class="delete_user">Delete User
+                        data-product_name="<?= $productInfo->getTitle(); ?>"
+                        class="delete_product">Delete Product
                 </button>
             </td>
         </tr>
     </table>
     <script src="asset/js/jquery.min.js"></script>
     <script>
-        $("#ProductContent").on("click", ".delete_user", function () {
+        $("#ProductContent").on("click", ".delete_product", function () {
             var product_id = $(this).data("product_id");
             var product_name = $(this).data("product_name");
-            var confirmation = confirm('Weet u zeker dat u gebruiker: ' + product_name + ' wilt verwijderen?');
+            var confirmation = confirm('Weet u zeker dat u product: ' + product_name + ' wilt verwijderen?');
 
             if (confirmation == true) {
                 $.ajax({
@@ -93,19 +96,58 @@
                 });
             }
         });
-    </script>
-    <script>
-        function confirmEdit(message, url) {
-            var confirmation = confirm(message);
+        $("#ProductContent").on("click", ".edit_product", function () {
+            var product_id = $(this).data("product_id");
+            var product_name = $(this).data("product_name");
+            var confirmation = confirm('Weet u zeker dat u product: ' + product_name + ' wilt verwijderen?');
 
             if (confirmation == true) {
-                window.location = url;
-            } else {
-                return false;
+                $.ajax({
+                    url: '/products?id=' + product_id,
+                    type: 'UPDATE',
+                    success: function (result) {
+                        // Do something with the result
+                        if (result === "1") {
+                            $("#ProductContent").find("#product_" + product_id).update();
+                        }
+                    }
+                });
             }
-        }
+        });
     </script>
 </div>
+    <section class="body">
+        <div class="col-md-6">
+            <div class="wrapper">
+                <h2 class="card-header">Add Product</h2>
+                <form action="/products" method="get" class="card-body border">
+                    <div class="form-group">
+                        <label>Productnaam</label>
+                        <input type="text" name="title" class="form-control form-control-sm" value="<?= isset($_POST["title"]) ? $_POST["title"] : ""?>">
+                    </div>
+                    <div class="form-group">
+                        <label>Product Code</label>
+                        <input type="text" name="productCode" class="form-control form-control-sm"
+                    </div>
+                    <div class="form-group">
+                        <label>Productomschrijving</label>
+                        <input type="text" name="productOmschrijving" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label>Prijs</label>
+                        <input type="number" name="Prijs" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <label>Hoeveelheid</label>
+                        <input type="text" name="Hoeveelheid" class="form-control form-control-sm">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                        <input type="reset" class="btn btn-default" value="Reset">
+                    </div>
+                </form>
+            </div>
+    </section>
 <?php } ?>
 </body>
 </html>

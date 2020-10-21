@@ -6,7 +6,7 @@
 <body>
 <?php include "includes/nav.view.php" ?>
 
-<div id="weergaveUsers">
+<div id="weergaveUsers" class="form-group">
     <table id="Usertable" border="1" class="table-sm table-striped table-bordered" style="width:100%; height:60px;">
         <tr>
             <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
@@ -45,10 +45,10 @@
                     <?= $userInfo->getUpdatedAt(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <a value="<?= isset($_POST[$userInfo->getId()]) ?>"
-                       class="edit-item"
-                       href="/users?controller=AdminUsersController&method=edit&id=<?= $userInfo->getId(); ?>"
-                       onclick="confirmEdit('Weet je zeker dat je gebruiker #<?= $userInfo->getId(); ?> wilt modificeren?');">Edit</a>
+                    <button data-user_id="<?= $userInfo->getId(); ?>"
+                            data-user_name="<?= $userInfo->getUsername(); ?>"
+                            class="edit_user">Edit User
+                    </button>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <button data-user_id="<?= $userInfo->getId(); ?>" data-user_name="<?= $userInfo->getUsername(); ?>" class="delete_user">Delete User</button>
@@ -76,8 +76,46 @@
                 });
             }
         });
+        $("#UserContent").on("click",".edit_user", function () {
+            var user_id = $(this).data("user_id");
+            var user_name = $(this).data("user_name");
+            var confirmation = confirm('Weet u zeker dat u gebruiker: ' + user_name + ' wilt modificeren?');
+
+            if (confirmation == true) {
+                $.ajax({
+                    url: '/users?id=' + user_id,
+                    type: 'UPDATE',
+                    success: function (result) {
+                        // Do something with the result
+                        if (result === "1"){
+                            $("#UserContent").find("#user_" + user_id).update();
+                        }
+                    }
+                });
+            }
+        });
     </script>
 </div>
+<section class="body">
+    <div class="col-md-6">
+        <div class="wrapper">
+            <h2 class="card-header">Add user</h2>
+            <form action="/users" method="post" class="card-body border">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="gebruikersnaam" class="form-control form-control-sm" value="<?= isset($_POST["gebruikersnaam"]) ? $_POST["gebruikersnaam"] : ""?>">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="wachtwoord" class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                    <input type="reset" class="btn btn-default" value="Reset">
+                </div>
+            </form>
+        </div>
+</section>
 </body>
 </html>
 <!-- <?php } else {
