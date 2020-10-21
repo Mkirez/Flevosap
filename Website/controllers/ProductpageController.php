@@ -7,8 +7,34 @@ class ProductpageController
     {
         $model = new ProductModel();
         $products = $model->all();
+
         require 'views/Productpage.view.php';
     }
+    public function appels()
+    {
+        $model = new ProductModel();
+        $products = $model->selectproducts("Appel");
+
+        require 'views/Productpage.view.php';
+    }
+    public function peer()
+    {
+        $model = new ProductModel();
+        $products = $model->selectproducts("Peer");
+
+        require 'views/Productpage.view.php';
+    }
+
+
+    // public function test(){
+
+    //     $model = new ProductModel();
+    //     $products = $model->selectall();
+
+    //     require 'views/Productpage.view.php';
+
+
+    // }
 
     public function product_info(){
 

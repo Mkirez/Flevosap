@@ -7,7 +7,7 @@
 <?php include "includes/nav.view.php" ?>
 
 <?php include "includes/header.view.php" ?>
-<div class="main-content">
+<div class="main-content" style="padding: 70px;">
     <div class="container">
         <div class="row">
             <div class="col-md-3" id="filter_search">
@@ -16,52 +16,13 @@
                         <div class="card-title">Soorten sap</div>
                         <div class="card-text">
                             <div class="custom-radio">
-                                <label><input type="radio" name="check"/>Alles</label>
+                                <label><input type="radio" name="check" onchange="alles();" id="alles"/>Alles</label>
                             </div>
                             <div class="custom-radio">
-                                <label><input type="radio" name="check"/>100%Fruitsap</label>
+                                <label><input type="radio" name="check" id="appel" onchange="appels();" />appel</label>
                             </div>
                             <div class="custom-radio">
-                                <label><input type="radio" name="check"/>100%Groentesap</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="card-title">Smaak</div>
-                        <div class="card-text">
-                            <div class="custom-radio">
-                                <label><input type="radio" name="check"/>Alles</label>
-                            </div>
-                            <div class="custom-radio">
-                                <label><input type="radio" name="check"/>Fris</label>
-                            </div>
-                            <div class="custom-radio">
-                                <label><input type="radio" name="check"/>Zoet</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="card-title">Appel met</div>
-                        <div class="card-text" id="filter_for">
-                            <div class="custom-checkbox">
-                                <label><input type="checkbox" data-filter_id="1" value="1" name="check"/>Aardbei</label>
-                            </div>
-                            <div class="custom-radio">
-                                <label><input type="checkbox" data-filter_id="1" value="2" name="check"/>Ananas</label>
-                            </div>
-                            <div class="custom-radio">
-                                <label><input type="checkbox" data-filter_id="1" value="3" name="check"/>Perzik</label>
-                            </div>
-                            <div class="custom-radio">
-                                <label><input type="checkbox" data-filter_id="1" value="4" name="check"/>100%Groentesap</label>
-                            </div>
-                            <div class="custom-radio">
-                                <label><input type="checkbox" data-filter_id="1" value="5"
-                                              name="check"/>100%Fruitsap</label>
+                                <label><input type="radio" name="check" id="peer" onchange="peer();" />peer</label>
                             </div>
                         </div>
                     </div>
@@ -128,22 +89,45 @@
 
 <script>
     $("#filter_search").on("change", "input", function () {
-        build_url();
+        // build_url();
+
+
     });
 
-    function build_url() {
 
-        //Fix this shit
-        var url = "";
+    function alles(){
 
-        $("#filter_search #filter_for").each(function () {
-            var filter_id = $(this).data("filter_id");
-            var value = $(this).val();
-            url += filter_id + "=" + value;
-        });
+        
+        window.location.href = "/shop";
 
-        window.location.replace("/Productpage?" + url);
     }
+    function appels(){
+
+        
+        window.location.href = "/shop/appels";
+
+    }
+    function peer(){
+
+        
+        window.location.href = "/shop/peer";
+
+    }
+    // function build_url() {
+
+    //     //Fix this shit
+
+    //     alert('hooiu');
+    //     var url = "";
+
+    //     $("#filter_search #filter_for").each(function () {
+    //         var filter_id = $(this).data("filter_id");
+    //         var value = $(this).val();
+    //         url += filter_id + "=" + value;
+    //     });
+
+    //     window.location.replace("/shop?" + url);
+    // }
 </script>
 </body>
 </html>

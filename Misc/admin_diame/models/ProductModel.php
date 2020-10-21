@@ -58,6 +58,28 @@ class ProductModel extends BaseModel
 
         return $result;
     }
+    public function selectproduct()
+    {
+        $query = 'SELECT * FROM Products';
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $result = array();
+        while($data = $stmt->fetch())
+        {
+            $product = new ProductModel();
+            $product->load($data);
+            $result[]=$product;
+        }
+
+        return $result;
+    }
+
+    public function selectall()
+    {
+        echo "sahs";
+    }
+
+
 
     private function load($data)
     {
