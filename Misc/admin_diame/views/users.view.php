@@ -103,7 +103,7 @@
             <form action="/users" method="post" class="card-body border">
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" name="gebruikersnaam" class="form-control form-control-sm" value="<?= isset($_POST["gebruikersnaam"]) ? $_POST["gebruikersnaam"] : ""?>">
+                    <input type="text" name="gebruikersnaam" class="form-control form-control-sm">
                 </div>
                 <div class="form-group">
                     <label>Password</label>

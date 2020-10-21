@@ -16,6 +16,9 @@
                 Productnaam:
             </th>
             <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
+                ProductCode:
+            </th>
+            <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 Productbeschrijving:
             </th>
             <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
@@ -38,14 +41,17 @@
             </th>
         </tr>
     </table>
+    <?php foreach ($products as $productInfo){ ?>
     <table id="ProductContent" border=1 class="table-sm" style="width:100%">
-        <?php foreach ($products as $productInfo){ ?>
         <tr id="product_<?= $productInfo->getId(); ?>">
             <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 <?= $productInfo->getId(); ?>
             </td>
             <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 <?= $productInfo->getTitle(); ?>
+            </td>
+            <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
+                <?= $productInfo->getProductCode(); ?>
             </td>
             <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 <?= $productInfo->getProductOmschrijving(); ?>
@@ -76,6 +82,8 @@
             </td>
         </tr>
     </table>
+</div>
+</body>
     <script src="asset/js/jquery.min.js"></script>
     <script>
         $("#ProductContent").on("click", ".delete_product", function () {
@@ -115,12 +123,13 @@
             }
         });
     </script>
+<?php } ?>
 </div>
     <section class="body">
         <div class="col-md-6">
             <div class="wrapper">
                 <h2 class="card-header">Add Product</h2>
-                <form action="/products" method="get" class="card-body border">
+                <form action="/products" method="post" class="card-body border">
                     <div class="form-group">
                         <label>Productnaam</label>
                         <input type="text" name="title" class="form-control form-control-sm" value="<?= isset($_POST["title"]) ? $_POST["title"] : ""?>">
@@ -148,7 +157,6 @@
                 </form>
             </div>
     </section>
-<?php } ?>
 </body>
 </html>
 <!-- <?php } else {header('location:/admin');} ?> -->
