@@ -33,11 +33,11 @@ $router->define([
         ],
         '/users' => [
             'controller' => 'AdminUsersController',
-            'method' => 'index'
+            'method' => 'AddUser'
         ],
         '/products' => [
             'controller' => 'AdminProductController',
-            'method' => 'index'
+            'method' => 'AddProduct'
         ],
     ],
     'DELETE' => [
