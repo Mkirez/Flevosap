@@ -66,6 +66,17 @@ $router->define([
             'controller' => 'ProductpageController',
             'method' => 'test'
         ],
+        '/shop/peer' => [
+            'controller' => 'ProductpageController',
+            'method' => 'peer'
+        ],
+        '/shop/appels' => [
+            'controller' => 'ProductpageController',
+            'method' => 'appels'
+        ],
+
+
+
     ],
 
     'POST' => [

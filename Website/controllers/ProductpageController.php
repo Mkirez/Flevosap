@@ -6,7 +6,21 @@ class ProductpageController
     public function index()
     {
         $model = new ProductModel();
-        $products = $model->selectproducts("bannaan");
+        $products = $model->all();
+
+        require 'views/Productpage.view.php';
+    }
+    public function appels()
+    {
+        $model = new ProductModel();
+        $products = $model->selectproducts("Appel");
+
+        require 'views/Productpage.view.php';
+    }
+    public function peer()
+    {
+        $model = new ProductModel();
+        $products = $model->selectproducts("Peer");
 
         require 'views/Productpage.view.php';
     }
