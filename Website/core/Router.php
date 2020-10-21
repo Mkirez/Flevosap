@@ -23,9 +23,8 @@ class Router
     public function direct()
     {
         $method = $_SERVER['REQUEST_METHOD'];
-        $uri = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : $_SERVER['REQUEST_URI'];
-
-
+        $uri = $_SERVER['REQUEST_URI'];
+        $uri = explode("?",$uri)[0];
         if (array_key_exists($uri, $this->routes[$method])) {
             $currentRoute = $this->routes[$method][$uri];
             $controller = new $currentRoute['controller']();
