@@ -1,7 +1,7 @@
 <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) { ?>
 <!doctype html>
 <html lang="en">
-<?php $title = "Dashboard" ?>
+<?php $title = "Users" ?>
 <?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
