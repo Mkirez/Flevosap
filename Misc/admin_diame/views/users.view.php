@@ -79,7 +79,7 @@
         $("#UserContent").on("click",".edit_user", function () {
             var user_id = $(this).data("user_id");
             var user_name = $(this).data("user_name");
-            var confirmation = confirm('Weet u zeker dat u gebruiker: ' + user_name + ' wilt modificeren??');
+            var confirmation = confirm('Weet u zeker dat u gebruiker: ' + user_name + ' wilt modificeren?');
 
             if (confirmation == true) {
                 $.ajax({
