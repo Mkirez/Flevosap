@@ -6,5 +6,7 @@
 <?php include "includes/nav.view.php" ?>
 <h1>Alles over de ADSD!</h1>
 <?php include "includes/footer.view.php" ?>
-</body>
+
+
+</body >
 </html>

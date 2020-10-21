@@ -134,6 +134,8 @@
     function build_url() {
 
         //Fix this shit
+
+        alert('hooiu');
         var url = "";
 
         $("#filter_search #filter_for").each(function () {
@@ -142,7 +144,7 @@
             url += filter_id + "=" + value;
         });
 
-        window.location.replace("/Productpage?" + url);
+        window.location.replace("/shop?" + url);
     }
 </script>
 </body>

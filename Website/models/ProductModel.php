@@ -55,6 +55,25 @@ class ProductModel extends BaseModel
 
         return $result;
     }
+    public function selectproducts($queryselect)
+    {
+
+
+        // $queryselect = "Appel";
+
+        $query = "SELECT * FROM Products WHERE title like  '%$queryselect' ";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $result = array();
+        while($data = $stmt->fetch())
+        {
+            $product = new ProductModel();
+            $product->load($data);
+            $result[]=$product;
+        }
+
+        return $result;
+    }
 
     public function load($data)
     {

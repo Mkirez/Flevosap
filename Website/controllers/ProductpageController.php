@@ -6,9 +6,21 @@ class ProductpageController
     public function index()
     {
         $model = new ProductModel();
-        $products = $model->all();
+        $products = $model->selectproducts("bannaan");
+
         require 'views/Productpage.view.php';
     }
+
+
+    // public function test(){
+
+    //     $model = new ProductModel();
+    //     $products = $model->selectall();
+
+    //     require 'views/Productpage.view.php';
+
+
+    // }
 
     public function product_info(){
 

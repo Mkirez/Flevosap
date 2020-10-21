@@ -62,6 +62,10 @@ $router->define([
             'controller' => 'ZakelijkeLoginController',
             'method' => 'index'
         ],
+        '/test' => [
+            'controller' => 'ProductpageController',
+            'method' => 'test'
+        ],
     ],
 
     'POST' => [
