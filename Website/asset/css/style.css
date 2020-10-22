@@ -549,3 +549,25 @@ img{
 .navbar-expand-lg .navbar-nav .nav-link > .fa > .badge {
     top: -7px;
 }
+
+.aboutpageimg{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.Aboutheading{
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*margin-top: auto;*/
+    /*margin-bottom: auto;*/
+}
+
+.aboutcontent{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
