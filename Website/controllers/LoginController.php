@@ -5,7 +5,8 @@ class LoginController
     {
         unset($_SESSION['login_incorrect']);
         if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) {
-            header("location: /");
+            header("location:/");
+            
             exit;
         }
         require 'views/login.view.php';

@@ -40,10 +40,11 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Login bij Mijn Flevosap</h5>
+
             <form action="/login" method="post" onsubmit="inputCheckLogin()">
-                <div class="error" style="color: #ff0000; font-size: 22px;">
-                    <?= isset($_SESSION["login_incorrect"]) ? $_SESSION["login_incorrect"] : ''; ?>
-                    <div class="form-group <?= isset($_SESSION["login_incorrect"]) ? 'error' : ''; ?>">
+              
+                  
+                    <div class="form-group">
                         <label>Gebruikersnaam</label>
                         <input type="text" name="username" class="form-control form-control-sm"
                                value="<?= isset($_POST["username"]) ? $_POST["username"] : "" ?>" id="name">
@@ -59,9 +60,10 @@
                             <input type="submit" name="submit" class="btn btn-primary" value="Login">
                         </div>
                         <p>Heeft u geen account? <a href='/register'>Registreer dan nu</a></p>
-                    </div>
+              
                 </div>
             </form>
+
         </div>
     </div>
 </div>

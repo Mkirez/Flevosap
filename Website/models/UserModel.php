@@ -30,6 +30,7 @@ class UserModel extends BaseModel
             endif;
         endif;
     }
+    
 
     public function checkExistingUsername(string $username) : bool
     {
