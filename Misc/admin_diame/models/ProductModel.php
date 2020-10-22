@@ -4,7 +4,7 @@
 class ProductModel extends BaseModel
 {
     private int $id;
-    private string $title, $productCode, $prijs, $hoeveelheid, $ProductOmschrijving;
+    private string $title, $productCode, $prijs, $hoeveelheid, $productOmschrijving;
     private $picture;
     private $createdAt, $updatedAt;
 
@@ -58,6 +58,28 @@ class ProductModel extends BaseModel
 
         return $result;
     }
+    public function selectproduct()
+    {
+        $query = 'SELECT * FROM Products';
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $result = array();
+        while($data = $stmt->fetch())
+        {
+            $product = new ProductModel();
+            $product->load($data);
+            $result[]=$product;
+        }
+
+        return $result;
+    }
+
+    public function selectall()
+    {
+        echo "sahs";
+    }
+
+
 
     private function load($data)
     {
@@ -65,7 +87,7 @@ class ProductModel extends BaseModel
         $this->setTitle($data['title']);
         $this->setProductCode($data['productCode']);
         $this->setPrijs($data['prijs']);
-        $this->setProductOmschrijving($data['ProductOmschrijving']);
+        $this->setProductOmschrijving($data['productOmschrijving']);
         $this->setHoeveelheid($data['hoeveelheid']);
         $this->setCreatedAt($data['createdAt']);
         $this->setUpdatedAt($data['updatedAt']);
@@ -87,6 +109,31 @@ class ProductModel extends BaseModel
             return "0";
         }
     }
+
+    public function store(ProductModel $product)
+    {
+        $query = "INSERT INTO Products (title, productCode, productOmschrijving, prijs, hoeveelheid) VALUES (:title, :productCode, :productOmschrijving, :prijs, :hoeveelheid)";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindValue(':title', $product->getTitle());
+            $stmt->bindValue(':productCode', $product->getProductCode());
+            $stmt->bindValue(':productOmschrijving', $product->getProductOmschrijving());
+            $stmt->bindValue(':prijs', $product->getPrijs());
+            $stmt->bindValue(':hoeveelheid', $product->getHoeveelheid());
+            return $stmt->execute();
+        endif;
+        return false;
+    }
+
+    public function checkExistingTitle(string $title) : bool
+    {
+        $query = "SELECT * FROM Products WHERE title = :title";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->rowCount() == 0;
+        endif;
+    }
+
     /**
      * @return int
      */
@@ -204,15 +251,15 @@ class ProductModel extends BaseModel
      */
     public function getProductOmschrijving(): string
     {
-        return $this->ProductOmschrijving;
+        return $this->productOmschrijving;
     }
 
     /**
-     * @param string $ProductOmschrijving
+     * @param string $productOmschrijving
      */
-    public function setProductOmschrijving(string $ProductOmschrijving): void
+    public function setProductOmschrijving(string $productOmschrijving): void
     {
-        $this->ProductOmschrijving = $ProductOmschrijving;
+        $this->productOmschrijving = $productOmschrijving;
     }
 
 

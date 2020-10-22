@@ -18,5 +18,7 @@
     </div>
 </div>
 <?php include "includes/footer.view.php" ?>
-</body>
+
+
+</body >
 </html>
