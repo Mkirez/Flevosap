@@ -41,7 +41,7 @@
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-primary" value="Login">
                         </div>
-                        <p>Heeft u geen account? <a href='/register'>Registreer dan nu</a></p>
+                        <p>Heeft u geen account? <a href='/zakelijkeregister'>Registreer dan nu</a></p>
                     </div>
                 </div>
             </form>

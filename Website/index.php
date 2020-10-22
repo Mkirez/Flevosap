@@ -39,6 +39,7 @@ require 'controllers/LogoutController.php';
 require 'controllers/ProductpageController.php';
 require 'controllers/ppzakelijkcontroller.php';
 require 'controllers/ZakelijkeLoginController.php';
+require 'controllers/ZakelijkeRegisterController.php';
 require 'core/Router.php';
 
 

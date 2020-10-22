@@ -74,7 +74,10 @@ $router->define([
             'controller' => 'ProductpageController',
             'method' => 'appels'
         ],
-
+        '/zakelijkeregister' => [
+            'controller' => 'ZakelijkeRegisterController',
+            'method' => 'index'
+        ],
 
 
     ],
@@ -96,5 +99,13 @@ $router->define([
             'controller' => 'RegisterController',
             'method' => 'register'
         ],
+        '/zakelijkeregister' => [
+            'controller' => 'ZakelijkeRegisterController',
+            'method' => 'zakelijkeregister'
+        ],
+        '/Zakelijkelogin' => [
+            'controller' => 'ZakelijkeLoginController',
+            'method' => 'zakelijkelogin'
+
     ]
 ]);
