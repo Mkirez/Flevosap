@@ -38,13 +38,21 @@ class CheckoutController
             }
             $cart = new CartModel(null);
             $_SESSION['cart'] = serialize($cart);
+            $_SESSION["checkout_status"] = json_encode(["Bestelling succesvol.","Bedankt voor uw bestelling"]);
             header("location: /checkout/status");
         }else{
+            $_SESSION["checkout_status"] = json_encode(["Bestelling mislukt.","Er is helaas wat misgegaan."]);
             header("location: /checkout/status");
         }
     }
 
     public function status(){
-        require 'views/checkout_status.view.php';
+        if(isset($_SESSION["checkout_status"])){
+            $status = json_decode($_SESSION["checkout_status"]);
+            unset($_SESSION["checkout_status"]);
+            require 'views/checkout_status.view.php';
+        }else{
+            require 'views/errors/404.view.php';return""; // If product not found, Return 404
+        }
     }
 }

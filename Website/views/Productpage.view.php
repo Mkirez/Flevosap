@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <?php include "includes/head.view.php" ?>
-</head>
+<?php $title = "Product Page" ?>
+<?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
-
 <?php include "includes/header.view.php" ?>
 <div class="main-content" style="padding: 70px;">
     <div class="container">

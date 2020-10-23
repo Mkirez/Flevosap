@@ -4,7 +4,6 @@
 <?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
-
 <section id="page-title">
     <div class="container clearfix">
         <h1>Checkout</h1>
@@ -28,13 +27,11 @@
                             <td class="cart-product-name">
                                 <a href="#"><?= (new ProductModel())->find($product->getProductId())->getTitle(); ?></a>
                             </td>
-
                             <td class="cart-product-quantity">
                                 <div class="quantity clearfix">
                                     <?= $product->getTotal() ?>
                                 </div>
                             </td>
-
                             <td class="cart-product-subtotal">
                                 <span class="amount">&euro;<?= number_format($product->getPrice() * $product->getTotal(), 2, ",", "."); ?></span>
                             </td>
@@ -81,6 +78,9 @@
             <div class="col-md-6 col-sm-12">
                 <div class="content-wrap">
                     <h3>Shipping Address</h3>
+                    <div class="form-error" style="display: none;">
+                        <p style="color: red;">Niet alle velden zijn ingevuld.</p>
+                    </div>
                     <div class="row">
                         <div class="w-100"></div>
                         <div class="col-8 form-group">
@@ -99,7 +99,7 @@
                                    class="sm-form-control">
                         </div>
                         <div class="col-12 form-group">
-                            <label for="shipping-form-city">Plaats</label>
+                            <label for="city">Plaats</label>
                             <input type="text" id="city" name="city" value=""
                                    class="sm-form-control">
                         </div>
@@ -114,7 +114,17 @@
 
 <script>
     $("#proceed_checkout").on("click", function () {
-        $("#checkout_form").submit();
+        var street = $("#street").val();
+        var house_nr = $("#house_nr").val();
+        var zipcode = $("#zipcode").val();
+        var city = $("#city").val();
+
+        if(street !== "" && house_nr !== ""  && zipcode !== "" && city !== ""){
+            $("#checkout_form").submit();
+        }else{
+            $(".form-error").css({"display" : "block"});
+        }
+
     });
 </script>
 </body>

@@ -11,9 +11,9 @@
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="inner">
-                        <h2><strong>Bestelling succesvol.</strong></h2>
+                        <h2><strong><?= $status[0]; ?></strong></h2>
                         <p>
-                            Bedankt voor uw bestelling
+                            <?= $status[1]; ?>
                         </p>
                     </div>
                 </div>
