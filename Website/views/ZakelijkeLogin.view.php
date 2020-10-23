@@ -45,10 +45,9 @@
         </div>
 
         <div class="card-body">
-            <h5 class="card-title">Login bij Mijn Flevosap</h5>
+            <h2>Login bij Mijn Flevosap</h2>
             <form action="/Zakelijkelogin" method="post" onsubmit="inputCheckLogin()">
-              
-                  
+                <p><?php if(isset($_SESSION['login_incorrect'])){echo $_SESSION['login_incorrect']; unset($_SESSION['login_incorrect']);}  ?></p>
                     <div class="form-group">
                         <label>Gebruikersnaam</label>
                         <input type="text" name="username" class="form-control form-control-sm"
@@ -64,13 +63,10 @@
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-primary" value="Login">
                         </div>
-<<<<<<< HEAD
-                        <p>Heeft u geen account? <a href='/register'>Registreer dan nu</a></p>
               
-=======
-                        <p>Heeft u geen account? <a href='/zakelijkeregister'>Registreer dan nu</a></p>
+                        <p>Heeft u geen account? <a href='/ZakelijkeRegister'>Registreer dan nu</a></p>
                     </div>
->>>>>>> 0af2972c8925fca16abe3aec20a13d9dcafd85be
+
                 </div>
             </form>
         </div>

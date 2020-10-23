@@ -12,6 +12,7 @@ class RegisterController
             if($_POST["wachtwoord"] == $_POST["bevestig_wachtwoord"]){
                 $user =  new UserModel();
                 $user->setUserName(trim($_POST["gebruikersnaam"]));
+                $user->setType(1);
                 $user->setPassword(trim($_POST["wachtwoord"]));
                 if($user->checkExistingUsername($user->getUserName()) != null){
                     if($user->store($user)){

@@ -22,6 +22,7 @@ class UserEditorController
             $user = new UserModel();
             $user->setId((int)trim($_POST["id"]));
             $user->setUserName(trim($_POST["gebruikersnaam"]));
+            $user->setType((int)$_POST["type"]);
             $user->setPassword(trim($_POST["wachtwoord"]));
             if ($user->updateUser($user)) {
                 header('location: /users');

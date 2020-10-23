@@ -122,10 +122,15 @@ class ProductModel extends BaseModel
         if ($stmt = $this->pdo->prepare($query)) :
             $stmt->bindValue(':id', $product->getId(), PDO::PARAM_INT);
             $stmt->bindValue(':title', $product->getTitle());
+            if($product->getPicture() != null){
+                $stmt->bindValue(':picture',$product->getPicture() );
+            }
             $stmt->bindValue(':productCode', $product->getProductCode());
             $stmt->bindValue(':productOmschrijving', $product->getProductOmschrijving());
             $stmt->bindValue(':prijs', $product->getPrijs());
             $stmt->bindValue(':hoeveelheid', $product->getHoeveelheid());
+
+
             return $stmt->execute();
         endif;
         return false;
@@ -257,6 +262,24 @@ class ProductModel extends BaseModel
     public function getUpdatedAt()
     {
         return $this->updatedAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     * @return ProductModel
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+        return $this;
     }
 
     /**

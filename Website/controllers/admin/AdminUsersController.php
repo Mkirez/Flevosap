@@ -27,6 +27,7 @@ class AdminUsersController
         if (!empty($_POST["gebruikersnaam"]) && !empty($_POST["wachtwoord"])) {
             $user = new UserModel();
             $user->setUserName(trim($_POST["gebruikersnaam"]));
+            $user->setType((int)$_POST["type"]);
             $user->setPassword(trim($_POST["wachtwoord"]));
             if ($user->checkExistingUsername($user->getUserName()) != null) {
                 if ($user->store($user)) {

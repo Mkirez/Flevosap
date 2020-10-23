@@ -7,12 +7,13 @@ class ZakelijkeRegisterController
         require 'views/zakelijkeRegister.view.php';
     }
 
-    public function register(){
+    public function ZakelijkeRegister(){
         if(!empty($_POST["gebruikersnaam"]) && !empty($_POST["wachtwoord"]) && !empty($_POST["bevestig_wachtwoord"])){
             if($_POST["wachtwoord"] == $_POST["bevestig_wachtwoord"]){
                 $user =  new UserModel();
                 $user->setUserName(trim($_POST["gebruikersnaam"]));
                 $user->setPassword(trim($_POST["wachtwoord"]));
+                $user->setType(2);
                 if($user->checkExistingUsername($user->getUserName()) != null){
                     if($user->store($user)){
                         header('location: /Zakelijkelogin');

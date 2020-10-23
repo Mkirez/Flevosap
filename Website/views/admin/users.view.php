@@ -19,6 +19,9 @@
                 <th style="white-space: nowrap; height: 50px; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     Gebruikers
                 </th>
+                <th style="white-space: nowrap; height: 50px; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
+                    Type
+                </th>
                 <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     Created at
                 </th>
@@ -36,6 +39,13 @@
                 <tr id="user_<?= $userInfo->getId(); ?>">
                     <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                         <?= $userInfo->getUsername(); ?>
+                    </td>
+                    <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
+                        <?php if($userInfo->getType() == 1){ ?>
+                            Gebruiker
+                        <?php }else{ ?>
+                            Zakelijk
+                        <?php } ?>
                     </td>
                     <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                         <?= date("d-m-Y",strtotime($userInfo->getCreatedAt())); ?>

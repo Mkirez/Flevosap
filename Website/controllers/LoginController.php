@@ -19,40 +19,15 @@ class LoginController
         exit;
     }
 
-    
-    public function login(){
-        // POST LOGIN
-        $user =  new UserModel();
-        $user->findByEmail($_POST['username']);
-        if (password_verify($_POST['password'],$user->getPassword())){
-            $_SESSION['loggedIn'] = true;
-            $_SESSION['userId'] = $user->getId();
-            header("location: /");
-        } else {
-            $_SESSION['login_incorrect'] = "Password or username not correct";
-            header('location: /login');
-            require 'views/login.view.php';
-        }
-    }
-
     Public function login3(){
-
         $user =  new UserModel();
-       
-            
-            if($user->findByName($_POST['username'])){
-                 
-
-                 //check het wachtwoord
-                 $wachtwoord=$user->getPassword();
+            if($user->findByName($_POST['username'],1)){
                 // echo $wachtwoord;exit;
                  if(password_verify($_POST['password'],$user->getPassword())){
                     //Alles is OK! Zowel het wachtwoord als de inlognaam
                     $_SESSION['loggedIn'] = true;
                     $_SESSION['userId'] = $user->getId();
                     header("location: /");
-
-
                  }else {
                     //De inlognaam is juis maar het wachtwoord is niet ok
                     $_SESSION['login_incorrect'] = "Password or username not correct";
@@ -63,6 +38,6 @@ class LoginController
                 //De gebruikersnaam niet OK
                 $_SESSION['login_incorrect'] = "Password or username not correct";
                 header('location: /login');
-            } 
+            }
     }
 }

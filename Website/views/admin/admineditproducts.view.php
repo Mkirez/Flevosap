@@ -11,7 +11,7 @@
 </section>
 <div class="container">
     <div class="wrapper">
-        <form action="/admineditproducts" method="POST">
+        <form action="/admineditproducts" method="POST" enctype="multipart/form-data">
             <div class="hide">
                 <input class="hidden" type="hidden" name="id"
                        id="id" value="<?= $product->getId(); ?>">
@@ -34,6 +34,12 @@
                 <br>
                 <textarea rows="12" style="width: 100%;" type="text" name="productOmschrijving"
                           id="productOmschrijving"><?= $product->getProductOmschrijving(); ?></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="productImage">Product Image:</label>
+                <br>
+                <input name="productImage" type="file" class="inputFile" />
             </div>
 
             <div class="form-group">

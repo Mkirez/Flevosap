@@ -5,7 +5,7 @@
 
 class UserModel extends BaseModel
 {
-    private int $id;
+    private int $id, $type;
     private string $username, $password;
     private $createdAt, $updatedAt;
 
@@ -42,6 +42,7 @@ class UserModel extends BaseModel
                 $this->id = $data['id'];
                 $this->username = $data['gebruikersnaam'];
                 $this->password = $data['wachtwoord'];
+                $this->type = $data['type'];
                 $this->createdAt = $data['created_at'];
                 $this->updatedAt = $data['updated_at'];
                 return $this;
@@ -59,55 +60,53 @@ class UserModel extends BaseModel
         endif;
     }
 
-    public function find($id)
+    public function find($id, $type)
     {
-        $query = "SELECT * FROM gebruikers WHERE id = :id";
-
+        $query = "SELECT * FROM gebruikers WHERE id = :id and `type`=:type";
         if ($stmt = $this->pdo->prepare($query)) :
             $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindParam(':type', $type, PDO::PARAM_INT);
             $stmt->execute();
             $data = $stmt->fetch();
             if($data !== false) :
                 $this->id = $data['id'];
                 $this->username = $data['gebruikersnaam'];
                 $this->password = $data['wachtwoord'];
+                $this->type = $data['type'];
                 $this->createdAt = $data['created_at'];
                 $this->updatedAt = $data['updated_at'];
             endif;
         endif;
     }
 
-     public function findByName($username)
+     public function findByName($username,$type)
     {
-        $query = "SELECT * FROM gebruikers WHERE gebruikersnaam = '$username'";
-
+        $query = "SELECT * FROM gebruikers WHERE gebruikersnaam = :username and `type`=:type";
         if ($stmt = $this->pdo->prepare($query)) {
+            $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+            $stmt->bindParam(':type', $type, PDO::PARAM_STR);
            $stmt->bindParam(':username', $username, PDO::PARAM_INT);
             $stmt->execute();
             $data = $stmt->fetch();
             if($data !== false) :
                 $this->id = $data['id'];
                 $this->username = $data['gebruikersnaam'];
-               //$this->username='test';
                 $this->password = $data['wachtwoord'];
                 $this->createdAt = $data['created_at'];
                 $this->updatedAt = $data['updated_at'];
-
-               //echo $this->username;
-               // exit;
                 return 1;
             endif;
             } else{
                 return 0;
-            };
+            }
     }
-
 
     public function store(UserModel $user)
     {
-        $query = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES (:username, :password)";
+        $query = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord, `type`) VALUES (:username, :password, :type)";
         if ($stmt = $this->pdo->prepare($query)) :
             $stmt->bindValue(':username', $user->getUserName());
+            $stmt->bindValue(':type', $user->getType());
             $stmt->bindValue(':password', password_hash($user->getPassword(),PASSWORD_DEFAULT));
             return $stmt->execute();
         endif;
@@ -165,6 +164,7 @@ class UserModel extends BaseModel
         $this->setId($data['id']);
         $this->setUsername($data['gebruikersnaam']);
         $this->setPassword($data['wachtwoord']);
+        $this->setType($data['type']);
         $this->setCreatedAt($data['created_at']);
         $this->setUpdatedAt($data['updated_at']);
     }
@@ -183,6 +183,24 @@ class UserModel extends BaseModel
     public function setId(int $id): void
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return int
+     */
+    public function getType(): int
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param int $type
+     * @return UserModel
+     */
+    public function setType(int $type): UserModel
+    {
+        $this->type = $type;
+        return $this;
     }
 
     /**

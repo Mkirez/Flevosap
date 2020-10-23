@@ -34,7 +34,12 @@
                 <?php foreach ($orders as $order) { ?>
                     <tr id="user_<?= $order->getId(); ?>">
                         <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                            <?= ((new UserModel())->fetchById($order->getUserId()))->getUserName(); ?>
+                            <?= ((new UserModel())->fetchById($order->getUserId()))->getUserName(); ?> -
+                            <?php if(((new UserModel())->fetchById($order->getUserId()))->getType() == 1){ ?>
+                                Gebruiker
+                            <?php }else{ ?>
+                                Zakelijk
+                            <?php } ?>
                         </td>
                         <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                             <?= $order->getCity(); ?>

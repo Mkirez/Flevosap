@@ -1,30 +1,30 @@
 <!doctype html>
 <html lang="en">
-<?php $title = "Register" ?>
+<?php $title = "ZakelijkeRegister  " ?>
 <?php include "includes/head.view.php" ?>
 <body>
 <?php include "includes/nav.view.php" ?>
 
 <div class="main-content">
-    <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" href="/register">Particulier</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/zakelijkeregister">Zakelijk</a>
-            </li>
-        </ul>
-    </div>
-    <section class="body">
-        <div class="col-md-6">
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link " href="/register">Particulier</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/ZakelijkeRegister">Zakelijk</a>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
             <div class="wrapper">
-                <h2>Registreren</h2>
+                <h2> zakelijke Registreren</h2>
                 <p>Vul a.u.b. dit formulier in om u te registreren.</p>
                 <div class="error" style="color: red; font-size: 22px;">
                     <?= isset($_SESSION["register_incorrect"]) ? $_SESSION["register_incorrect"] : ''; ?>
                 </div>
-                <form action="/register" method="post">
+                <form action="/ZakelijkeRegister" method="post" >
                     <div class="form-group">
                         <label>Gebruikersnaam</label>
                         <input type="text" name="gebruikersnaam" class="form-control form-control-sm"
@@ -45,8 +45,12 @@
                     <p>Heeft u al een account? <a href="/Zakelijkelogin">Log dan hier in</a>.</p>
                 </form>
             </div>
-    </section>
+        </div>
+    </div>
 </div>
+
+
+
 <?php include "includes/footer.view.php" ?>
 </body>
 </html>

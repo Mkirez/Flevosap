@@ -108,14 +108,23 @@ class ProductModel extends BaseModel
 
     public function updateProduct(ProductModel $product)
     {
-        $query = "UPDATE products SET 
+
+        $string = "";
+        if($product->getPicture() != null){
+            $string = "picture = :picture,";
+        }
+        $query = "UPDATE Products SET 
                     title = :title, 
                     productCode = :productCode, 
                     productOmschrijving = :productOmschrijving,
-                    prijs = :prijs,
-                    hoeveelheid = :hoeveelheid
+                    prijs = :prijs,".$string.
+                    "hoeveelheid = :hoeveelheid
                     WHERE id = :id";
+
         if ($stmt = $this->pdo->prepare($query)) :
+            if($product->getPicture() != null){
+                $stmt->bindValue(':picture', $product->getPicture());
+            }
             $stmt->bindValue(':id', $product->getId(), PDO::PARAM_INT);
             $stmt->bindValue(':title', $product->getTitle());
             $stmt->bindValue(':productCode', $product->getProductCode());
@@ -129,10 +138,11 @@ class ProductModel extends BaseModel
 
     public function store(ProductModel $product)
     {
-        $query = "INSERT INTO Products (title, productCode, productOmschrijving, prijs, hoeveelheid) VALUES (:title, :productCode, :productOmschrijving, :prijs, :hoeveelheid)";
+        $query = "INSERT INTO Products (title, productCode, productOmschrijving, prijs, picture,hoeveelheid) VALUES (:title, :productCode, :productOmschrijving, :prijs, :picture, :hoeveelheid)";
         if ($stmt = $this->pdo->prepare($query)) :
             $stmt->bindValue(':title', $product->getTitle());
             $stmt->bindValue(':productCode', $product->getProductCode());
+            $stmt->bindValue(':picture', $product->getPicture());
             $stmt->bindValue(':productOmschrijving', $product->getProductOmschrijving());
             $stmt->bindValue(':prijs', $product->getPrijs());
             $stmt->bindValue(':hoeveelheid', $product->getHoeveelheid());
@@ -197,6 +207,24 @@ class ProductModel extends BaseModel
     public function setProductCode(string $productCode): void
     {
         $this->productCode = $productCode;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPicture()
+    {
+        return $this->picture;
+    }
+
+    /**
+     * @param mixed $picture
+     * @return ProductModel
+     */
+    public function setPicture($picture)
+    {
+        $this->picture = $picture;
+        return $this;
     }
 
     /**

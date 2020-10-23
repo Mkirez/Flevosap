@@ -26,6 +26,13 @@
                            value="<?= $user->getUsername(); ?>">
                 </div>
                 <div class="form-group">
+                    <label>Type</label>
+                    <select name="type" id="type">
+                        <option <?php if($user->getType() == 1){ ?>selected<?php } ?> value="1">Gebruiker</option>
+                        <option <?php if($user->getType() == 2){ ?>selected<?php } ?> value="2">Zakelijk</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="wachtwoord">Wachtwoord:</label>
                     <br>
                     <input class="form-control-sm" type="text" name="wachtwoord"

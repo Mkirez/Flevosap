@@ -15,7 +15,7 @@
 <div class="container">
     <div id="weergaveProducts" class="form-group">
         <div class="wrapper">
-            <form action="/products" method="post" class="card-body border">
+            <form action="/products" method="post" class="card-body border" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Productnaam</label>
                     <input type="text" name="title" class="form-control form-control-sm"
@@ -28,6 +28,11 @@
                 <div class="form-group">
                     <label>Productomschrijving</label>
                     <input type="text" name="productOmschrijving" class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Product Image:</label>
+                    <br>
+                    <input name="productImage" type="file" class="inputFile" />
                 </div>
                 <div class="form-group">
                     <label>Prijs</label>

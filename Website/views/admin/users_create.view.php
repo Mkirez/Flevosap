@@ -25,6 +25,13 @@
                     <input type="password" name="wachtwoord" class="form-control form-control-sm">
                 </div>
                 <div class="form-group">
+                    <label>Type</label>
+                    <select name="type" id="type">
+                        <option value="1">Gebruiker</option>
+                        <option value="2">Zakelijk</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <input type="submit" class="btn btn-primary" value="Submit">
                     <input type="reset" class="btn btn-default" value="Reset">
                 </div>
