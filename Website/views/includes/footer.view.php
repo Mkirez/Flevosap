@@ -20,7 +20,7 @@
                 <div class="col-md-4 footer-link">
                     <h4>Horeca</h4>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/zakelijkeregister">Klant worden</a>
+                        <a class="nav-link active" href="/ZakelijkeRegister">Klant worden</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/Productpagezakelijk">Bestellen via Flevosap.nl </a>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-4 footer-link">
                     <h4>Volgs ons op</h4>
-                    
+
                     <li class="nav-item footer-link">
                         <a class="nav-link" href="https://www.linkedin.com/company/vermeulen-food-group/"><i class="fa fa-instagram"></i></a>
                     </li>
