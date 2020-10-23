@@ -37,6 +37,10 @@ $router->define([
             'controller' => 'CheckoutController',
             'method' => 'index'
         ],
+        '/checkout/status' => [
+            'controller' => 'CheckoutController',
+            'method' => 'status'
+        ],
         '/shop' => [
             'controller' => 'ProductpageController',
             'method' => 'index'
@@ -92,6 +96,10 @@ $router->define([
         '/contact' => [
             'controller' => 'ContactController',
             'method' => 'contact'
+        ],
+        '/checkout' => [
+            'controller' => 'CheckoutController',
+            'method' => 'CheckOut'
         ],
         '/register' => [
             'controller' => 'RegisterController',
