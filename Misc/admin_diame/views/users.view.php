@@ -85,20 +85,10 @@
             var confirmation = confirm('Weet u zeker dat u gebruiker: ' + user_name + ' wilt modificeren?');
 
             if (confirmation == true) {
-                $.ajax({
-                    url: '/users?id=' + user_id,
-                    type: 'UPDATE',
-                    success: function (result) {
-                        // Do something with the result
-                        if (result === "1"){
-                            $("#UserContent").find("#user_" + user_id).update();
-                        }
-                    }
-                });
+                window.location.href = '/admineditusers?id=' + user_id
             }
         });
     </script>
-
 <section class="body">
     <div class="col-md-6">
         <div class="wrapper">
