@@ -23,8 +23,8 @@ class UserModel extends BaseModel
             $data = $stmt->fetch();
             if($data !== false) :
                 $this->id = $data['id'];
-                $this->username = $data['gebruikersnaam'];
-                $this->password = $data['wachtwoord'];
+                $this->username = $data['username'];
+                $this->password = $data['password'];
                 $this->createdAt = $data['created_at'];
                 $this->updatedAt = $data['updated_at'];
             endif;
@@ -51,8 +51,8 @@ class UserModel extends BaseModel
             $data = $stmt->fetch();
             if($data !== false) :
                 $this->id = $data['id'];
-                $this->username = $data['gebruikersnaam'];
-                $this->password = $data['wachtwoord'];
+                $this->username = $data['username'];
+                $this->password = $data['password'];
                 $this->createdAt = $data['created_at'];
                 $this->updatedAt = $data['updated_at'];
             endif;

@@ -7,7 +7,7 @@ class AdminProductController
     {
         $model = new ProductModel();
         $products = $model->all();
-        require 'views/admin/products.view.php';
+        require 'views/products.view.php';
     }
 
     public function delete()

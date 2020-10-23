@@ -5,6 +5,6 @@ class DashboardController
 {
     public function index()
     {
-        require 'views/admin/Dashboard.view.php';
+        require 'views/Dashboard.view.php';
     }
 }

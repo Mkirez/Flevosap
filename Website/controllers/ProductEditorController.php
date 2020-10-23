@@ -6,7 +6,7 @@ class ProductEditorController
     {
         $model = new ProductModel();
         $products = $model->all();
-        require 'views/admin/admineditproducts.view.php';
+        require 'views/admineditproducts.view.php';
     }
 
     public function editProduct()
