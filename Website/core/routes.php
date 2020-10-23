@@ -10,14 +10,14 @@ $router->define([
             'method' => 'index'
         ],
         '/contact' => [
-            'controller' => 'ContactController',
-            'method' => 'index'
+            'controller' => 'MiscController',
+            'method' => 'contact'
         ],
-        '/login' => [ #Done
+        '/login' => [
             'controller' => 'LoginController',
             'method' => 'index'
         ],
-        '/register' => [ #Done
+        '/register' => [
             'controller' => 'RegisterController',
             'method' => 'index'
         ],
@@ -57,10 +57,6 @@ $router->define([
             'controller' => 'LogoutController',
             'method' => 'logout'
         ],
-        '/Productpagezakelijk' => [
-            'controller' => 'ppzakelijkcontroller',
-            'method' => 'index'
-        ],
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
             'method' => 'ZakelijkeloginGet'
@@ -74,7 +70,7 @@ $router->define([
             'method' => 'appels'
         ],
         '/ZakelijkeRegister' => [
-            'controller' =>'ZakelijkeRegisterController',
+            'controller' => 'ZakelijkeRegisterController',
             'method' => 'index'
         ],
         '/zakelijkeregister' => [
@@ -82,16 +78,16 @@ $router->define([
             'method' => 'index'
         ],
         '/Faq' => [
-            'controller' => 'VeelgesteldeVragenContoller',
-            'method' => 'index'
+            'controller' => 'MiscController',
+            'method' => 'veelgesteldevragen'
         ],
         '/nieuwsbrief' => [
-            'controller' => 'NieuwsbriefController',
-            'method' => 'index'
+            'controller' => 'MiscController',
+            'method' => 'nieuwsbrief'
         ],
         '/onzepartners' => [
-            'controller' => 'OnzepartnersController',
-            'method' => 'index'
+            'controller' => 'MiscController',
+            'method' => 'onzepartner'
         ],
         '/profile' => [
             'controller' => 'ProfileController',
@@ -152,8 +148,12 @@ $router->define([
             'method' => 'update_product'
         ],
         '/contact' => [
-            'controller' => 'ContactController',
-            'method' => 'contact'
+            'controller' => 'MiscController',
+            'method' => 'contact_send'
+        ],
+        '/nieuwsbrief' => [
+            'controller' => 'MiscController',
+            'method' => 'nieuwsbrief_send'
         ],
         '/checkout' => [
             'controller' => 'CheckoutController',
@@ -164,7 +164,7 @@ $router->define([
             'method' => 'register'
         ],
         '/ZakelijkeRegister' => [
-            'controller' =>'ZakelijkeRegisterController',
+            'controller' => 'ZakelijkeRegisterController',
             'method' => 'ZakelijkeRegister'
         ],
         '/zakelijkeregister' => [

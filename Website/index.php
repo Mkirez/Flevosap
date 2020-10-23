@@ -31,12 +31,9 @@ require 'models/OrderRuleModel.php';
  */
 
 require 'controllers/HomeController.php';
+require 'controllers/MiscController.php';
 require 'controllers/ProfileController.php';
 require 'controllers/AboutController.php';
-require 'controllers/VeelgesteldeVragenContoller.php';
-require 'controllers/OnzepartnersController.php';
-require 'controllers/NieuwsbriefController.php';
-require 'controllers/ContactController.php';
 require 'controllers/RegisterController.php';
 require 'controllers/LoginController.php';
 require 'controllers/CartController.php';
