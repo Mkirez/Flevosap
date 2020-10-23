@@ -78,6 +78,19 @@ $router->define([
             'controller' => 'ZakelijkeRegisterController',
             'method' => 'index'
         ],
+        '/Faq' => [
+            'controller' => 'VeelgesteldeVragenContoller',
+            'method' => 'index'
+        ],
+        '/nieuwsbrief' => [
+            'controller' => 'NieuwsbriefController',
+            'method' => 'index'
+        ],
+        '/onzepartners' => [
+            'controller' => 'OnzepartnersController',
+            'method' => 'index'
+        ],
+
 
 
     ],
@@ -106,6 +119,11 @@ $router->define([
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
             'method' => 'zakelijkelogin'
+        ],
+        '/nieuwsbrief' => [
+            'controller' => 'NieuwsbriefController',
+            'method' => 'Sendemail'
+        ]
+    ],
 
-    ]
 ]);

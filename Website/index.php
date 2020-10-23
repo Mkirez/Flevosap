@@ -30,6 +30,8 @@ require 'models/ppzakelijkmodel.php';
  */
 require 'controllers/HomeController.php';
 require 'controllers/AboutController.php';
+require 'controllers/VeelgesteldeVragenContoller.php';
+require 'controllers/NieuwsbriefController.php';
 require 'controllers/ContactController.php';
 require 'controllers/RegisterController.php';
 require 'controllers/LoginController.php';
@@ -40,6 +42,7 @@ require 'controllers/ProductpageController.php';
 require 'controllers/ppzakelijkcontroller.php';
 require 'controllers/ZakelijkeLoginController.php';
 require 'controllers/ZakelijkeRegisterController.php';
+require 'controllers/OnzepartnersController.php';
 require 'core/Router.php';
 
 

@@ -8,34 +8,34 @@
                         <a class="nav-link active" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Boomgaard</a>
+                        <a class="nav-link" href="/about">over ons</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Veelgestelde vragen</a>
+                        <a class="nav-link" href="/Faq">Veelgestelde vragen</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="/contact">Contact</a>
                     </li>
                 </div>
                 <div class="col-md-3 footer-link">
                     <h4>Horeca</h4>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Klant worden</a>
+                        <a class="nav-link active" href="/zakelijkeregister">Klant worden</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Bestellen via Flevosap.nl </a>
+                        <a class="nav-link" href="/Productpagezakelijk">Bestellen via Flevosap.nl </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Onze Partners</a>
+                        <a class="nav-link" href="/onzepartners">Onze Partners</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nieuwsbrief aanvragen</a>
+                        <a class="nav-link" href="/nieuwsbrief">Nieuwsbrief aanvragen</a>
                     </li>
                 </div>
                 <div class="col-md-3 footer-link">
                     <h4>Contact</h4>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/">Contact</a>
+                        <a class="nav-link active" href="/contact">Contact</a>
                     </li>
                 </div>
                 <div class="col-md-3 footer-link">
