@@ -10,6 +10,27 @@
 </head>
 <body>
 <?php include "includes/nav.view.php" ?>
+
+
+
+
+<script>
+    function inputCheckLogin(){
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("password").value;
+        var empty = ""
+
+        if(name == empty || password == empty){
+            alert("Vul een gebruikersnaam of wachtwoord in");
+            event.preventDefault();
+        }else{
+            return true;
+        }
+    }
+</script>
+
+
+
 <div class="main-content">
     <div class="card text-center">
         <div class="card-header">
@@ -22,18 +43,20 @@
                 </li>
             </ul>
         </div>
+
         <div class="card-body">
             <h5 class="card-title">Login bij Mijn Flevosap</h5>
-            <form action="/Zakelijkelogin" method="post">
-                <div class="error" style="color: #ff0000; font-size: 22px;">
-                    <?= isset($_SESSION["login_incorrect"]) ? $_SESSION["login_incorrect"] : ''; ?>
-                    <div class="form-group <?= isset($_SESSION["login_incorrect"]) ? 'error' : ''; ?>">
+            <form action="/Zakelijkelogin" method="post" onsubmit="inputCheckLogin()">
+              
+                  
+                    <div class="form-group">
                         <label>Gebruikersnaam</label>
-                        <input type="text" name="username" class="form-control form-control-sm" value="<?= isset($_POST["username"]) ? $_POST["username"] : ""?>">
+                        <input type="text" name="username" class="form-control form-control-sm"
+                               value="<?= isset($_POST["username"]) ? $_POST["username"] : "" ?>" id="name">
                     </div>
                     <div class="form-group">
                         <label>Wachtwoord</label>
-                        <input type="password" name="password" class="form-control form-control-sm">
+                        <input type="password" name="password" class="form-control form-control-sm" id="password">
                     </div>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -42,7 +65,7 @@
                             <input type="submit" name="submit" class="btn btn-primary" value="Login">
                         </div>
                         <p>Heeft u geen account? <a href='/register'>Registreer dan nu</a></p>
-                    </div>
+              
                 </div>
             </form>
         </div>

@@ -60,6 +60,35 @@ class UserModel extends BaseModel
         endif;
     }
 
+
+
+
+     public function findByName($username)
+    {
+        $query = "SELECT * FROM gebruikers WHERE gebruikersnaam = '$username'";
+
+        if ($stmt = $this->pdo->prepare($query)) {
+           $stmt->bindParam(':username', $username, PDO::PARAM_INT);
+            $stmt->execute();
+            $data = $stmt->fetch();
+            if($data !== false) :
+                $this->id = $data['id'];
+                $this->username = $data['gebruikersnaam'];
+               //$this->username='test';
+                $this->password = $data['wachtwoord'];
+                $this->createdAt = $data['created_at'];
+                $this->updatedAt = $data['updated_at'];
+
+               //echo $this->username;
+               // exit;
+                return 1;
+            endif;
+            } else{
+                return 0;
+            };
+    }
+
+
     public function store(UserModel $user)
     {
         $query = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES (:gebruikersnaam, :wachtwoord)";

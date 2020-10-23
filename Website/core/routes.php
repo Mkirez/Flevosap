@@ -60,7 +60,7 @@ $router->define([
         ],
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
-            'method' => 'index'
+            'method' => 'ZakelijkeloginGet'
         ],
         '/test' => [
             'controller' => 'ProductpageController',
@@ -74,7 +74,10 @@ $router->define([
             'controller' => 'ProductpageController',
             'method' => 'appels'
         ],
-
+        '/ZakelijkeRegister' => [
+            'controller' =>'ZakelijkeRegisterController',
+            'method' => 'index'
+        ],
 
 
     ],
@@ -82,7 +85,7 @@ $router->define([
     'POST' => [
         '/login' => [
             'controller' => 'LoginController',
-            'method' => 'login'
+            'method' => 'login3'
         ],
         '/cart/update' => [
             'controller' => 'CartController',
@@ -96,5 +99,15 @@ $router->define([
             'controller' => 'RegisterController',
             'method' => 'register'
         ],
+        
+        '/Zakelijkelogin' => [
+            'controller' => 'ZakelijkeLoginController',
+            'method' => 'Zakelijkelogin'
+        ],
+        '/ZakelijkeRegister' => [
+            'controller' =>'ZakelijkeRegisterController',
+            'method' => 'ZakelijkeRegister'
+        ],
+
     ]
 ]);
