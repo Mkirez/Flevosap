@@ -76,7 +76,7 @@ class UserModel extends BaseModel
                     wachtwoord = :wachtwoord 
                     WHERE id = :id";
         if ($stmt = $this->pdo->prepare($query)) :
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindValue(':id', $user->getId(), PDO::PARAM_INT);
             $stmt->bindValue(':gebruikersnaam', $user->getUserName());
             $stmt->bindValue(':wachtwoord', password_hash($user->getPassword(),PASSWORD_DEFAULT));
             return $stmt->execute();

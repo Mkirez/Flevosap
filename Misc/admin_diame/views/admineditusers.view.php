@@ -8,20 +8,18 @@
         <div class="wrapper">
             <?php foreach ($users as $userInfo) {
             } ?>
-            <h2>Edit Contact #<?= $userInfo->getId(); ?></h2>
-            <form action="/admineditusers" method="post">
+            <form action="/admineditusers" method="POST">
+                <h2>Edit Contact #<?= $userInfo->getId(); ?></h2>
                 <div class="form-group">
-                    <label for="name">Gebruikersnaam:</label>
+                    <label for="gebruikersnaam">Gebruikersnaam:</label>
                     <br>
                     <input class="form-control-sm" type="text" name="gebruikersnaam"
-                           value="<?= isset($_POST["gebruikersnaam"]) ? $_POST["gebruikersnaam"] : $userInfo->getUsername() ?>"
                            id="gebruikersnaam">
                 </div>
                 <div class="form-group">
-                    <label for="password">Wachtwoord:</label>
+                    <label for="wachtwoord">Wachtwoord:</label>
                     <br>
                     <input class="form-control-sm" type="text" name="wachtwoord"
-                           value="<?= isset($_POST["wachtwoord"]) ? $_POST["wachtwoord"] : $userInfo->getPassword() ?>"
                            id="wachtwoord">
                 </div>
                 <div class="form-group">

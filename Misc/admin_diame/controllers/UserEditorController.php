@@ -11,8 +11,10 @@ class UserEditorController
 
     public function editUser()
     {
+
         if (!empty($_POST["gebruikersnaam"]) and !empty($_POST["wachtwoord"])) {
             $user = new UserModel();
+            $user->setId(6);
             $user->setUserName(trim($_POST["gebruikersnaam"]));
             $user->setPassword(trim($_POST["wachtwoord"]));
             if ($user->checkExistingUsername($user->getUserName()) != null) {
