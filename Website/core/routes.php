@@ -1,15 +1,15 @@
 <?php
 $router->define([
     'GET' => [
-        '/' => [ #DONE
+        '/' => [
             'controller' => 'HomeController',
             'method' => 'index'
         ],
-        '/about' => [ #ToDo Check deze pagina
+        '/about' => [
             'controller' => 'AboutController',
             'method' => 'index'
         ],
-        '/contact' => [ #ToDo Check deze pagina
+        '/contact' => [
             'controller' => 'ContactController',
             'method' => 'index'
         ],
@@ -78,8 +78,6 @@ $router->define([
             'controller' => 'ZakelijkeRegisterController',
             'method' => 'index'
         ],
-
-
     ],
 
     'POST' => [
@@ -106,6 +104,6 @@ $router->define([
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
             'method' => 'zakelijkelogin'
-
+        ]
     ]
 ]);
