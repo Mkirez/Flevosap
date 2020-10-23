@@ -3,7 +3,7 @@ class AdminLogoutController
 {
     public function index()
     {
-        require 'views/logout.view.php';
+        require 'views/admin/logout.view.php';
     }
     public function logout()
     {

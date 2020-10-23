@@ -1,31 +1,23 @@
 <?php
 
-
-class AdminUsersController
+class UserEditorController
 {
     public function index()
     {
         $model = new UserModel();
         $users = $model->all();
-        require 'views/users.view.php';
+        require 'views/admin/admineditusers.view.php';
     }
 
-    public function delete()
+    public function editUser()
     {
-        $model = new UserModel();
-        $id=$_GET["id"];
-        $delete = $model->delete($id);
-        echo $delete;
-    }
-
-    public function AddUser()
-    {
-        if (!empty($_POST["gebruikersnaam"]) && !empty($_POST["wachtwoord"])) {
+        if (!empty($_POST["gebruikersnaam"]) and !empty($_POST["wachtwoord"])) {
             $user = new UserModel();
+            $user->setId((int)trim($_POST["id"]));
             $user->setUserName(trim($_POST["gebruikersnaam"]));
             $user->setPassword(trim($_POST["wachtwoord"]));
             if ($user->checkExistingUsername($user->getUserName()) != null) {
-                if ($user->store($user)) {
+                if ($user->updateUser($user)) {
                     header('location: /users');
                     die();
                 } else {
@@ -35,7 +27,7 @@ class AdminUsersController
                 echo "Deze gebruikersnaam bestaat al";
             }
         } else {
-            echo "Niet alle waardes zijn ingevuld";
+            echo "Er ontbreken waardes!";
         }
     }
 }

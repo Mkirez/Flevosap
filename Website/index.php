@@ -44,13 +44,16 @@ require 'controllers/ProductpageController.php';
 require 'controllers/ppzakelijkcontroller.php';
 require 'controllers/ZakelijkeLoginController.php';
 require 'controllers/ZakelijkeRegisterController.php';
+
+#ADMIN
 require 'controllers/DashboardController.php';
-require 'controllers/AdminLoginController.php';
-require 'controllers/AdminLogoutController.php';
-require 'controllers/AdminUsersController.php';
-require 'controllers/AdminProductController.php';
-require 'controllers/UserEditorController.php';
-require 'controllers/ProductEditorController.php';
+require 'controllers/admin/AdminLoginController.php';
+require 'controllers/admin/AdminLogoutController.php';
+require 'controllers/admin/AdminUsersController.php';
+require 'controllers/admin/AdminProductController.php';
+require 'controllers/admin/UserEditorController.php';
+require 'controllers/admin/ProductEditorController.php';
+
 require 'core/Router.php';
 
 
