@@ -136,46 +136,6 @@ $router->define([
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
             'method' => 'zakelijkelogin'
-        ],
-        '/admin' => [
-            'controller' => 'AdminLoginController',
-            'method' => 'login'
-        ],
-        '/users' => [
-            'controller' => 'AdminUsersController',
-            'method' => 'AddUser'
-        ],
-        '/products' => [
-            'controller' => 'AdminProductController',
-            'method' => 'AddProduct'
-        ],
-        '/admineditusers' => [
-            'controller' => 'UserEditorController',
-            'method' => 'editUser'
-        ],
-        '/admineditproducts' => [
-            'controller' => 'ProductEditorController',
-            'method' => 'editProduct'
         ]
-    ],
-    'DELETE' => [
-        '/users' => [
-            'controller' => 'AdminUsersController',
-            'method' => 'delete'
-        ],
-        '/products' => [
-            'controller' => 'AdminProductController',
-            'method' => 'delete'
-        ]
-    ],
-    'UPDATE' => [
-        '/admineditusers' => [
-            'controller' => 'UserEditorController',
-            'method' => 'editUser'
-        ],
-        '/admineditproducts' => [
-            'controller' => 'ProductEditorController',
-            'method' => 'editProduct'
-        ]
-    ],
+    ]
 ]);
