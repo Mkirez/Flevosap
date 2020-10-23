@@ -17,6 +17,7 @@ class ProductpageController
 
         require 'views/Productpage.view.php';
     }
+
     public function peer()
     {
         $model = new ProductModel();
@@ -24,17 +25,6 @@ class ProductpageController
 
         require 'views/Productpage.view.php';
     }
-
-
-    // public function test(){
-
-    //     $model = new ProductModel();
-    //     $products = $model->selectall();
-
-    //     require 'views/Productpage.view.php';
-
-
-    // }
 
     public function product_info(){
 

@@ -4,9 +4,16 @@ class UserEditorController
 {
     public function index()
     {
-        $model = new UserModel();
-        $users = $model->all();
-        require 'views/admin/admineditusers.view.php';
+        if(isset($_GET["id"])){
+            //Get product info
+            $order_id = $_GET["id"];
+            $user = new UserModel();
+            $user = $user->fetchById($order_id);
+            if($user != null){;
+                require 'views/admin/admineditusers.view.php'; return "";
+            }
+        }
+        require 'views/admin/errors/404.view.php';return""; // If user not found, Return 404
     }
 
     public function editUser()
@@ -16,15 +23,11 @@ class UserEditorController
             $user->setId((int)trim($_POST["id"]));
             $user->setUserName(trim($_POST["gebruikersnaam"]));
             $user->setPassword(trim($_POST["wachtwoord"]));
-            if ($user->checkExistingUsername($user->getUserName()) != null) {
-                if ($user->updateUser($user)) {
-                    header('location: /users');
-                    die();
-                } else {
-                    echo "Er is helaas iets misgegaan";
-                }
+            if ($user->updateUser($user)) {
+                header('location: /users');
+                die();
             } else {
-                echo "Deze gebruikersnaam bestaat al";
+                echo "Er is helaas iets misgegaan";
             }
         } else {
             echo "Er ontbreken waardes!";

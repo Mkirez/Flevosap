@@ -18,6 +18,10 @@ class AdminUsersController
         echo $delete;
     }
 
+    public function create(){
+        require 'views/admin/users_create.view.php';
+    }
+
     public function AddUser()
     {
         if (!empty($_POST["gebruikersnaam"]) && !empty($_POST["wachtwoord"])) {

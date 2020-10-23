@@ -13,9 +13,13 @@ class AdminProductController
     public function delete()
     {
         $model = new ProductModel();
-        $id=$_GET["id"];
+        $id = $_GET["id"];
         $delete = $model->delete($id);
         echo $delete;
+    }
+
+    public function create(){
+        require 'views/admin/products_create.view.php';
     }
 
     public function AddProduct()

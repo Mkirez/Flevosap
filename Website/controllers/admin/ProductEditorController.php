@@ -4,9 +4,18 @@ class ProductEditorController
 {
     public function index()
     {
-        $model = new ProductModel();
-        $products = $model->all();
-        require 'views/admin/admineditproducts.view.php';
+        if (isset($_GET["id"])) {
+            //Get product info
+            $product_id = $_GET["id"];
+            $product = new ProductModel();
+            $product = $product->find($product_id);
+            if ($product != null) {
+                require 'views/admin/admineditproducts.view.php';
+                return "";
+            }
+        }
+        require 'views/admin/errors/404.view.php';
+        return ""; // If product not found, Return 404
     }
 
     public function editProduct()

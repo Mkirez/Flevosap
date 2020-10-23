@@ -31,6 +31,24 @@ class UserModel extends BaseModel
         endif;
     }
 
+    public function fetchById(int $id)
+    {
+        $query = "SELECT * FROM gebruikers WHERE id = :id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $data = $stmt->fetch();
+            if($data !== false) {
+                $this->id = $data['id'];
+                $this->username = $data['gebruikersnaam'];
+                $this->password = $data['wachtwoord'];
+                $this->createdAt = $data['created_at'];
+                $this->updatedAt = $data['updated_at'];
+                return $this;
+            }
+        endif;
+    }
+
     public function checkExistingUsername(string $username) : bool
     {
         $query = "SELECT * FROM gebruikers WHERE gebruikersnaam = :username";
@@ -58,9 +76,6 @@ class UserModel extends BaseModel
             endif;
         endif;
     }
-
-
-
 
      public function findByName($username)
     {

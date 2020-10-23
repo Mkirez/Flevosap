@@ -5,12 +5,53 @@
 
 class OrderModel extends BaseModel
 {
-    private int $id, $user_id;
+    private int $id, $user_id,$status;
     private string $street, $house_nr, $zipcode, $city, $createdAt;
 
     public function __construct()
     {
         parent::__construct();
+    }
+
+    public function fetchAll()
+    {
+        $query = 'SELECT * FROM flevo_order';
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $result = array();
+        while($data = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
+            $user = new OrderModel();
+            $user->load($data);
+            $result[]=$user;
+        }
+        return $result;
+    }
+
+    public function fetchById(int $id)
+    {
+        $query = "SELECT * FROM flevo_order WHERE id = :id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->execute();
+            $data = $stmt->fetch();
+            if($data !== false) {
+                return $this->load($data);
+            }
+        endif;
+    }
+
+    private function load($data)
+    {
+        $this->setId($data['id']);
+        $this->setCity($data['city']);
+        $this->setHouseNr($data['house_nr']);
+        $this->setStreet($data['street']);
+        $this->setZipcode($data['zipcode']);
+        $this->setUserId($data['user_id']);
+        $this->setStatus($data['status']);
+        $this->setCreatedAt($data['created_at']);
+        return $this;
     }
 
     public function store(OrderModel $order)
@@ -61,6 +102,24 @@ class OrderModel extends BaseModel
     public function setUserId(int $user_id): OrderModel
     {
         $this->user_id = $user_id;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatus(): int
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param int $status
+     * @return OrderModel
+     */
+    public function setStatus(int $status): OrderModel
+    {
+        $this->status = $status;
         return $this;
     }
 

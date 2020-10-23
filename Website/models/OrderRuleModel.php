@@ -27,6 +27,33 @@ class OrderRuleModel extends BaseModel
         return false;
     }
 
+    public function fetchByOrderId(int $orderId)
+    {
+        $query = "SELECT * FROM order_rule WHERE order_id = :order_id ";
+        $stmt = $this->pdo->prepare($query);
+        $stmt->bindValue(':order_id',$orderId);
+        $stmt->execute();
+        $result = array();
+        $data = $stmt->fetchAll();
+        foreach($data as $item)
+        {
+            $OrderRule = new OrderRuleModel();
+            $OrderRule->load($item);
+            $result[]=$OrderRule;
+        }
+        return $result;
+    }
+
+
+    private function load($data)
+    {
+        $this->setId($data['id']);
+        $this->setPrice($data['price']);
+        $this->setTotal($data['total']);
+        $this->setProductId($data['product_id']);
+        $this->setPrice($data['price']);
+    }
+
     /**
      * @return int
      */

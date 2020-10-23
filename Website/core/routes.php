@@ -60,15 +60,10 @@ $router->define([
         '/Productpagezakelijk' => [
             'controller' => 'ppzakelijkcontroller',
             'method' => 'index'
-
         ],
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
             'method' => 'ZakelijkeloginGet'
-        ],
-        '/test' => [
-            'controller' => 'ProductpageController',
-            'method' => 'test'
         ],
         '/shop/peer' => [
             'controller' => 'ProductpageController',
@@ -102,6 +97,22 @@ $router->define([
             'controller' => 'AdminProductController',
             'method' => 'index'
         ],
+        '/products/create' => [
+            'controller' => 'AdminProductController',
+            'method' => 'create'
+        ],
+        '/users/create' => [
+            'controller' => 'AdminUsersController',
+            'method' => 'create'
+        ],
+        '/orders' => [
+            'controller' => 'AdminOrderController',
+            'method' => 'index'
+        ],
+        '/order' => [
+            'controller' => 'AdminOrderController',
+            'method' => 'show'
+        ],
         '/admineditusers' => [
             'controller' => 'UserEditorController',
             'method' => 'index'
@@ -111,7 +122,6 @@ $router->define([
             'method' => 'index'
         ]
     ],
-
     'POST' => [
         '/login' => [
             'controller' => 'LoginController',

@@ -51,6 +51,7 @@ require 'controllers/DashboardController.php';
 require 'controllers/admin/AdminLoginController.php';
 require 'controllers/admin/AdminLogoutController.php';
 require 'controllers/admin/AdminUsersController.php';
+require 'controllers/admin/AdminOrderController.php';
 require 'controllers/admin/AdminProductController.php';
 require 'controllers/admin/UserEditorController.php';
 require 'controllers/admin/ProductEditorController.php';
