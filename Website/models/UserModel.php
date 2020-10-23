@@ -79,13 +79,22 @@ class UserModel extends BaseModel
         endif;
     }
 
+    public function profile($id)
+    {
+        if ($id != null) {
+            $stmt = $this->pdo->prepare('SELECT * FROM gebruikers WHERE id = ?');
+            $stmt->execute([$id]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $user;
+        }
+    }
+
      public function findByName($username,$type)
     {
-        $query = "SELECT * FROM gebruikers WHERE gebruikersnaam = :username and `type`=:type";
+        $query = "SELECT * FROM gebruikers WHERE gebruikersnaam = :username and `type`=:user_type";
         if ($stmt = $this->pdo->prepare($query)) {
             $stmt->bindParam(':username', $username, PDO::PARAM_STR);
-            $stmt->bindParam(':type', $type, PDO::PARAM_STR);
-           $stmt->bindParam(':username', $username, PDO::PARAM_INT);
+            $stmt->bindParam(':user_type', $type, PDO::PARAM_INT);
             $stmt->execute();
             $data = $stmt->fetch();
             if($data !== false) :

@@ -82,7 +82,6 @@ $router->define([
             'controller' => 'ProfileController',
             'method' => 'index'
         ],
-        
     ],
 
     'POST' => [

@@ -93,6 +93,10 @@ $router->define([
             'controller' => 'OnzepartnersController',
             'method' => 'index'
         ],
+        '/profile' => [
+            'controller' => 'ProfileController',
+            'method' => 'index'
+        ],
         '/admin' => [
             'controller' => 'AdminLoginController',
             'method' => 'index'
@@ -138,6 +142,10 @@ $router->define([
         '/login' => [
             'controller' => 'LoginController',
             'method' => 'login3'
+        ],
+        '/order/update' => [
+            'controller' => 'AdminOrderController',
+            'method' => 'update'
         ],
         '/cart/update' => [
             'controller' => 'CartController',

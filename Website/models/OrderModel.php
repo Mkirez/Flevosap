@@ -41,6 +41,36 @@ class OrderModel extends BaseModel
         endif;
     }
 
+    public function updateOrder(OrderModel $order){
+        $query = "UPDATE flevo_order SET 
+                    status = :status 
+                    WHERE id = :id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindValue(':id', $order->getId(), PDO::PARAM_INT);
+            $stmt->bindValue(':status', $order->getStatus(), PDO::PARAM_INT);
+            return $stmt->execute();
+        endif;
+        return false;
+    }
+
+
+    public function fetchByUserId(int $user_id)
+    {
+        $query = "SELECT * FROM flevo_order WHERE user_id = :user_id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+            $stmt->execute();
+            $result = array();
+            while($data = $stmt->fetch(PDO::FETCH_ASSOC))
+            {
+                $user = new OrderModel();
+                $user->load($data);
+                $result[]=$user;
+            }
+            return $result;
+        endif;
+    }
+
     private function load($data)
     {
         $this->setId($data['id']);

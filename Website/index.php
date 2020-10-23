@@ -31,6 +31,7 @@ require 'models/OrderRuleModel.php';
  */
 
 require 'controllers/HomeController.php';
+require 'controllers/ProfileController.php';
 require 'controllers/AboutController.php';
 require 'controllers/VeelgesteldeVragenContoller.php';
 require 'controllers/OnzepartnersController.php';

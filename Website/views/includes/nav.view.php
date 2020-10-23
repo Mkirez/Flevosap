@@ -21,12 +21,13 @@
                                 <a class="nav-link" href="/shop">Shop</a>
                             </li>
                         <?php } ?>
-
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
-
                         <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"]) { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/profile">Profile</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="/logout">Logout</a>
                             </li>
