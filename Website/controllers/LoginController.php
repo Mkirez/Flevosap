@@ -19,6 +19,7 @@ class LoginController
         exit;
     }
 
+    
     public function login(){
         // POST LOGIN
         $user =  new UserModel();

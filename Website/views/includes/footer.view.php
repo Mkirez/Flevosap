@@ -2,7 +2,7 @@
     <ul class="nav text-center">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-3 footer-link ">
+                <div class="col-md-4 footer-link ">
                     <h4>Flevosap</h4>
                     <li class="nav-item">
                         <a class="nav-link active" href="/">Home</a>
@@ -17,7 +17,7 @@
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                 </div>
-                <div class="col-md-3 footer-link">
+                <div class="col-md-4 footer-link">
                     <h4>Horeca</h4>
                     <li class="nav-item">
                         <a class="nav-link active" href="/zakelijkeregister">Klant worden</a>
@@ -32,13 +32,7 @@
                         <a class="nav-link" href="/nieuwsbrief">Nieuwsbrief aanvragen</a>
                     </li>
                 </div>
-                <div class="col-md-3 footer-link">
-                    <h4>Contact</h4>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/contact">Contact</a>
-                    </li>
-                </div>
-                <div class="col-md-3 footer-link">
+                <div class="col-md-4 footer-link">
                     <h4>Volgs ons op</h4>
                     
                     <li class="nav-item footer-link">
