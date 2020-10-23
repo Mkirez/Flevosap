@@ -22,6 +22,7 @@ class LoginController
     public function login(){
         // POST LOGIN
         $user =  new UserModel();
+
         $user->findByEmail($_POST['username']);
         if (password_verify($_POST['password'],$user->getPassword())){
             $_SESSION['loggedIn'] = true;
