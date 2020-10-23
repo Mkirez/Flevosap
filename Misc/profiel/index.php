@@ -19,25 +19,17 @@ require "core/config.php";
  */
 require 'models/BaseModel.php';
 require 'models/UserModel.php';
-require 'models/ZaklijkuserModel.php';
 require 'models/CartModel.php';
 require 'models/CartProductModel.php';
 require 'models/ProductModel.php';
 require 'models/ProductInfoModel.php';
 require 'models/ppzakelijkmodel.php';
-require 'models/OrderModel.php';
-require 'models/OrderRuleModel.php';
 
 /**
  * Controllers
  */
-
-
-require 'controllers/ZakelijkeRegisterController.php';
 require 'controllers/HomeController.php';
 require 'controllers/AboutController.php';
-require 'controllers/VeelgesteldeVragenContoller.php';
-require 'controllers/NieuwsbriefController.php';
 require 'controllers/ContactController.php';
 require 'controllers/RegisterController.php';
 require 'controllers/LoginController.php';
@@ -48,16 +40,7 @@ require 'controllers/ProductpageController.php';
 require 'controllers/ppzakelijkcontroller.php';
 require 'controllers/ZakelijkeLoginController.php';
 require 'controllers/ZakelijkeRegisterController.php';
-
-#ADMIN
-require 'controllers/DashboardController.php';
-require 'controllers/admin/AdminLoginController.php';
-require 'controllers/admin/AdminLogoutController.php';
-require 'controllers/admin/AdminUsersController.php';
-require 'controllers/admin/AdminProductController.php';
-require 'controllers/admin/UserEditorController.php';
-require 'controllers/admin/ProductEditorController.php';
-
+require 'controllers/ProfileController.php';
 require 'core/Router.php';
 
 

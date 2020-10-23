@@ -11,9 +11,6 @@
 <body>
 <?php include "includes/nav.view.php" ?>
 
-
-
-
 <script>
     function inputCheckLogin(){
         var name = document.getElementById("name").value;
@@ -29,24 +26,22 @@
     }
 </script>
 
-
-
 <div class="main-content">
     <div class="card text-center">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Particulier</a>
+                    <a class="nav-link active" href="/login">Particulier</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/Zakelijkelogin">Zakelijk</a>
+                    <a class="nav-link" href="/Zakelijkelogin">Zakelijk</a>
                 </li>
             </ul>
         </div>
-
         <div class="card-body">
             <h5 class="card-title">Login bij Mijn Flevosap</h5>
-            <form action="/Zakelijkelogin" method="post" onsubmit="inputCheckLogin()">
+
+            <form action="/login" method="post" onsubmit="inputCheckLogin()">
               
                   
                     <div class="form-group">
@@ -64,15 +59,11 @@
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-primary" value="Login">
                         </div>
-<<<<<<< HEAD
                         <p>Heeft u geen account? <a href='/register'>Registreer dan nu</a></p>
               
-=======
-                        <p>Heeft u geen account? <a href='/zakelijkeregister'>Registreer dan nu</a></p>
-                    </div>
->>>>>>> 0af2972c8925fca16abe3aec20a13d9dcafd85be
                 </div>
             </form>
+
         </div>
     </div>
 </div>
