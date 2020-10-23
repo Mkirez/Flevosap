@@ -21,147 +21,103 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">lorem</a>
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Waar komt het groente en fruit van Flevosap vandaan?</a>
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem beatae deserunt enim et eum eveniet fugit hic libero maiores molestiae,
-                    numquam omnis optio, placeat quae quam tempora temporibus tenetur!
+                    Flevosap sappen worden uitsluitend gemaakt van het beste fruit uit eigenbodem.Om precies te zijn Biddinghuizen in Flevoland.
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">lorem</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Hoe kunnen de producten van Flevosap het beste bewaard worden?</a>
                 </h4>
             </div>
             <div id="collapseTen" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium error fugit hic iure perferendis rem repellendus, sequi voluptate? Cumque delectus dolor
-                    illum inventore quaerat quibusdam quidem, reiciendis ullam. Sit, totam.
+                    Onze houdbare producten kunnen het beste bewaard worden in een donkere en koele ruimte. Na opening dienen de producten gekoeld bewaard te worden (max. 7°C).
+                    De Flevosap Vers Geperste Sappen zijn verkrijgbaar in het gekoelde sap-assortiment en dienen altijd gekoeld (max. 7°C) bewaard te worden.
+
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">lorem</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven">Zitten er gluten, lactose of andere allergenen in Flevosap producten?</a>
                 </h4>
             </div>
             <div id="collapseEleven" class="panel-collapse collapse">
                 <div class="panel-body">
-                    All Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, perferendis, quas. Consectetur explicabo ipsa itaque nam nihil, omnis reprehenderit sunt totam
-                    veritatis voluptate? Assumenda eveniet neque repellat sit sunt, tenetur.
+                    Nee. Al onze producten zijn vrij van glutenbevattende granen, ei, pinda, noten, soja en melk (inclusief lactose).
                 </div>
             </div>
         </div>
 
-        <div class="faqHeader">Verkoop</div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">lorem</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Waar zijn de producten van Flevosap verkrijgbaar?</a>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aliquid atque autem commodi, consequuntur dolor dolorum error explicabo
-                    fugiat minus neque nesciunt odit, officia quisquam quod suscipit veritatis vitae voluptatum.
+                    We streven ernaar om onze producten bij zoveel mogelijk verschillende supermarktketens in zoveel mogelijk winkels beschikbaar te stellen.
+                    Om de exacte verkrijgbaarheid van onze producten te weten te komen, adviseren wij u om de websites van de supermarktketens te raadplegen.
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">lorem</a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam consequuntur dolor magnam reprehenderit. Adipisci amet beatae, corporis doloremque iusto nam
-                    praesentium quas qui quis quo, rem repudiandae sint tempore ullam.
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">lorem</a>
-                </h4>
-            </div>
-            <div id="collapseFive" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus cum cumque deserunt, enim eos excepturi illo nihil obcaecati odit quas
-                    quia quisquam, quod repellat velit! Enim obcaecati odit perspiciatis.
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">lorem</a>
-                </h4>
-            </div>
-            <div id="collapseSix" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum magnam obcaecati officia soluta. Ab ex explicabo fuga
-                    odit quisquam unde vitae! Cum deserunt ea illo nihil nulla sunt temporibus, ut?
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">lorem</a>
-                </h4>
-            </div>
-            <div id="collapseEight" class="panel-collapse collapse">
-                <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, in inventore iste maiores natus nesciunt nulla porro praesentium sunt voluptas.
-                    Distinctio dolor dolorem eius harum minima quibusdam quidem totam voluptate.
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">lorem</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">Bevat Flevosap dierlijke gelatine?</a>
                 </h4>
             </div>
             <div id="collapseNine" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur consectetur doloribus dolorum enim eos inventore magni reiciendis, saepe tempora
-                    tempore voluptas? Et illo ipsam iusto, nulla temporibus vitae voluptates.
-                </div>
-            </div>
-        </div>
-
-        <div class="faqHeader">Kopers</div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">lorem</a>
-                </h4>
-            </div>
-            <div id="collapseFour" class="panel-collapse collapse">
-                <div class="panel-body">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi earum expedita libero nihil nobis nulla quibusdam quidem, reprehenderit repudiandae sequi.
-                    Cumque est in iste nam placeat possimus praesentium rem voluptate.
+                    Nee, Flevosap bevat geen dierlijke gelatine. Bij het helder maken van Appelsientje wordt er gebruik gemaakt van ultrafiltratie.
+                    Ultrafiltreren is het filteren (zeven) van het sap door een heel fijn filter/zeef, waardoor de deeltjes achterblijven en er een helder sap ontstaat.
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">lorem</a>
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Wat is een veilige consumptie-eenheid?</a>
                 </h4>
             </div>
-            <div id="collapseSeven" class="panel-collapse collapse">
+            <div id="collapseThree" class="panel-collapse collapse">
                 <div class="panel-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta dignissimos dolores explicabo iure nobis optio quisquam repellendus sapiente ullam voluptas? Ad eos hic inventore.
-                    Asperiores doloribus eveniet maiores sed suscipit?
+                    Ons sap wordt gemaakt van geconcentreerd fruitsap. Daarom bevat het de van nature aanwezige fruitsuikers.
+                    Wij adviseren een glas sap en niet meer dan twee glazen per dag te drinken.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Is versgeperst sap net zo gezond als fruit?</a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Vers sap, geperst sap en sap uit pak zijn allen 100% geperst fruit en bevatten dus dezelfde voedingsstoffen als fruit. De hoeveelheden en verhoudingen verschillen echter wel. Voor een glas (200ml) Flevosap worden gemiddeld drie sinaasappels geperst.
+                    Hierdoor krijg je meer Vitamine C, kalium, foliumzuur en fruitsuikers binnen dan bij het eten van één sinaasappel.
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Past Flevosap in een veganistisch en/of vegetarisch dieet?</a>
+                </h4>
+            </div>
+            <div id="collapseSix" class="panel-collapse collapse">
+                <div class="panel-body">
+                    Er worden geen dierlijke producten verwerkt in Flevosap en dus zijn de producten geschikt voor veganisten en vegetariërs.
                 </div>
             </div>
         </div>

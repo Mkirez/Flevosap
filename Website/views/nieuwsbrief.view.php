@@ -46,10 +46,10 @@
 <script>
     function inputCheckLogin(){
         var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
+        var mail = document.getElementById("mail").value;
         var empty = ""
 
-        if(name == empty || email == empty){
+        if(name == empty || mail == empty){
             alert("Vul een gebruikersnaam of wachtwoord in");
             event.preventDefault();
         }else{
@@ -60,7 +60,7 @@
 
 <div class="container">
     <div class="container max-container">
-        <form action="/nieuwsbrief" method="post">
+        <form action="/nieuwsbrief" method="post" onsubmit="inputCheckLogin()">
             <h2>Abonneer op onze nieuwsbrief</h2>
             <p>Lorem ipsum text about why you should subscribe to our newsletter blabla. Lorem ipsum text about why you should subscribe to our newsletter blabla.</p>
             <div class="container" style="background-color:white">
