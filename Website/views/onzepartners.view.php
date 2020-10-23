@@ -10,7 +10,7 @@
     <div class="container">
         <div class="section-header">
             <h3>Onze Partners</h3>
-            <p>Ontmoet onze tevreden Partners</p>
+            <p>Ontmoet onze tevreden partners</p>
         </div>
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
             <div class="col-lg-3 col-md-4 col-xs-6">

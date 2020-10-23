@@ -82,6 +82,18 @@ $router->define([
             'controller' => 'ZakelijkeRegisterController',
             'method' => 'index'
         ],
+        '/Faq' => [
+            'controller' => 'VeelgesteldeVragenContoller',
+            'method' => 'index'
+        ],
+        '/nieuwsbrief' => [
+            'controller' => 'NieuwsbriefController',
+            'method' => 'index'
+        ],
+        '/onzepartners' => [
+            'controller' => 'OnzepartnersController',
+            'method' => 'index'
+        ],
     ],
 
     'POST' => [
