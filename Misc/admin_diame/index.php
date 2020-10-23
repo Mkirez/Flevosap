@@ -25,12 +25,13 @@ require 'models/ProductInfoModel.php';
 /**
  * Controllers
  */
-require 'controllers/HomeController.php';
+require 'controllers/DashboardController.php';
 require 'controllers/AdminLoginController.php';
 require 'controllers/AdminLogoutController.php';
 require 'controllers/AdminUsersController.php';
 require 'controllers/AdminProductController.php';
-require 'controllers/EditorController.php';
+require 'controllers/UserEditorController.php';
+require 'controllers/ProductEditorController.php';
 
 
 require 'core/Router.php';

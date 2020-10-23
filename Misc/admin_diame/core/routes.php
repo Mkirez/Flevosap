@@ -5,8 +5,8 @@ $router->define([
             'controller' => 'AdminLoginController',
             'method' => 'index'
         ],
-        '/' => [
-            'controller' => 'HomeController',
+        '/dashboard' => [
+            'controller' => 'DashboardController',
             'method' => 'index'
         ],
         '/logout' => [
@@ -19,6 +19,14 @@ $router->define([
         ],
         '/products' => [
             'controller' => 'AdminProductController',
+            'method' => 'index'
+        ],
+        '/admineditusers' => [
+            'controller' => 'UserEditorController',
+            'method' => 'index'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'ProductEditorController',
             'method' => 'index'
         ]
     ],
@@ -39,6 +47,14 @@ $router->define([
             'controller' => 'AdminProductController',
             'method' => 'AddProduct'
         ],
+        '/admineditusers' => [
+            'controller' => 'UserEditorController',
+            'method' => 'editUser'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'ProductEditorController',
+            'method' => 'editProduct'
+        ]
     ],
     'DELETE' => [
         '/users' => [
@@ -52,12 +68,13 @@ $router->define([
     ],
     'UPDATE' => [
         '/admineditusers' => [
-            'controller' => 'EditorController',
-            'method' => 'Update'
+            'controller' => 'UserEditorController',
+            'method' => 'editUser'
         ],
         '/admineditproducts' => [
-            'controller' => 'EditorController',
-            'method' => 'Update'
+            'controller' => 'ProductEditorController',
+            'method' => 'editProduct'
         ]
-    ]
+    ],
+
 ]);

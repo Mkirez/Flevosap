@@ -7,7 +7,7 @@ class AdminUsersController
     {
         $model = new UserModel();
         $users = $model->all();
-        require 'views/users.view.php';;
+        require 'views/users.view.php';
     }
 
     public function delete()

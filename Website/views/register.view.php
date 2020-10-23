@@ -5,6 +5,7 @@
 <body>
 <?php include "includes/nav.view.php" ?>
 
+<<<<<<< HEAD
 <script>
     function inputCheckLogin(){
         var name = document.getElementById("name").value;
@@ -21,6 +22,19 @@
 </script>
 
 <!-- <div class="main-content">
+=======
+<div class="main-content">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="/register">Particulier</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/zakelijkeregister">Zakelijk</a>
+            </li>
+        </ul>
+    </div>
+>>>>>>> 0af2972c8925fca16abe3aec20a13d9dcafd85be
     <section class="body">
         <div class="col-md-6">
             <div class="wrapper">

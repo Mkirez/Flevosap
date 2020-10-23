@@ -39,8 +39,8 @@ class ProductModel extends BaseModel
             $product->load($data);
             return $product;
         }
-
-        throw new Exception("Unknown product id");
+        else{ throw new Exception("Unknown product id");
+        }
     }
 
     public function all()
@@ -108,6 +108,27 @@ class ProductModel extends BaseModel
         } else {
             return "0";
         }
+    }
+
+    public function updateProduct(ProductModel $product)
+    {
+        $query = "UPDATE products SET 
+                    title = :title, 
+                    productCode = :productCode, 
+                    productOmschrijving = :productOmschrijving,
+                    prijs = :prijs,
+                    hoeveelheid = :hoeveelheid
+                    WHERE id = :id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindValue(':id', $product->getId(), PDO::PARAM_INT);
+            $stmt->bindValue(':title', $product->getTitle());
+            $stmt->bindValue(':productCode', $product->getProductCode());
+            $stmt->bindValue(':productOmschrijving', $product->getProductOmschrijving());
+            $stmt->bindValue(':prijs', $product->getPrijs());
+            $stmt->bindValue(':hoeveelheid', $product->getHoeveelheid());
+            return $stmt->execute();
+        endif;
+        return false;
     }
 
     public function store(ProductModel $product)

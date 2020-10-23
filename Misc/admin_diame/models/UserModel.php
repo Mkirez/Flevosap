@@ -70,6 +70,20 @@ class UserModel extends BaseModel
         return false;
     }
 
+    public function updateUser(UserModel $user){
+        $query = "UPDATE gebruikers SET 
+                    gebruikersnaam = :gebruikersnaam, 
+                    wachtwoord = :wachtwoord 
+                    WHERE id = :id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindValue(':id', $user->getId(), PDO::PARAM_INT);
+            $stmt->bindValue(':gebruikersnaam', $user->getUserName());
+            $stmt->bindValue(':wachtwoord', password_hash($user->getPassword(),PASSWORD_DEFAULT));
+            return $stmt->execute();
+        endif;
+        return false;
+    }
+
     public function delete($id)
     {
         if ($id != null) {

@@ -13,9 +13,6 @@
                 Gebruikers:
             </th>
             <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                Wachtwoorden:
-            </th>
-            <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 Created at:
             </th>
             <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
@@ -34,9 +31,6 @@
             <tr id="user_<?= $userInfo->getId(); ?>">
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?= $userInfo->getUsername(); ?>
-                </td>
-                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?= $userInfo->getPassword(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?= $userInfo->getCreatedAt(); ?>
@@ -85,20 +79,10 @@
             var confirmation = confirm('Weet u zeker dat u gebruiker: ' + user_name + ' wilt modificeren?');
 
             if (confirmation == true) {
-                $.ajax({
-                    url: '/users?id=' + user_id,
-                    type: 'UPDATE',
-                    success: function (result) {
-                        // Do something with the result
-                        if (result === "1"){
-                            $("#UserContent").find("#user_" + user_id).update();
-                        }
-                    }
-                });
+                window.location.href = '/admineditusers?id=' + user_id
             }
         });
     </script>
-
 <section class="body">
     <div class="col-md-6">
         <div class="wrapper">

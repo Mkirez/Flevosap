@@ -1,42 +1,33 @@
-<<!doctype html>
+<!doctype html>
 <html lang="en">
 <?php $title = "Edit User" ?>
+<?php include "includes/head.view.php" ?>
 <body>
 <section class="body">
     <div class="col-md-6">
         <div class="wrapper">
-            <h2>Edit User <?=$userInfo->getId();?></h2>
-            <form action="/users" method="post">
+            <?php foreach ($users as $userInfo) {
+            } ?>
+            <form action="/admineditusers" method="POST">
+                <h2>Edit Contact #<?= $userInfo->getId(); ?></h2>
                 <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" name="Title" class="form-control form-control-sm">
+                    <label for="gebruikersnaam">Gebruikersnaam:</label>
+                    <br>
+                    <input class="form-control-sm" type="text" name="gebruikersnaam"
+                           id="gebruikersnaam">
                 </div>
                 <div class="form-group">
-                    <label>Productcode</label>
-                    <input type="text" name="Productcode" class="form-control form-control-sm">
+                    <label for="wachtwoord">Wachtwoord:</label>
+                    <br>
+                    <input class="form-control-sm" type="text" name="wachtwoord"
+                           id="wachtwoord">
                 </div>
                 <div class="form-group">
-                    <label>Prijs</label>
-                    <input type="text" name="Prijsw" class="form-control form-control-sm">
-                </div>
-                <div class="form-group">
-                    <label>Productcode</label>
-                    <input type="number" name="Productcode" class="form-control form-control-sm">
-                </div>
-                <div class="form-group">
-                    <label>Productcode</label>
-                    <input type="number" name="Productcode" class="form-control form-control-sm">
-                </div>
-                <div class="form-group">
-                    <label>Productcode</label>
-                    <input type="image" name="picture" class="form-control form-control-sm">
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                    <input type="reset" class="btn btn-default" value="Reset">
+                    <input class="form-control-sm" type="submit" value="Update">
                 </div>
             </form>
         </div>
+    </div>
 </section>
 </body>
 </html>

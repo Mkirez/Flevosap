@@ -1,15 +1,15 @@
 <?php
 $router->define([
     'GET' => [
-        '/' => [ #DONE
+        '/' => [
             'controller' => 'HomeController',
             'method' => 'index'
         ],
-        '/about' => [ #ToDo Check deze pagina
+        '/about' => [
             'controller' => 'AboutController',
             'method' => 'index'
         ],
-        '/contact' => [ #ToDo Check deze pagina
+        '/contact' => [
             'controller' => 'ContactController',
             'method' => 'index'
         ],
@@ -36,6 +36,10 @@ $router->define([
         '/checkout' => [
             'controller' => 'CheckoutController',
             'method' => 'index'
+        ],
+        '/checkout/status' => [
+            'controller' => 'CheckoutController',
+            'method' => 'status'
         ],
         '/shop' => [
             'controller' => 'ProductpageController',
@@ -74,12 +78,43 @@ $router->define([
             'controller' => 'ProductpageController',
             'method' => 'appels'
         ],
+<<<<<<< HEAD
         '/ZakelijkeRegister' => [
             'controller' =>'ZakelijkeRegisterController',
             'method' => 'index'
         ],
 
 
+=======
+        '/zakelijkeregister' => [
+            'controller' => 'ZakelijkeRegisterController',
+            'method' => 'index'
+        ],
+        '/admin' => [
+            'controller' => 'AdminLoginController',
+            'method' => 'index'
+        ],
+        '/dashboard' => [
+            'controller' => 'DashboardController',
+            'method' => 'index'
+        ],
+        '/users' => [
+            'controller' => 'AdminUsersController',
+            'method' => 'index'
+        ],
+        '/products' => [
+            'controller' => 'AdminProductController',
+            'method' => 'index'
+        ],
+        '/admineditusers' => [
+            'controller' => 'UserEditorController',
+            'method' => 'index'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'ProductEditorController',
+            'method' => 'index'
+        ]
+>>>>>>> 0af2972c8925fca16abe3aec20a13d9dcafd85be
     ],
 
     'POST' => [
@@ -95,10 +130,15 @@ $router->define([
             'controller' => 'ContactController',
             'method' => 'contact'
         ],
+        '/checkout' => [
+            'controller' => 'CheckoutController',
+            'method' => 'CheckOut'
+        ],
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'register'
         ],
+<<<<<<< HEAD
         
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
@@ -110,4 +150,55 @@ $router->define([
         ],
 
     ]
+=======
+        '/zakelijkeregister' => [
+            'controller' => 'ZakelijkeRegisterController',
+            'method' => 'zakelijkeregister'
+        ],
+        '/Zakelijkelogin' => [
+            'controller' => 'ZakelijkeLoginController',
+            'method' => 'zakelijkelogin'
+        ],
+        '/admin' => [
+            'controller' => 'AdminLoginController',
+            'method' => 'login'
+        ],
+        '/users' => [
+            'controller' => 'AdminUsersController',
+            'method' => 'AddUser'
+        ],
+        '/products' => [
+            'controller' => 'AdminProductController',
+            'method' => 'AddProduct'
+        ],
+        '/admineditusers' => [
+            'controller' => 'UserEditorController',
+            'method' => 'editUser'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'ProductEditorController',
+            'method' => 'editProduct'
+        ]
+    ],
+    'DELETE' => [
+        '/users' => [
+            'controller' => 'AdminUsersController',
+            'method' => 'delete'
+        ],
+        '/products' => [
+            'controller' => 'AdminProductController',
+            'method' => 'delete'
+        ]
+    ],
+    'UPDATE' => [
+        '/admineditusers' => [
+            'controller' => 'UserEditorController',
+            'method' => 'editUser'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'ProductEditorController',
+            'method' => 'editProduct'
+        ]
+    ],
+>>>>>>> 0af2972c8925fca16abe3aec20a13d9dcafd85be
 ]);
