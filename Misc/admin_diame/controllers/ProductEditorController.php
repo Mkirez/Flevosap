@@ -20,7 +20,7 @@ class ProductEditorController
             $product->setHoeveelheid(trim($_POST["Hoeveelheid"]));
             if ($product->checkExistingTitle($product->getTitle()) != null) {
                 if ($product->updateProduct($product)) {
-                    header('location: /users');
+                    header('location: /products');
                     die();
                 } else {
                     echo "Er is helaas iets misgegaan";

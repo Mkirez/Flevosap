@@ -5,8 +5,8 @@ $router->define([
             'controller' => 'AdminLoginController',
             'method' => 'index'
         ],
-        '/' => [
-            'controller' => 'HomeController',
+        '/dashboard' => [
+            'controller' => 'DashboardController',
             'method' => 'index'
         ],
         '/logout' => [
@@ -66,4 +66,15 @@ $router->define([
             'method' => 'delete'
         ]
     ],
+    'UPDATE' => [
+        '/admineditusers' => [
+            'controller' => 'UserEditorController',
+            'method' => 'editUser'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'ProductEditorController',
+            'method' => 'editProduct'
+        ]
+    ],
+
 ]);

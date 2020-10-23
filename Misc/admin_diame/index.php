@@ -25,7 +25,7 @@ require 'models/ProductInfoModel.php';
 /**
  * Controllers
  */
-require 'controllers/HomeController.php';
+require 'controllers/DashboardController.php';
 require 'controllers/AdminLoginController.php';
 require 'controllers/AdminLogoutController.php';
 require 'controllers/AdminUsersController.php';

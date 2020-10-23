@@ -1,15 +1,15 @@
 <?php
 $router->define([
     'GET' => [
-        '/' => [ #DONE
+        '/' => [
             'controller' => 'HomeController',
             'method' => 'index'
         ],
-        '/about' => [ #ToDo Check deze pagina
+        '/about' => [
             'controller' => 'AboutController',
             'method' => 'index'
         ],
-        '/contact' => [ #ToDo Check deze pagina
+        '/contact' => [
             'controller' => 'ContactController',
             'method' => 'index'
         ],
@@ -36,6 +36,10 @@ $router->define([
         '/checkout' => [
             'controller' => 'CheckoutController',
             'method' => 'index'
+        ],
+        '/checkout/status' => [
+            'controller' => 'CheckoutController',
+            'method' => 'status'
         ],
         '/shop' => [
             'controller' => 'ProductpageController',
@@ -78,21 +82,6 @@ $router->define([
             'controller' => 'ZakelijkeRegisterController',
             'method' => 'index'
         ],
-        '/Faq' => [
-            'controller' => 'VeelgesteldeVragenContoller',
-            'method' => 'index'
-        ],
-        '/nieuwsbrief' => [
-            'controller' => 'NieuwsbriefController',
-            'method' => 'index'
-        ],
-        '/onzepartners' => [
-            'controller' => 'OnzepartnersController',
-            'method' => 'index'
-        ],
-
-
-
     ],
 
     'POST' => [
@@ -108,6 +97,10 @@ $router->define([
             'controller' => 'ContactController',
             'method' => 'contact'
         ],
+        '/checkout' => [
+            'controller' => 'CheckoutController',
+            'method' => 'CheckOut'
+        ],
         '/register' => [
             'controller' => 'RegisterController',
             'method' => 'register'
@@ -119,11 +112,6 @@ $router->define([
         '/Zakelijkelogin' => [
             'controller' => 'ZakelijkeLoginController',
             'method' => 'zakelijkelogin'
-        ],
-        '/nieuwsbrief' => [
-            'controller' => 'NieuwsbriefController',
-            'method' => 'Sendemail'
         ]
-    ],
-
+    ]
 ]);

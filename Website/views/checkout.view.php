@@ -12,7 +12,7 @@
         </div>
     </section>
     <div class="container clearfix" id="checkout">
-        <form class="form-horizontal" method="POST" action="/checkout">
+        <form class="form-horizontal" method="POST" id="checkout_form" action="/checkout">
             <div class="row">
                 <div class="col-md-12 table-responsive">
                     <table class="table cart">
@@ -105,7 +105,7 @@
                                        class="sm-form-control">
                             </div>
                         </div>
-                        <a href="#" class="button button-3d float-right">Place Order</a>
+                        <a href="#" id="proceed_checkout" class="button button-3d float-right">Place Order</a>
                     </div>
                 </div>
             </div>
@@ -113,5 +113,11 @@
     </div>
 </div>
 <?php include "includes/footer.view.php" ?>
+
+<script>
+    $("#proceed_checkout").on("click",function () {
+        $("#checkout_form").submit();
+    });
+</script>
 </body>
 </html>

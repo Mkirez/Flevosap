@@ -13,9 +13,6 @@
                 Gebruikers:
             </th>
             <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                Wachtwoorden:
-            </th>
-            <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                 Created at:
             </th>
             <th style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
@@ -34,9 +31,6 @@
             <tr id="user_<?= $userInfo->getId(); ?>">
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?= $userInfo->getUsername(); ?>
-                </td>
-                <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
-                    <?= $userInfo->getPassword(); ?>
                 </td>
                 <td style="white-space: nowrap; text-overflow:ellipsis; overflow: hidden; max-width:1px;">
                     <?= $userInfo->getCreatedAt(); ?>

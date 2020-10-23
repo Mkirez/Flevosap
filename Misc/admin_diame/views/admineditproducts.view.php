@@ -9,7 +9,7 @@
             <?php foreach ($products as $productInfo) {
             } ?>
             <h2>Edit Contact #<?= $productInfo->getId(); ?></h2>
-            <form action="/admineditproducts" method="post">
+            <form action="/admineditproducts" method="UPDATE">
                 <div class="form-group">
                     <label for="title">Naam product:</label>
                     <br>

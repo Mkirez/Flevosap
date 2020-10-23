@@ -24,6 +24,8 @@ require 'models/CartProductModel.php';
 require 'models/ProductModel.php';
 require 'models/ProductInfoModel.php';
 require 'models/ppzakelijkmodel.php';
+require 'models/OrderModel.php';
+require 'models/OrderRuleModel.php';
 
 /**
  * Controllers
