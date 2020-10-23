@@ -78,14 +78,10 @@ $router->define([
             'controller' => 'ProductpageController',
             'method' => 'appels'
         ],
-<<<<<<< HEAD
         '/ZakelijkeRegister' => [
             'controller' =>'ZakelijkeRegisterController',
             'method' => 'index'
         ],
-
-
-=======
         '/zakelijkeregister' => [
             'controller' => 'ZakelijkeRegisterController',
             'method' => 'index'
@@ -114,7 +110,6 @@ $router->define([
             'controller' => 'ProductEditorController',
             'method' => 'index'
         ]
->>>>>>> 0af2972c8925fca16abe3aec20a13d9dcafd85be
     ],
 
     'POST' => [
@@ -138,19 +133,10 @@ $router->define([
             'controller' => 'RegisterController',
             'method' => 'register'
         ],
-<<<<<<< HEAD
-        
-        '/Zakelijkelogin' => [
-            'controller' => 'ZakelijkeLoginController',
-            'method' => 'Zakelijkelogin'
-        ],
         '/ZakelijkeRegister' => [
             'controller' =>'ZakelijkeRegisterController',
             'method' => 'ZakelijkeRegister'
         ],
-
-    ]
-=======
         '/zakelijkeregister' => [
             'controller' => 'ZakelijkeRegisterController',
             'method' => 'zakelijkeregister'
@@ -200,5 +186,4 @@ $router->define([
             'method' => 'editProduct'
         ]
     ],
->>>>>>> 0af2972c8925fca16abe3aec20a13d9dcafd85be
 ]);

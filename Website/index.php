@@ -19,7 +19,6 @@ require "core/config.php";
  */
 require 'models/BaseModel.php';
 require 'models/UserModel.php';
-require 'models/ZaklijkuserModel.php';
 require 'models/CartModel.php';
 require 'models/CartProductModel.php';
 require 'models/ProductModel.php';
@@ -32,8 +31,6 @@ require 'models/OrderRuleModel.php';
  * Controllers
  */
 
-
-require 'controllers/ZakelijkeRegisterController.php';
 require 'controllers/HomeController.php';
 require 'controllers/AboutController.php';
 require 'controllers/VeelgesteldeVragenContoller.php';
