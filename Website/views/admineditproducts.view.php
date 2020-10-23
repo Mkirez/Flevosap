@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <?php $title = "Edit Product" ?>
-<?php include "includes/head.view.php" ?>
+<?php include "includes/dashboardhead.view.php" ?>
 <body>
 <section class="body">
     <div class="col-md-6">
@@ -10,11 +10,15 @@
             } ?>
             <h2>Edit Contact #<?= $productInfo->getId(); ?></h2>
             <form action="/admineditproducts" method="POST">
+                <div class="hide">
+                    <input class="hidden" type="hidden" name="id"
+                           id="id" value="<?= isset($_POST["id"]) ? $_POST["id"] : $productInfo->getId(); ?>">
+                </div>
                 <div class="form-group">
                     <label for="title">Naam product:</label>
                     <br>
                     <input class="form-control-sm" type="text" name="title"
-                           id="title">
+                           id="title" value="<?= isset($_POST["title"]) ? $_POST["title"] : "" ?>">
                 </div>
                 <div class="form-group">
                     <label for="productCode">Productcode:</label>

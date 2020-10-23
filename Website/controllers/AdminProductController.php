@@ -1,37 +1,44 @@
 <?php
 
-class ProductEditorController
+
+class AdminProductController
 {
     public function index()
     {
         $model = new ProductModel();
         $products = $model->all();
-        require 'views/admineditproducts.view.php';
+        require 'views/products.view.php';
     }
 
-    public function editProduct()
+    public function delete()
     {
-        if (!empty($_POST["title"]) and !empty($_POST["productCode"]) and !empty($_POST["productOmschrijving"]) and !empty($_POST["Prijs"]) and !empty($_POST["Hoeveelheid"])) {
+        $model = new ProductModel();
+        $id=$_GET["id"];
+        $delete = $model->delete($id);
+        echo $delete;
+    }
+
+    public function AddProduct()
+    {
+        if (!empty($_POST["title"]) && !empty($_POST["productCode"]) && !empty($_POST["productOmschrijving"]) && !empty($_POST["Prijs"]) && !empty($_POST["Hoeveelheid"])) {
             $product = new ProductModel();
-            $product->setId((int)trim($_POST["id"]));
             $product->setTitle(trim($_POST["title"]));
             $product->setProductCode(trim($_POST["productCode"]));
             $product->setProductOmschrijving(trim($_POST["productOmschrijving"]));
             $product->setPrijs(trim($_POST["Prijs"]));
             $product->setHoeveelheid(trim($_POST["Hoeveelheid"]));
             if ($product->checkExistingTitle($product->getTitle()) != null) {
-                if ($product->updateProduct($product)) {
+                if ($product->store($product)) {
                     header('location: /products');
                     die();
                 } else {
                     echo "Er is helaas iets misgegaan";
                 }
             } else {
-                echo "Deze gebruikersnaam bestaat al";
+                echo "Dit product bestaat al";
             }
         } else {
-            echo "Er ontbreken waardes!";
+            echo "Niet alle waardes zijn ingevuld";
         }
     }
-
 }

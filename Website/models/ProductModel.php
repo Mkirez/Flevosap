@@ -38,6 +38,8 @@ class ProductModel extends BaseModel
             $product->load($data);
             return $product;
         }
+        else{ throw new Exception("Unknown product id");
+        }
     }
 
     public function all()
@@ -85,6 +87,68 @@ class ProductModel extends BaseModel
         $this->setHoeveelheid($data['hoeveelheid']);
         $this->setCreatedAt($data['createdAt']);
         $this->setUpdatedAt($data['updatedAt']);
+    }
+
+    public function delete($id)
+    {
+        if ($id != null) {
+            $stmt = $this->pdo->prepare('SELECT * FROM Products WHERE id = ?');
+            $stmt->execute([$id]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$user) {
+                return "0";
+            }
+            $stmt = $this->pdo->prepare('DELETE FROM Products WHERE id = ?');
+            $stmt->execute([$id]);
+            return "1";
+        } else {
+            return "0";
+        }
+    }
+
+    public function updateProduct(ProductModel $product)
+    {
+        $query = "UPDATE products SET 
+                    title = :title, 
+                    productCode = :productCode, 
+                    productOmschrijving = :productOmschrijving,
+                    prijs = :prijs,
+                    hoeveelheid = :hoeveelheid
+                    WHERE id = :id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindValue(':id', $product->getId(), PDO::PARAM_INT);
+            $stmt->bindValue(':title', $product->getTitle());
+            $stmt->bindValue(':productCode', $product->getProductCode());
+            $stmt->bindValue(':productOmschrijving', $product->getProductOmschrijving());
+            $stmt->bindValue(':prijs', $product->getPrijs());
+            $stmt->bindValue(':hoeveelheid', $product->getHoeveelheid());
+            return $stmt->execute();
+        endif;
+        return false;
+    }
+
+    public function store(ProductModel $product)
+    {
+        $query = "INSERT INTO Products (title, productCode, productOmschrijving, prijs, hoeveelheid) VALUES (:title, :productCode, :productOmschrijving, :prijs, :hoeveelheid)";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindValue(':title', $product->getTitle());
+            $stmt->bindValue(':productCode', $product->getProductCode());
+            $stmt->bindValue(':productOmschrijving', $product->getProductOmschrijving());
+            $stmt->bindValue(':prijs', $product->getPrijs());
+            $stmt->bindValue(':hoeveelheid', $product->getHoeveelheid());
+            return $stmt->execute();
+        endif;
+        return false;
+    }
+
+    public function checkExistingTitle(string $title) : bool
+    {
+        $query = "SELECT * FROM Products WHERE title = :title";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindParam(':title', $title, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->rowCount() == 0;
+        endif;
     }
 
     /**

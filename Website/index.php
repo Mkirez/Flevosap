@@ -42,6 +42,13 @@ require 'controllers/ProductpageController.php';
 require 'controllers/ppzakelijkcontroller.php';
 require 'controllers/ZakelijkeLoginController.php';
 require 'controllers/ZakelijkeRegisterController.php';
+require 'controllers/DashboardController.php';
+require 'controllers/AdminLoginController.php';
+require 'controllers/AdminLogoutController.php';
+require 'controllers/AdminUsersController.php';
+require 'controllers/AdminProductController.php';
+require 'controllers/UserEditorController.php';
+require 'controllers/ProductEditorController.php';
 require 'core/Router.php';
 
 

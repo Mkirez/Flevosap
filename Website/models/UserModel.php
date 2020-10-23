@@ -23,14 +23,13 @@ class UserModel extends BaseModel
             $data = $stmt->fetch();
             if($data !== false) :
                 $this->id = $data['id'];
-                $this->username = $data['gebruikersnaam'];
-                $this->password = $data['wachtwoord'];
+                $this->username = $data['username'];
+                $this->password = $data['password'];
                 $this->createdAt = $data['created_at'];
                 $this->updatedAt = $data['updated_at'];
             endif;
         endif;
     }
-    
 
     public function checkExistingUsername(string $username) : bool
     {
@@ -52,8 +51,8 @@ class UserModel extends BaseModel
             $data = $stmt->fetch();
             if($data !== false) :
                 $this->id = $data['id'];
-                $this->username = $data['gebruikersnaam'];
-                $this->password = $data['wachtwoord'];
+                $this->username = $data['username'];
+                $this->password = $data['password'];
                 $this->createdAt = $data['created_at'];
                 $this->updatedAt = $data['updated_at'];
             endif;
@@ -62,13 +61,68 @@ class UserModel extends BaseModel
 
     public function store(UserModel $user)
     {
-        $query = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES (:gebruikersnaam, :wachtwoord)";
+        $query = "INSERT INTO gebruikers (gebruikersnaam, wachtwoord) VALUES (:username, :password)";
         if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindValue(':username', $user->getUserName());
+            $stmt->bindValue(':password', password_hash($user->getPassword(),PASSWORD_DEFAULT));
+            return $stmt->execute();
+        endif;
+        return false;
+    }
+
+    public function updateUser(UserModel $user){
+        $query = "UPDATE gebruikers SET 
+                    gebruikersnaam = :gebruikersnaam, 
+                    wachtwoord = :wachtwoord 
+                    WHERE id = :id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindValue(':id', $user->getId(), PDO::PARAM_INT);
             $stmt->bindValue(':gebruikersnaam', $user->getUserName());
             $stmt->bindValue(':wachtwoord', password_hash($user->getPassword(),PASSWORD_DEFAULT));
             return $stmt->execute();
         endif;
         return false;
+    }
+
+    public function delete($id)
+    {
+        if ($id != null) {
+            $stmt = $this->pdo->prepare('SELECT * FROM gebruikers WHERE id = ?');
+            $stmt->execute([$id]);
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            if (!$user) {
+                return "0";
+            }
+            $stmt = $this->pdo->prepare('DELETE FROM gebruikers WHERE id = ?');
+            $stmt->execute([$id]);
+            return "1";
+        } else {
+            return "0";
+        }
+    }
+
+    public function all()
+    {
+        $query = 'SELECT * FROM gebruikers';
+        $stmt = $this->pdo->prepare($query);
+        $stmt->execute();
+        $result = array();
+        while($data = $stmt->fetch(PDO::FETCH_ASSOC))
+        {
+            $user = new UserModel();
+            $user->load($data);
+            $result[]=$user;
+        }
+        return $result;
+    }
+
+    private function load($data)
+    {
+        $this->setId($data['id']);
+        $this->setUsername($data['gebruikersnaam']);
+        $this->setPassword($data['wachtwoord']);
+        $this->setCreatedAt($data['created_at']);
+        $this->setUpdatedAt($data['updated_at']);
     }
 
     /**

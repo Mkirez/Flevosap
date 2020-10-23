@@ -39,8 +39,8 @@ class ProductModel extends BaseModel
             $product->load($data);
             return $product;
         }
-
-        throw new Exception("Unknown product id");
+        else{ throw new Exception("Unknown product id");
+        }
     }
 
     public function all()
@@ -120,7 +120,7 @@ class ProductModel extends BaseModel
                     hoeveelheid = :hoeveelheid
                     WHERE id = :id";
         if ($stmt = $this->pdo->prepare($query)) :
-            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindValue(':id', $product->getId(), PDO::PARAM_INT);
             $stmt->bindValue(':title', $product->getTitle());
             $stmt->bindValue(':productCode', $product->getProductCode());
             $stmt->bindValue(':productOmschrijving', $product->getProductOmschrijving());
