@@ -107,19 +107,10 @@
         $("#ProductContent").on("click", ".edit_product", function () {
             var product_id = $(this).data("product_id");
             var product_name = $(this).data("product_name");
-            var confirmation = confirm('Weet u zeker dat u product: ' + product_name + ' wilt verwijderen?');
+            var confirmation = confirm('Weet u zeker dat u product: ' + product_name + ' wilt modificeren?');
 
             if (confirmation == true) {
-                $.ajax({
-                    url: '/products?id=' + product_id,
-                    type: 'UPDATE',
-                    success: function (result) {
-                        // Do something with the result
-                        if (result === "1") {
-                            $("#ProductContent").find("#product_" + product_id).update();
-                        }
-                    }
-                });
+                window.location.href = '/admineditproducts?id=' + product_id
             }
         });
     </script>

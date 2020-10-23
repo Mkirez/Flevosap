@@ -20,6 +20,14 @@ $router->define([
         '/products' => [
             'controller' => 'AdminProductController',
             'method' => 'index'
+        ],
+        '/admineditusers' => [
+            'controller' => 'UserEditorController',
+            'method' => 'index'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'ProductEditorController',
+            'method' => 'index'
         ]
     ],
     'POST' => [
@@ -39,6 +47,14 @@ $router->define([
             'controller' => 'AdminProductController',
             'method' => 'AddProduct'
         ],
+        '/admineditusers' => [
+            'controller' => 'UserEditorController',
+            'method' => 'editUser'
+        ],
+        '/admineditproducts' => [
+            'controller' => 'ProductEditorController',
+            'method' => 'editProduct'
+        ]
     ],
     'DELETE' => [
         '/users' => [
@@ -50,14 +66,4 @@ $router->define([
             'method' => 'delete'
         ]
     ],
-    'UPDATE' => [
-        '/admineditusers' => [
-            'controller' => 'EditorController',
-            'method' => 'Update'
-        ],
-        '/admineditproducts' => [
-            'controller' => 'EditorController',
-            'method' => 'Update'
-        ]
-    ]
 ]);

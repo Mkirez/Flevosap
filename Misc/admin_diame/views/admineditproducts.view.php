@@ -1,42 +1,56 @@
-<<!doctype html>
+<!doctype html>
 <html lang="en">
-<?php $title = "Edit Products" ?>
+<?php $title = "Edit Product" ?>
+<?php include "includes/head.view.php" ?>
 <body>
 <section class="body">
     <div class="col-md-6">
         <div class="wrapper">
-            <h2>Edit Product <?=$productInfo->getId();?></h2>
-            <form action="/products" method="post">
+            <?php foreach ($products as $productInfo) {
+            } ?>
+            <h2>Edit Contact #<?= $productInfo->getId(); ?></h2>
+            <form action="/admineditproducts" method="post">
                 <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" name="Title" class="form-control form-control-sm">
+                    <label for="title">Naam product:</label>
+                    <br>
+                    <input class="form-control-sm" type="text" name="title"
+                           value="<?= isset($_POST["title"]) ? $_POST["title"] : $productInfo->getTitle() ?>"
+                           id="title">
                 </div>
                 <div class="form-group">
-                    <label>Productcode</label>
-                    <input type="text" name="Productcode" class="form-control form-control-sm">
+                    <label for="productCode">Productcode:</label>
+                    <br>
+                    <input class="form-control-sm" type="text" name="productCode"
+                           value="<?= isset($_POST["productCode"]) ? $_POST["productCode"] : $productInfo->getProductCode() ?>"
+                           id="productCode">
                 </div>
                 <div class="form-group">
-                    <label>Prijs</label>
-                    <input type="text" name="Prijsw" class="form-control form-control-sm">
+                    <label for="productOmschrijving">Beschrijving product:</label>
+                    <br>
+                    <input class="form-control-sm" type="text" name="productOmschrijving"
+                           value="<?= isset($_POST["productOmschrijving"]) ? $_POST["productOmschrijving"] : $productInfo->getProductOmschrijving() ?>"
+                           id="productOmschrijving">
                 </div>
                 <div class="form-group">
-                    <label>Productcode</label>
-                    <input type="number" name="Productcode" class="form-control form-control-sm">
+                    <label for="Prijs">Prijs:</label>
+                    <br>
+                    <input class="form-control-sm" type="text" name="Prijs"
+                           value="<?= isset($_POST["Prijs"]) ? $_POST["Prijs"] : $productInfo->getPrijs() ?>"
+                           id="Prijs">
                 </div>
                 <div class="form-group">
-                    <label>Productcode</label>
-                    <input type="number" name="Productcode" class="form-control form-control-sm">
+                    <label for="Hoeveelheid">Hoeveelheid:</label>
+                    <br>
+                    <input class="form-control-sm" type="text" name="Hoeveelheid"
+                           value="<?= isset($_POST["Hoeveelheid"]) ? $_POST["Hoeveelheid"] : $productInfo->getHoeveelheid() ?>"
+                           id="Hoeveelheid">
                 </div>
-                <div class="form-group">
-                    <label>Productcode</label>
-                    <input type="image" name="picture" class="form-control form-control-sm">
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Submit">
-                    <input type="reset" class="btn btn-default" value="Reset">
+                <div>
+                    <input type="submit" value="Update">
                 </div>
             </form>
         </div>
+    </div>
 </section>
 </body>
 </html>

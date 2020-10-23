@@ -110,6 +110,27 @@ class ProductModel extends BaseModel
         }
     }
 
+    public function updateProduct(ProductModel $product)
+    {
+        $query = "UPDATE products SET 
+                    title = :title, 
+                    productCode = :productCode, 
+                    productOmschrijving = :productOmschrijving,
+                    prijs = :prijs,
+                    hoeveelheid = :hoeveelheid
+                    WHERE id = :id";
+        if ($stmt = $this->pdo->prepare($query)) :
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            $stmt->bindValue(':title', $product->getTitle());
+            $stmt->bindValue(':productCode', $product->getProductCode());
+            $stmt->bindValue(':productOmschrijving', $product->getProductOmschrijving());
+            $stmt->bindValue(':prijs', $product->getPrijs());
+            $stmt->bindValue(':hoeveelheid', $product->getHoeveelheid());
+            return $stmt->execute();
+        endif;
+        return false;
+    }
+
     public function store(ProductModel $product)
     {
         $query = "INSERT INTO Products (title, productCode, productOmschrijving, prijs, hoeveelheid) VALUES (:title, :productCode, :productOmschrijving, :prijs, :hoeveelheid)";
